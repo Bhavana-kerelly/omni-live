@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradF" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE7F3" />
+      <stop offset="100%" stop-color="#E0F2FE" />
+    </linearGradient>
+    <linearGradient id="coatGradF" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F8FAFC" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="240" fill="url(#bgGradF)" />
+  
+  <!-- Long Hair Back -->
+  <path d="M50 80 Q45 150 65 170 Q135 170 150 80 C150 40 50 40 50 80 Z" fill="#0F172A" />
+  
+  <!-- Face -->
+  <ellipse cx="100" cy="88" rx="28" ry="32" fill="#FDE68A" />
+  
+  <!-- Hair Front Bangs -->
+  <path d="M72 65 Q100 50 128 65 C132 80 125 100 128 120 Q122 105 118 85 Q100 68 82 85 Q78 105 72 120 C75 100 68 80 72 65 Z" fill="#1E293B" />
+  
+  <!-- Neck -->
+  <rect x="92" y="116" width="16" height="20" fill="#FCD34D" />
+  
+  <!-- Inner Medical Top -->
+  <path d="M84 135 L116 135 L100 165 Z" fill="#0284C7" />
+  
+  <!-- Doctor Coat -->
+  <path d="M30 240 L60 142 L86 135 L100 165 L114 135 L140 142 L170 240 Z" fill="url(#coatGradF)" stroke="#CBD5E1" stroke-width="1.5" />
+  
+  <!-- Stethoscope -->
+  <path d="M74 138 Q68 175 84 198 Q100 218 116 198 Q132 175 126 138" fill="none" stroke="#0284C7" stroke-width="4" stroke-linecap="round" />
+  <circle cx="116" cy="200" r="7.5" fill="#0369A1" stroke="#FFFFFF" stroke-width="2" />
+</svg>

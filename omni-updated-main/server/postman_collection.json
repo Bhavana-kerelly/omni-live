@@ -1,0 +1,72 @@
+{
+  "info": {
+    "_postman_id": "omni-leadsquared-api-collection",
+    "name": "OMNI Hospitals LeadSquared API",
+    "description": "Postman Collection for testing OMNI Hospitals LeadSquared backend endpoint.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Submit Lead to LeadSquared",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n  { \"Attribute\": \"FirstName\", \"Value\": \"Postman Test\" },\n  { \"Attribute\": \"LastName\", \"Value\": \"User\" },\n  { \"Attribute\": \"Phone\", \"Value\": \"9999999999\" },\n  { \"Attribute\": \"EmailAddress\", \"Value\": \"test@example.com\" },\n  { \"Attribute\": \"Source\", \"Value\": \"OMNI Website\" }\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/leadsquared/submit",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "leadsquared",
+            "submit"
+          ]
+        },
+        "description": "Submits lead array to OMNI Hospitals backend API proxy for LeadSquared."
+      },
+      "response": []
+    },
+    {
+      "name": "Backend Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "health"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

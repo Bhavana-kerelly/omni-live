@@ -1,0 +1,548 @@
+/* RankedHospitalSection.css - EXACT GLOWY REFERENCE MATCH */
+
+/* ==================================================
+   1. OVERALL SECTION & ATMOSPHERE
+   ================================================== */
+.ranked-hospital-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 60px 0 60px;
+  overflow: hidden;
+  font-family: var(--font-primary, system-ui, sans-serif);
+  z-index: 1;
+}
+
+/* Base Sky Background */
+.ranked-bg-sky {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #d8eeff 0%, #e6f5ff 40%, #ffffff 100%);
+  z-index: -10;
+}
+
+/* Soft white glow behind text */
+.sky-glow-white {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: radial-gradient(ellipse at center left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%);
+  z-index: -9;
+}
+
+/* Soft blue atmospheric glow */
+.sky-glow-blue {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 50%;
+  height: 80%;
+  background: radial-gradient(circle at center, rgba(14, 165, 233, 0.15) 0%, rgba(14, 165, 233, 0) 60%);
+  filter: blur(40px);
+  z-index: -8;
+}
+
+/* ==================================================
+   2. EXACT BACKGROUND SHAPES
+   ================================================== */
+
+/* Giant Glass Bubble & Middle Cross */
+.giant-glass-bubble {
+  position: absolute;
+  top: 15%;
+  left: 45%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 
+    inset 0 0 40px rgba(255,255,255,0.3),
+    0 10px 30px rgba(0,100,255,0.05);
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: -4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.middle-glass-cross {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  left: -20px;
+  top: 40%;
+}
+
+/* Left Large Glass Cross */
+.left-glass-cross {
+  position: absolute;
+  top: 35%;
+  left: 2%;
+  width: 140px;
+  height: 140px;
+  z-index: -5;
+}
+
+/* Bottom Sweeping Blue & Green Waves */
+.bottom-wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.wave-swoosh {
+  position: absolute;
+  width: 120%;
+  height: 250px;
+  border-radius: 50%;
+  left: -10%;
+}
+
+.wave-blue-layer {
+  bottom: -150px;
+  background: linear-gradient(180deg, #1d78d4 0%, #064b9e 100%);
+  box-shadow: 0 -5px 15px rgba(29, 120, 212, 0.3);
+  transform: rotate(-3deg);
+  z-index: 1;
+}
+
+.wave-green-layer {
+  bottom: -180px;
+  background: linear-gradient(180deg, #3cb832 0%, #16a34a 100%);
+  box-shadow: 0 -5px 15px rgba(60, 184, 50, 0.3);
+  transform: rotate(-1deg);
+  z-index: 2;
+}
+
+.ranked-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 5;
+}
+
+/* ==================================================
+   3. CONTENT LAYOUT (LEFT SIDE)
+   ================================================== */
+.promo-content-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.promo-text-col {
+  flex: 0 0 52%;
+  position: relative;
+  z-index: 10;
+  padding-right: 20px;
+}
+
+/* Typography matching the strong condensed navy look */
+.promo-main-heading {
+  font-family: var(--font-display, system-ui, sans-serif);
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #0c3e7f; /* Deep navy blue */
+  line-height: 1.15;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 1);
+}
+
+.promo-main-heading .text-blue {
+  color: #0b4b8a; 
+}
+
+.promo-sub-heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #3cb832; /* Exact green from reference */
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.promo-desc {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0 0 30px 0;
+  font-weight: 500;
+}
+
+/* ==================================================
+   4. EXACT GLOSSY BUTTONS
+   ================================================== */
+.promo-cta-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn-exact {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  z-index: 1;
+}
+
+.btn-top-shine {
+  position: absolute;
+  top: 1px;
+  left: 3px;
+  right: 3px;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.1) 100%);
+  border-radius: 100px 100px 20px 20px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.btn-blue-glossy {
+  background: linear-gradient(180deg, #1d78d4 0%, #064b9e 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 6px 15px rgba(6, 75, 158, 0.3), 
+    inset 0 -3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-blue-glossy:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #2b8df1 0%, #0a5bb8 100%);
+  box-shadow: 0 10px 20px rgba(6, 75, 158, 0.4), inset 0 -3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white-glossy {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f9ff 100%);
+  color: #2da125;
+  border: 1px solid #c2e2cc;
+  box-shadow: 
+    0 6px 15px rgba(0, 0, 0, 0.05), 
+    inset 0 -3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn-white-glossy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), inset 0 -3px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ==================================================
+   5. INTEGRATED HOSPITAL IMAGE (RIGHT SIDE)
+   ================================================== */
+.promo-img-col {
+  flex: 0 0 55%;
+  position: absolute;
+  right: -5%;
+  top: 5%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none; /* Let clicks pass through to background */
+  z-index: 1;
+}
+
+.exact-hospital-image {
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  object-fit: contain;
+  object-position: right center;
+  /* Soft fade into background on left edge just like image */
+  mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 100%);
+}
+
+/* ==================================================
+   6. EXACT GLOSSY STATISTICS BAR
+   ================================================== */
+.exact-stats-bar {
+  margin-top: 40px;
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  
+  /* Luminous atmospheric gradient (Blue -> Cyan -> Green) exactly like image */
+  background: linear-gradient(90deg, 
+    #53b6f9 0%, 
+    #3294e9 30%, 
+    #086cc4 50%, 
+    #13829b 75%, 
+    #57c268 100%
+  );
+  
+  border-radius: 100px;
+  
+  /* Bright white outer glow and rim */
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  
+  /* Intense glossy shadows */
+  box-shadow: 
+    0 15px 30px rgba(0, 90, 200, 0.25),
+    inset 0 0 20px rgba(0, 100, 255, 0.4),
+    inset 0 -8px 15px rgba(0, 50, 120, 0.3);
+}
+
+/* Strong white glossy reflection covering top half */
+.stats-bar-shine {
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  right: 10px;
+  height: 48%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 100px 100px 30px 30px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.promo-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* Soft translucent vertical dividers */
+.exact-divider {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+  z-index: 5;
+}
+
+/* Exactly matching glass bubbles for icons */
+.exact-icon-circle {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0%, #d6ebff 40%, #5ca1e6 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 5px 15px rgba(0, 50, 150, 0.3),
+    inset 0 -5px 10px rgba(0, 100, 255, 0.4),
+    inset 0 5px 10px rgba(255, 255, 255, 1);
+  overflow: hidden;
+}
+.exact-icon-circle::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 10%;
+  width: 80%;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+  border-radius: 50px 50px 0 0;
+  pointer-events: none;
+}
+
+.promo-stat-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.promo-stat-number {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.promo-stat-label {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================================================
+   7. EXACT SIDEBAR (ATTACHED TO CONTAINER)
+   ================================================== */
+.banner-action-sidebar {
+  position: absolute;
+  right: -20px; /* Attaches exactly to the right edge of the banner */
+  top: 40%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  border-radius: 12px 0 0 12px;
+  overflow: hidden;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.15);
+}
+
+.sidebar-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 8px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.sidebar-btn span {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.sidebar-icon {
+  margin-bottom: 4px;
+}
+
+.sidebar-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+
+.sidebar-green {
+  background: linear-gradient(180deg, #5abf3f 0%, #3ca822 100%);
+}
+
+.sidebar-blue {
+  background: linear-gradient(180deg, #1978d3 0%, #0a5299 100%);
+}
+
+.sidebar-whatsapp {
+  background: linear-gradient(180deg, #25D366 0%, #1da851 100%);
+  padding: 12px;
+}
+.sidebar-whatsapp span { display: none; }
+
+.sidebar-btn:hover {
+  filter: brightness(1.15);
+  padding-right: 12px;
+}
+
+/* ==================================================
+   8. RESPONSIVE DESIGN
+   ================================================== */
+@media (max-width: 1350px) {
+  .banner-action-sidebar {
+    right: 0;
+  }
+}
+
+@media (max-width: 1250px) {
+  .promo-main-heading { font-size: 2.3rem; }
+  .promo-sub-heading { font-size: 1.2rem; }
+  .promo-stat-number { font-size: 1.3rem; }
+  .promo-stat-item { gap: 8px; }
+  .exact-stats-bar { padding: 10px 12px; }
+  .exact-icon-circle { width: 40px; height: 40px; }
+  .promo-img-col { flex: 0 0 50%; }
+}
+
+@media (max-width: 900px) {
+  .ranked-hospital-wrapper { padding: 50px 0 50px; }
+  .promo-content-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .promo-text-col {
+    max-width: 100%;
+    flex: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .promo-img-col {
+    position: relative;
+    width: 100%;
+    top: 0;
+    right: 0;
+    justify-content: center;
+  }
+  .exact-hospital-image {
+    mask-image: none;
+    -webkit-mask-image: none;
+    max-width: 100%;
+    border-radius: 20px;
+  }
+  .exact-stats-bar {
+    flex-wrap: wrap;
+    border-radius: 24px;
+    padding: 20px;
+    gap: 20px;
+  }
+  .stats-bar-shine {
+    border-radius: 24px 24px 0 0;
+  }
+  .promo-stat-item {
+    width: calc(50% - 15px);
+    flex: none;
+    justify-content: flex-start;
+  }
+  .exact-divider {
+    display: none;
+  }
+  .banner-action-sidebar { display: none; }
+}
+
+@media (max-width: 500px) {
+  .promo-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-exact {
+    width: 100%;
+    justify-content: center;
+  }
+  .promo-stat-item {
+    width: 100%;
+  }
+}

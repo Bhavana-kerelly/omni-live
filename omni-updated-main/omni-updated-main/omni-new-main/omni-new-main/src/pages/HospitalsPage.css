@@ -1,0 +1,980 @@
+/* ==========================================================================
+   OMNI Hospitals — Our Hospitals / Locations Page (BRAND LOGO SYSTEM)
+   ========================================================================== */
+
+.hospitals-page-wrapper {
+  min-height: 100vh;
+  background-color: #FAFCFF;
+  color: #2C3238;
+  font-family: 'Outfit', 'Plus Jakarta Sans', var(--font-primary), sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.hospitals-main-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION (ATMOSPHERIC BRAND GRADIENT)
+   -------------------------------------------------------------------------- */
+.hospitals-hero {
+  position: relative;
+  padding: 70px 24px 70px;
+  background: linear-gradient(180deg, #EDF5FC 0%, #FAFCFF 100%);
+  border-bottom: 1px solid #E2E8F0;
+  overflow: hidden;
+}
+
+.hospitals-hero-glow {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 750px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(1, 144, 222, 0.09) 0%, rgba(112, 190, 68, 0.05) 50%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.hospitals-hero-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hospitals-hero-eyebrow,
+.map-eyebrow,
+.story-eyebrow,
+.facilities-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 20px;
+  border-radius: 100px;
+  background: rgba(112, 190, 68, 0.12);
+  border: 1px solid rgba(112, 190, 68, 0.35);
+  color: #70BE44;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+.hospitals-hero-title {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.8rem, 6.5vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #0F172A;
+  margin-bottom: 20px;
+}
+
+.text-blue-primary {
+  color: #0190DE !important;
+}
+
+.text-green-accent {
+  color: #70BE44 !important;
+}
+
+.hospitals-hero-lead {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: #475569;
+  line-height: 1.65;
+}
+
+.hospitals-hero-image-wrapper {
+  position: relative;
+  max-width: 1000px;
+  height: 380px;
+  margin: 36px auto 0;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1.5px solid #E2E8F0;
+  box-shadow: 0 16px 40px rgba(1, 144, 222, 0.12);
+  background: transparent !important;
+}
+
+.hospitals-hero-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hospitals-hero-image-wrapper:hover .hospitals-hero-img {
+  transform: scale(1.03);
+}
+
+.hospitals-hero-img-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(112, 190, 68, 0.35);
+  color: #70BE44;
+  font-size: 0.88rem;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(112, 190, 68, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   2. LOCATION SELECTOR BAR
+   -------------------------------------------------------------------------- */
+.location-selector-section {
+  position: sticky;
+  top: 70px;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1.5px solid #E2E8F0;
+  padding: 14px 24px;
+  box-shadow: 0 4px 20px rgba(1, 144, 222, 0.05);
+}
+
+.selector-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.selector-container::-webkit-scrollbar {
+  display: none;
+}
+
+.location-nav-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: max-content;
+}
+
+.location-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 20px 6px 8px;
+  border-radius: 100px;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  color: #334155;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.location-tab-btn .tab-thumb-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(1, 144, 222, 0.25);
+  transition: border-color 0.3s ease;
+}
+
+.location-tab-btn:hover {
+  background: #F8FAFD;
+  color: #0190DE;
+  border-color: #0190DE;
+}
+
+.location-tab-btn.active {
+  background: linear-gradient(135deg, #0190DE 0%, #00A3B4 100%);
+  border-color: transparent;
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(1, 144, 222, 0.3);
+}
+
+.location-tab-btn.active .tab-thumb-img {
+  border-color: #FFFFFF;
+}
+
+.tab-check-icon {
+  color: #70BE44;
+  margin-left: 2px;
+}
+
+.location-tab-btn.active .tab-check-icon {
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   3. MAIN INTERACTIVE DISPLAY (SPLIT-SCREEN)
+   -------------------------------------------------------------------------- */
+.hospitals-showcase-section {
+  padding: 40px 24px;
+  background: #F8FAFD;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.showcase-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.showcase-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.showcase-split-grid.fade-out {
+  opacity: 0.3;
+  transform: scale(0.99);
+}
+
+.showcase-split-grid.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Visual Column */
+.showcase-visual-column {
+  width: 100%;
+}
+
+.visual-image-card {
+  position: relative;
+  width: 100%;
+  height: 490px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1.5px solid #E2E8F0;
+  box-shadow: 0 16px 36px rgba(1, 144, 222, 0.1);
+  background: transparent !important;
+}
+
+.visual-main-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visual-image-card:hover .visual-main-image {
+  transform: scale(1.04);
+}
+
+.visual-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 8, 12, 0.05) 0%, rgba(6, 8, 12, 0.78) 100%);
+}
+
+.visual-badge-pill {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 18px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(112, 190, 68, 0.35);
+  color: #70BE44;
+  font-size: 0.86rem;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(112, 190, 68, 0.15);
+}
+
+.visual-caption {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+}
+
+.caption-tag {
+  display: inline-block;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  color: #70BE44;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.caption-heading {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+/* Info Column */
+.showcase-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.info-location-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #70BE44;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  background: rgba(112, 190, 68, 0.12);
+  padding: 5px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(112, 190, 68, 0.3);
+  width: fit-content;
+}
+
+.info-hospital-name {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #0190DE 0%, #00A3B4 50%, #70BE44 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  transition: opacity 0.2s ease;
+}
+
+.info-hospital-name.clickable:hover {
+  opacity: 0.85;
+}
+
+.info-hospital-desc {
+  font-size: 1.02rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.info-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.stat-card {
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-top: 3px solid #70BE44;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 4px 14px rgba(112, 190, 68, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(112, 190, 68, 0.12);
+}
+
+.stat-card.span-2 {
+  grid-column: span 2;
+  border-top-color: #0190DE;
+}
+
+.stat-label {
+  font-size: 0.76rem;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  color: #0190DE;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stat-value {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #70BE44;
+}
+
+.stat-value-sub {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #1E293B;
+}
+
+.info-address-box {
+  padding: 18px;
+  border-radius: 16px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  font-size: 0.92rem;
+  color: #334155;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.btn-primary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #70BE44 0%, #5CA832 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(112, 190, 68, 0.3);
+}
+
+.btn-primary-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(112, 190, 68, 0.42);
+}
+
+.btn-secondary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  background: rgba(1, 144, 222, 0.08);
+  color: #0190DE;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1.5px solid rgba(1, 144, 222, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-action:hover {
+  background: #0190DE;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   4. ELEGANT REGIONAL MAP SECTION
+   -------------------------------------------------------------------------- */
+.hospitals-map-section {
+  padding: 60px 24px;
+  background: #FAFCFF;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.map-section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.map-section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 44px;
+}
+
+.map-title,
+.story-main-title,
+.facilities-title {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.2rem, 4.2vw, 2.9rem);
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 12px;
+}
+
+.map-subtitle {
+  font-size: 1.02rem;
+  color: #64748B;
+}
+
+.interactive-map-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 12px 32px rgba(1, 144, 222, 0.06);
+}
+
+.map-svg-wrapper {
+  width: 100%;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.regional-svg-canvas {
+  width: 100%;
+  height: 100%;
+  max-height: 480px;
+}
+
+.map-node .node-pulse {
+  fill: rgba(1, 144, 222, 0.15);
+  transition: all 0.4s ease;
+  animation: mapPulseLight 3s infinite;
+}
+
+.map-node.selected .node-pulse {
+  fill: rgba(112, 190, 68, 0.3);
+  r: 26px;
+}
+
+.map-node .node-core {
+  fill: #0190DE;
+  transition: all 0.3s ease;
+}
+
+.map-node.selected .node-core {
+  fill: #70BE44;
+  r: 10px;
+}
+
+.map-node .node-label {
+  fill: #334155;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  transition: fill 0.3s ease;
+}
+
+.map-node.selected .node-label {
+  fill: #70BE44;
+  font-weight: 800;
+}
+
+.map-node:hover .node-core {
+  fill: #70BE44;
+}
+.map-node:hover .node-label {
+  fill: #0190DE;
+}
+
+@keyframes mapPulseLight {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 0.25; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+.map-legend-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid #E2E8F0;
+  font-size: 0.88rem;
+  color: #64748B;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0190DE;
+}
+
+.legend-dot.active {
+  background: #70BE44;
+  box-shadow: 0 0 8px rgba(112, 190, 68, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   5. EDITORIAL "EVERY OMNI HAS ITS OWN STORY"
+   -------------------------------------------------------------------------- */
+.hospitals-story-section {
+  padding: 60px 24px;
+  background: #F8FAFD;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.story-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.story-header-left {
+  max-width: 760px;
+  margin-bottom: 48px;
+}
+
+.story-lead {
+  font-size: 1.08rem;
+  color: #64748B;
+  line-height: 1.6;
+}
+
+.story-editorial-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+}
+
+.story-card {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(1, 144, 222, 0.05);
+}
+
+.story-card-image-box {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.story-card-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-card:hover .story-card-img {
+  transform: scale(1.05);
+}
+
+.story-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(6, 8, 12, 0.45) 100%);
+}
+
+.story-card-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.story-tag {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  color: #0190DE;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.story-heading {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.story-text {
+  font-size: 0.96rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.story-feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.feature-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(112, 190, 68, 0.12);
+  border: 1px solid rgba(112, 190, 68, 0.3);
+  color: #70BE44;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   6. MAJOR HOSPITAL FACILITIES
+   -------------------------------------------------------------------------- */
+.hospitals-facilities-section {
+  padding: 60px 24px;
+  background: #FAFCFF;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.facilities-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.facilities-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.facilities-lead {
+  font-size: 1.05rem;
+  color: #64748B;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.facility-editorial-card {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 20px rgba(1, 144, 222, 0.04);
+}
+
+.facility-editorial-card:hover {
+  border-color: #0190DE;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(1, 144, 222, 0.12);
+}
+
+.facility-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.facility-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.facility-editorial-card:hover .facility-img {
+  transform: scale(1.06);
+}
+
+.facility-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(6, 8, 12, 0.35) 100%);
+}
+
+.facility-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.facility-subtitle {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.76rem;
+  color: #0190DE;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.facility-card-title {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.facility-card-desc {
+  font-size: 0.9rem;
+  color: #64748B;
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   7. FINAL CTA
+   -------------------------------------------------------------------------- */
+.hospitals-final-cta {
+  position: relative;
+  padding: 70px 24px;
+  background: #FAFCFF;
+  border-top: 1px solid #E2EAF2;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta-glow-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(1, 144, 222, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hospitals-final-cta .cta-heading {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  text-transform: none !important;
+}
+
+.hospitals-final-cta .cta-lead {
+  font-size: 1.05rem;
+  color: #64748B !important;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 32px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #70BE44 0%, #5CA832 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(112, 190, 68, 0.35);
+}
+
+.cta-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(112, 190, 68, 0.45);
+}
+
+.cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 32px;
+  border-radius: 100px;
+  background: rgba(1, 144, 222, 0.08);
+  color: #0190DE !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1.5px solid rgba(1, 144, 222, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-btn-secondary:hover {
+  background: #0190DE;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .showcase-split-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .visual-image-card {
+    height: 380px;
+  }
+  .story-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hospitals-hero {
+    padding: 110px 20px 60px;
+  }
+  .location-selector-section {
+    top: 60px;
+    padding: 10px 16px;
+  }
+  .info-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-card.span-2 {
+    grid-column: span 1;
+  }
+  .info-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
+  .map-legend-bar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}

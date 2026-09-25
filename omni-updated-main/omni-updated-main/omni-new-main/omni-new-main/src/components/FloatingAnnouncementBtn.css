@@ -1,0 +1,37 @@
+/* src/components/FloatingAnnouncementBtn.css */
+.floating-announcement-btn {
+  position: fixed;
+  bottom: 25px;
+  left: 25px; /* Opposite side of WhatsApp button */
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 20px; /* Pill shape */
+  background: linear-gradient(135deg, #0056b3, #0088ff);
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 136, 255, 0.4);
+  z-index: 9999;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-announcement-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 136, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .floating-announcement-btn {
+    bottom: 20px;
+    left: 20px;
+    height: 36px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,1356 @@
+/* ===========================================================================
+   OMNI HOSPITALS — INSURANCE PARTNERS & EMPANELMENTS PAGE STYLES (EXACT DESIGN MATCH)
+   =========================================================================== */
+
+.insurance-page-root {
+  width: 100%;
+  min-height: 100vh;
+  background: #F7FBFF;
+  color: #1E293B;
+  font-family: var(--font-primary, 'Plus Jakarta Sans', sans-serif);
+  overflow-x: hidden;
+}
+
+.insurance-main-content {
+  position: relative;
+  width: 100%;
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===========================================================================
+   SECTION 01 — HERO (SPLIT HERO WITH 3D INSURANCE VISUAL)
+   =========================================================================== */
+
+.insurance-hero-section {
+  position: relative;
+  width: 100%;
+  padding: 56px 24px 45px;
+  background: linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 100%);
+  overflow: hidden;
+}
+
+.insurance-hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Breadcrumb Pill */
+.insurance-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+  border-radius: 100px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  font-size: 0.82rem;
+  color: #536B88;
+  margin-bottom: 24px;
+}
+
+.insurance-breadcrumb a {
+  color: #0878E8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.insurance-breadcrumb a:hover {
+  opacity: 0.8;
+}
+
+.breadcrumb-separator {
+  color: #94A3B8;
+}
+
+.breadcrumb-current {
+  color: #536B88;
+  font-weight: 500;
+}
+
+/* Eyebrow Pill */
+.insurance-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 100px;
+  background: rgba(112, 190, 68, 0.12);
+  border: 1px solid rgba(112, 190, 68, 0.35);
+  color: #70BE44;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.eyebrow-icon {
+  color: #70BE44;
+}
+
+/* Main Headline */
+.insurance-hero-title {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin-bottom: 20px;
+}
+
+.title-blue {
+  color: #0190DE !important;
+}
+
+.title-accent-green {
+  color: #70BE44 !important;
+  background: linear-gradient(135deg, #70BE44 0%, #5CA832 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.insurance-hero-lead {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #475569;
+  max-width: 580px;
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+/* Hero Action Buttons */
+.insurance-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary-blue {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #0190DE 0%, #0077C5 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(1, 144, 222, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary-blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(1, 144, 222, 0.4);
+}
+
+.btn-secondary-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 26px;
+  border-radius: 100px;
+  background: #FFFFFF;
+  color: #0878E8;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: 1.5px solid #0878E8;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-outline:hover {
+  background: #EBF4FE;
+  transform: translateY(-2px);
+}
+
+/* Right 3D Medical Visual Column */
+.insurance-hero-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-composition-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-ambient-glow {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(8, 120, 232, 0.18) 0%, rgba(53, 169, 232, 0) 70%);
+  pointer-events: none;
+}
+
+.visual-orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(8, 120, 232, 0.22);
+  pointer-events: none;
+}
+
+.ring-1 { width: 380px; height: 380px; }
+.ring-2 { width: 440px; height: 440px; border-color: rgba(53, 169, 232, 0.14); }
+
+/* Floating Micro Badges */
+.floating-micro-badge {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(11, 31, 65, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0878E8;
+  border: 1px solid #EBF4FE;
+  z-index: 4;
+}
+
+.badge-doc { top: 20px; right: 40px; }
+.badge-heart { top: 90px; left: 10px; }
+.badge-shield { bottom: 60px; right: 20px; }
+.badge-steth { bottom: 20px; left: 30px; }
+
+.hero-custom-illustration-img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  max-height: 380px;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 36px rgba(8, 120, 232, 0.16));
+  z-index: 3;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.hero-custom-illustration-img:hover {
+  transform: translateY(-4px);
+}
+
+/* 3D Graphic Cards Composition */
+.hero-3d-graphic-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graphic-building-block {
+  width: 250px;
+  height: 290px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #EBF4FE 100%);
+  border-radius: 20px;
+  border: 1.5px solid #D0E3F7;
+  box-shadow: 0 20px 40px rgba(8, 120, 232, 0.15);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.building-header-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.building-omni-tag {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: #0046B8;
+  letter-spacing: 0.08em;
+}
+
+.building-hosp-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  color: #0878E8;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+.building-windows-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.window-cell {
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(8, 120, 232, 0.12);
+  border: 1px solid rgba(8, 120, 232, 0.2);
+}
+
+/* Shield Badge Graphic */
+.graphic-shield-badge {
+  position: absolute;
+  width: 115px;
+  height: 135px;
+  left: 30px;
+  top: 110px;
+  z-index: 3;
+  filter: drop-shadow(0 12px 24px rgba(8, 120, 232, 0.3));
+}
+
+.shield-svg-shape {
+  width: 100%;
+  height: 100%;
+}
+
+/* Glassmorphism Insurance Card Overlay */
+.graphic-insurance-card {
+  position: absolute;
+  bottom: 40px;
+  right: 10px;
+  width: 220px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid #FFFFFF;
+  box-shadow: 0 16px 36px rgba(11, 31, 65, 0.14);
+  z-index: 3;
+}
+
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-chip-symbol {
+  width: 24px;
+  height: 18px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+}
+
+.card-type-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #0878E8;
+  letter-spacing: 0.05em;
+}
+
+.card-number-dots {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #0B1F41;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.card-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+  color: #536B88;
+  font-weight: 600;
+}
+
+.card-check-icon {
+  color: #0878E8;
+}
+
+/* ===========================================================================
+   SECTION 02 — QUICK BENEFITS STRIP
+   =========================================================================== */
+
+.quick-benefits-strip-section {
+  position: relative;
+  z-index: 10;
+  margin-top: -30px;
+  padding: 0 24px 60px;
+}
+
+.benefits-strip-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #DCE8F5;
+  box-shadow: 0 12px 32px rgba(11, 31, 65, 0.05);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.benefit-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #EBF4FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0878E8;
+  flex-shrink: 0;
+}
+
+.benefit-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #0B1F41;
+  margin-bottom: 2px;
+}
+
+.benefit-sub {
+  font-size: 0.82rem;
+  color: #536B88;
+  line-height: 1.35;
+}
+
+.strip-divider {
+  width: 1px;
+  height: 38px;
+  background: #E2E8F0;
+}
+
+/* ===========================================================================
+   SECTION 03 — FEATURED PARTNERS LOGO GRID
+   =========================================================================== */
+
+.featured-partners-section {
+  padding: 70px 0 85px;
+  background: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.section-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.section-eyebrow-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0878E8;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Section Display Title — EXACT Playfair Display Match */
+.section-title-dark {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-weight: 700;
+  color: #0B1F41;
+  line-height: 1.12;
+}
+
+.section-header-sub {
+  color: #536B88;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 460px;
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+
+/* Logo Grid */
+.partners-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.partner-card-item {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+
+.partner-card-item:hover {
+  border-color: #0878E8;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(8, 120, 232, 0.12);
+}
+
+.partner-logo-box {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.partner-logo-img {
+  width: 95%;
+  height: 95%;
+  max-width: 95%;
+  max-height: 78px;
+  object-fit: contain;
+  margin: 0 auto;
+  transition: transform 0.25s ease;
+}
+
+.partner-card-item:hover .partner-logo-img {
+  transform: scale(1.06);
+}
+
+.partner-brand-text {
+  font-family: var(--font-primary, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.view-all-partners-card {
+  background: #EBF4FE;
+  border: 1.5px dashed #0878E8;
+  border-radius: 16px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #0878E8;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-all-partners-card:hover {
+  background: #0878E8;
+  color: #FFFFFF;
+  border-style: solid;
+}
+
+/* ===========================================================================
+   SECTION 04 — INSURANCE DIRECTORY & SEARCH INTERACTIVE CARD
+   =========================================================================== */
+
+.directory-search-section {
+  padding: 85px 0;
+  background: #F7FBFF;
+}
+
+.directory-outer-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid #DCE8F5;
+  box-shadow: 0 16px 40px rgba(11, 31, 65, 0.05);
+  padding: 40px;
+}
+
+.directory-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+/* Segmented Control Tabs */
+.directory-segmented-tabs {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 100px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+}
+
+.segmented-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 100px;
+  background: transparent;
+  border: none;
+  color: #536B88;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.segmented-tab-btn.active {
+  background: #0878E8;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(8, 120, 232, 0.25);
+}
+
+/* Search Bar Input */
+.directory-search-bar-row {
+  margin-bottom: 32px;
+}
+
+.search-field-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-field-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0878E8;
+}
+
+.search-field-input {
+  width: 100%;
+  padding: 16px 100px 16px 52px;
+  border-radius: 14px;
+  border: 1.5px solid #DCE8F5;
+  background: #F8FAFC;
+  font-size: 0.98rem;
+  color: #0B1F41;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-field-input:focus {
+  border-color: #0878E8;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(8, 120, 232, 0.12);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #E2E8F0;
+  color: #536B88;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Grid Layout: Left List | Right Support Card */
+.directory-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 36px;
+  align-items: start;
+}
+
+.directory-list-wrapper {
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+/* Custom Scrollbar */
+.directory-list-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.directory-list-wrapper::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 6px;
+}
+
+.directory-two-col-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.directory-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #F8FAFC;
+  border: 1px solid #F1F5F9;
+  transition: background 0.2s ease;
+}
+
+.directory-list-item:hover {
+  background: #EBF4FE;
+  border-color: #C6E0FC;
+}
+
+.item-bullet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0878E8;
+  flex-shrink: 0;
+}
+
+.item-company-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0B1F41;
+}
+
+.no-search-results-box {
+  padding: 40px 20px;
+  text-align: center;
+  color: #536B88;
+}
+
+.text-btn-blue {
+  background: none;
+  border: none;
+  color: #0878E8;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Supportive Card Right — EXACT Image 2 Match */
+.directory-support-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.umbrella-top-graphic-wrapper {
+  position: relative;
+  z-index: 2;
+  margin-bottom: -32px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.umbrella-custom-img {
+  width: 180px;
+  height: 140px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.3s ease;
+}
+
+.umbrella-custom-img:hover {
+  transform: translateY(-3px);
+}
+
+.umbrella-svg-3d {
+  width: 180px;
+  height: 140px;
+  filter: drop-shadow(0 12px 24px rgba(8, 120, 232, 0.14));
+}
+
+.directory-support-card-box {
+  background: #F0F7FF;
+  border-radius: 20px;
+  border: 1px solid #D6E8FC;
+  padding: 46px 24px 28px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.support-card-heading {
+  font-family: var(--font-primary, sans-serif);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0B1F41;
+  margin-bottom: 8px;
+}
+
+.support-card-desc {
+  font-size: 0.86rem;
+  color: #536B88;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.btn-support-rect {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 20px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  border: 1.5px solid #86B7FE;
+  color: #0878E8;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(8, 120, 232, 0.04);
+}
+
+.btn-support-rect:hover {
+  border-color: #0878E8;
+  background: #EBF4FE;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(8, 120, 232, 0.15);
+}
+
+/* ===========================================================================
+   SECTION 05 — PUBLIC VS PRIVATE COMPARISON CARDS (EXACT MATCH TO IMAGE 2)
+   =========================================================================== */
+
+.company-comparison-section {
+  padding: 60px 0 85px;
+  background: #FFFFFF;
+}
+
+.section-header-left {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.comparison-cards-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.comparison-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 32px 28px;
+  overflow: hidden;
+}
+
+.public-card {
+  border: 1.5px solid #D8F3DC;
+  background: linear-gradient(180deg, #F4FBF7 0%, #FFFFFF 100%);
+  box-shadow: 0 12px 32px rgba(43, 147, 72, 0.05);
+}
+
+.private-card {
+  border: 1.5px solid #DCE8F5;
+  background: linear-gradient(180deg, #F4F8FD 0%, #FFFFFF 100%);
+  box-shadow: 0 12px 32px rgba(8, 120, 232, 0.05);
+}
+
+.card-top-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 3;
+}
+
+/* 3D Sphere Badge Icons */
+.sphere-badge-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.green-sphere-theme {
+  background: radial-gradient(circle at 35% 35%, #7CD393 0%, #2B9348 70%, #1B6630 100%);
+  box-shadow: 0 8px 18px rgba(43, 147, 72, 0.35);
+}
+
+.blue-sphere-theme {
+  background: radial-gradient(circle at 35% 35%, #50B4F8 0%, #0878E8 70%, #0046B8 100%);
+  box-shadow: 0 8px 18px rgba(8, 120, 232, 0.35);
+}
+
+/* Comparison Card Title */
+.comparison-card-title {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #0B1F41;
+}
+
+.comparison-list-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 3;
+}
+
+.comparison-list-grid.two-columns {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 20px;
+}
+
+.comparison-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0B1F41;
+  line-height: 1.4;
+}
+
+.comparison-list-item.item-faded {
+  color: #94A3B8;
+  font-weight: 500;
+  padding-left: 26px;
+}
+
+.check-icon-green { color: #2B9348; flex-shrink: 0; margin-top: 2px; }
+.check-icon-blue { color: #0878E8; flex-shrink: 0; margin-top: 2px; }
+
+/* 3D Artwork Overlay Positions */
+.public-card-graphic-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 220px;
+  height: 200px;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.private-card-graphic-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 190px;
+  height: 150px;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.card-3d-custom-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-3d-svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+}
+
+/* ===========================================================================
+   SECTION 06 — HOW CASHLESS TREATMENT WORKS (TIMELINE)
+   =========================================================================== */
+
+.cashless-process-section {
+  padding: 85px 0 95px;
+  background: #F7FBFF;
+}
+
+.cashless-timeline-wrapper {
+  position: relative;
+  margin-top: 50px;
+}
+
+.timeline-connecting-track {
+  position: absolute;
+  top: 20px;
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(8, 120, 232, 0.2) 0%, rgba(8, 120, 232, 0.85) 50%, rgba(8, 120, 232, 0.2) 100%);
+  z-index: 1;
+}
+
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.process-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step-num-node {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid #0878E8;
+  color: #0878E8;
+  font-size: 0.88rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px rgba(8, 120, 232, 0.25);
+  margin-bottom: 24px;
+  z-index: 3;
+}
+
+.step-icon-bubble {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #EBF4FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0878E8;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+}
+
+.process-step-item:hover .step-icon-bubble {
+  transform: translateY(-3px);
+  background: #0878E8;
+  color: #FFFFFF;
+}
+
+.step-title {
+  font-family: var(--font-primary, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0B1F41;
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 0.86rem;
+  color: #536B88;
+  line-height: 1.55;
+  max-width: 240px;
+}
+
+/* ===========================================================================
+   SECTION 07 — INSURANCE SUPPORT CTA PANEL
+   =========================================================================== */
+
+.insurance-support-cta-section {
+  padding: 0 0 95px;
+  background: #F7FBFF;
+}
+
+.support-glass-panel {
+  background: linear-gradient(135deg, #EBF4FE 0%, #F0F7FF 100%);
+  border-radius: 24px;
+  border: 1.5px solid #C6E0FC;
+  padding: 44px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  box-shadow: 0 16px 36px rgba(8, 120, 232, 0.08);
+}
+
+.support-panel-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.support-headset-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #0878E8;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(8, 120, 232, 0.3);
+}
+
+/* Support Title — EXACT Playfair Display Match */
+.support-panel-title {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #0B1F41;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.support-panel-desc {
+  font-size: 0.95rem;
+  color: #536B88;
+  line-height: 1.6;
+}
+
+.support-panel-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.support-action-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid #DCE8F5;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.support-action-card:hover {
+  border-color: #0878E8;
+  transform: translateX(4px);
+  box-shadow: 0 8px 20px rgba(8, 120, 232, 0.1);
+}
+
+.action-icon-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #EBF4FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0878E8;
+}
+
+.action-label {
+  display: block;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #536B88;
+  letter-spacing: 0.08em;
+}
+
+.action-value {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0878E8;
+}
+
+.action-value-sub {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0B1F41;
+}
+
+.support-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-radius: 14px;
+  background: #0878E8;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.support-action-btn:hover {
+  background: #0066C4;
+  transform: translateY(-2px);
+}
+
+/* ===========================================================================
+   RESPONSIVE MEDIA QUERIES
+   =========================================================================== */
+
+@media (max-width: 1024px) {
+  .insurance-hero-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+
+  .insurance-hero-left {
+    order: 1 !important;
+    width: 100% !important;
+  }
+
+  .insurance-hero-right {
+    order: 2 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* Compact Mobile Section Spacing Fix */
+  .featured-partners-section {
+    padding: 32px 0 36px !important;
+  }
+
+  .directory-search-section {
+    padding: 32px 0 36px !important;
+  }
+
+  .directory-outer-card {
+    padding: 24px 18px !important;
+  }
+
+  .company-comparison-section {
+    padding: 32px 0 36px !important;
+  }
+
+  .cashless-process-section {
+    padding: 32px 0 36px !important;
+  }
+
+  .insurance-faq-section {
+    padding: 32px 0 36px !important;
+  }
+
+  .benefits-strip-container {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .strip-divider {
+    display: none;
+  }
+
+  .partners-logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .directory-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support-glass-panel {
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .insurance-hero-section {
+    padding-top: 24px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .quick-benefits-strip-section {
+    margin-top: 0 !important;
+    padding: 0 16px 20px !important;
+  }
+
+  .featured-partners-section {
+    padding: 24px 0 28px !important;
+  }
+
+  .directory-search-section {
+    padding: 24px 0 28px !important;
+  }
+
+  .company-comparison-section {
+    padding: 24px 0 28px !important;
+  }
+
+  .partners-logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .comparison-list-grid.two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-connecting-track {
+    display: none;
+  }
+
+  .process-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .directory-two-col-list {
+    grid-template-columns: 1fr;
+  }
+}

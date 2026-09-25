@@ -1,0 +1,346 @@
+/* ==========================================================================
+   OMNI HOSPITALS — PREMIUM DOCTOR PROFILE MODAL / OVERLAY
+   ========================================================================== */
+
+/* 1. BACKDROP OVERLAY */
+.doctor-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
+  animation: fadeInBackdrop 0.3s ease-out forwards;
+}
+
+@keyframes fadeInBackdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 2. CENTERED POPUP PANEL */
+.doctor-modal-panel {
+  position: relative;
+  width: 90%;
+  max-width: 1040px;
+  max-height: 88vh;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  animation: scaleUpPanel 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes scaleUpPanel {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 3. CLOSE BUTTON */
+.doctor-modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.doctor-modal-close-btn:hover {
+  background: #0F172A;
+  color: #ffffff;
+  border-color: #0F172A;
+  transform: rotate(90deg);
+}
+
+/* 4. MODAL GRID LAYOUT */
+.doctor-modal-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3.5rem;
+  padding: 3.5rem 3.5rem;
+  align-items: center;
+}
+
+/* LEFT COLUMN: LARGE PORTRAIT */
+.doctor-modal-left-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doctor-portrait-stage {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 4 / 4.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portrait-bg-circle {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #EBF5FE 0%, #E0F2FE 100%);
+  z-index: 1;
+}
+
+.specialty-linework-pattern {
+  position: absolute;
+  inset: -10px;
+  border-radius: 24px;
+  background-image: radial-gradient(rgba(2, 132, 199, 0.12) 1px, transparent 1px);
+  background-size: 16px 16px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.doctor-portrait-large-img {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 20px;
+  box-shadow: 0 16px 36px rgba(2, 132, 199, 0.15);
+}
+
+/* RIGHT COLUMN: DOCTOR META & ABOUT */
+.doctor-modal-right-col {
+  display: flex;
+  flex-direction: column;
+  color: #0F172A;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.doctor-eyebrow-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #0284C7;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.doctor-profile-name {
+  font-family: 'Outfit', 'Playfair Display', sans-serif;
+  font-size: clamp(2rem, 2.8vw, 2.6rem);
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.doctor-qualifications-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0284C7;
+  margin-bottom: 0.25rem;
+}
+
+.doctor-designation-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 0.75rem;
+  white-space: pre-line;
+}
+
+.doctor-experience-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 700;
+  align-self: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.doctor-modal-divider {
+  width: 100%;
+  height: 1px;
+  background: #F1F5F9;
+  margin-bottom: 1.5rem;
+}
+
+/* ABOUT THE DOCTOR */
+.doctor-about-section {
+  margin-bottom: 2rem;
+}
+
+.doctor-about-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.825rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #0F172A;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.doctor-bio-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.doctor-bio-p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.65;
+}
+
+/* PRIMARY ACTION BUTTON */
+.doctor-modal-action-bar {
+  margin-top: auto;
+}
+
+.btn-book-appointment-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: 100px;
+  background: #0F172A;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+}
+
+.btn-book-appointment-pill:hover {
+  background: #0284C7;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.35);
+}
+
+/* SUCCESS CONFIRMATION VIEW */
+.modal-booking-success-view {
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.success-check-badge {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #ECFDF5;
+  color: #10B981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
+}
+
+.success-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 0.75rem;
+}
+
+.success-message {
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.btn-modal-close-confirm {
+  padding: 0.8rem 2rem;
+  border-radius: 100px;
+  background: #0F172A;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-modal-close-confirm:hover {
+  background: #0284C7;
+}
+
+/* RESPONSIVE MOBILE OVERLAY */
+@media (max-width: 900px) {
+  .doctor-modal-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 2rem 2.5rem;
+  }
+  .doctor-modal-panel {
+    width: 95%;
+    max-height: 92vh;
+    border-radius: 20px;
+  }
+  .doctor-portrait-stage {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  .doctor-modal-backdrop {
+    padding: 0;
+  }
+  .doctor-modal-panel {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+    border: none;
+  }
+  .doctor-modal-grid {
+    padding: 4rem 1.5rem 2.5rem;
+  }
+  .doctor-modal-close-btn {
+    top: 1rem;
+    right: 1rem;
+  }
+  .btn-book-appointment-pill {
+    width: 100%;
+  }
+}

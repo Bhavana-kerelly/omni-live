@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /blogs/*
+
+Sitemap: https://omnihospitals.in/sitemap.xml

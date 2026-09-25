@@ -1,0 +1,497 @@
+/* navbar-override.css - Redesigned Glassmorphic Navbar */
+
+/* Reset the main fixed header wrapper */
+.home-header, .home-header.scrolled, .home-header.transparent {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  pointer-events: none !important; /* allow clicks to pass through empty areas */
+  padding-top: 0 !important;
+}
+
+/* ====================================================
+   MAIN GLASS PILL CONTAINER
+   ==================================================== */
+.glass-pill-container-wrapper {
+  pointer-events: none !important;
+}
+
+/* Override the base header background from index.css to be white */
+.home-header,
+.home-header.scrolled,
+.home-header.transparent,
+.cinematic-hero-navbar {
+  background: #ffffff !important;
+}
+
+.glass-pill-container {
+  pointer-events: auto !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 8px 16px !important;
+  border-radius: 0 0 36px 36px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  position: relative;
+  z-index: 1000 !important;
+  transition: all 0.3s ease;
+  
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Hide the atmospheric glow to avoid ghost shadows */
+.glass-pill-container::before {
+  display: none !important;
+}
+
+/* Move the main glass header style strictly to the top row */
+.glass-pill-container .header-top-row {
+  /* Rich, deep gradient backing (dark blue -> dark green) */
+  background: linear-gradient(90deg, rgba(0, 82, 204, 0.75) 0%, rgba(0, 155, 229, 0.65) 45%, rgba(46, 196, 182, 0.6) 75%, rgba(88, 182, 40, 0.5) 100%) !important;
+  backdrop-filter: blur(28px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+  
+  /* Luminous bottom glow */
+  box-shadow: 
+    inset 0 -2px 10px rgba(255, 255, 255, 0.2), 
+    0 10px 30px rgba(0, 155, 229, 0.15) !important;
+    
+  border-radius: 0 0 24px 24px !important;
+  padding: 8px 16px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  min-height: 50px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 4px !important;
+}
+
+/* ====================================================
+   LOGO AREA
+   ==================================================== */
+.white-glass-bg {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  border-radius: 20px !important;
+  padding: 6px 16px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.white-glass-bg .header-brand-img {
+  height: 40px !important;
+  object-fit: contain;
+}
+
+/* ====================================================
+   TOP ACTION BUTTONS
+   ==================================================== */
+.glass-pill-container .header-top-actions {
+  display: flex !important;
+  gap: 12px !important;
+  align-items: center !important;
+}
+
+.glass-pill-container .header-emergency-glow-card,
+.glass-pill-container .header-phone-action-card,
+.glass-pill-container .header-appointment-cta-pill {
+  background: rgba(255, 255, 255, 0.3) !important; /* light translucent white */
+  border: 1px solid rgba(255, 255, 255, 0.6) !important; /* thin white glass border */
+  border-radius: 24px !important;
+  padding: 6px 14px !important;
+  /* subtle inner highlight + soft blue/cyan glow */
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 4px 12px rgba(0, 155, 229, 0.15) !important;
+  color: #ffffff !important; /* Highly readable white text */
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.glass-pill-container .header-emergency-glow-card:hover,
+.glass-pill-container .header-phone-action-card:hover,
+.glass-pill-container .header-appointment-cta-pill:hover {
+  background: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 1), 0 6px 16px rgba(0, 155, 229, 0.25) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Restore original icon colors against the white text */
+.phone-icon-svg, .calendar-icon-svg {
+  color: #0052cc !important; 
+}
+
+.emergency-orb-img {
+  filter: none !important;
+  display: block !important;
+}
+.emergency-orb-siren-fallback {
+  color: #ff3333 !important; /* if image fails to load, make the SVG red like the original */
+}
+
+.emergency-title-row, .phone-number-bold-text, .appointment-cta-label {
+  color: #ffffff !important; /* Text clearly visible in white */
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  margin: 0 !important;
+  letter-spacing: 0.2px !important;
+}
+
+.emergency-num-highlight, .emergency-label-caps { color: inherit !important; }
+.header-action-vertical-divider { display: none !important; }
+
+.header-nabh-seal-wrapper {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 50% !important;
+  padding: 4px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.6) !important;
+}
+
+/* ====================================================
+   NAVIGATION MENU BACKGROUND
+   ==================================================== */
+.glass-pill-container .header-bottom-row {
+  display: flex !important;
+  justify-content: center !important;
+  padding-bottom: 2px !important;
+}
+
+.glass-pill-container .floating-nav-capsule {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: 100% !important;
+  border: none !important;
+}
+
+/* ONE continuous deep glossy glass navigation surface (stats bar style) */
+.nav-glass-strip {
+  /* Horizontal Blue to Ocean Cyan Gradient */
+  background: linear-gradient(90deg, #004bb0 0%, #006dd7 30%, #0084c8 65%, #0192a8 100%) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  border-radius: 9999px !important;
+  padding: 4px 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  position: relative !important;
+  
+  /* Outer glow and crisp top-inner rim specular highlight */
+  box-shadow: 
+    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.25),
+    0 8px 24px -4px rgba(0, 82, 204, 0.45),
+    0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Specular gloss glaze across the top half of the bar */
+.nav-glass-strip::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 1px !important;
+  left: 2px !important;
+  right: 2px !important;
+  height: 48% !important;
+  background: linear-gradient(180deg, 
+    rgba(255, 255, 255, 0.4) 0%, 
+    rgba(255, 255, 255, 0.12) 65%, 
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
+  border-radius: 9999px 9999px 0 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+/* Diagonal light sweep */
+.nav-glass-strip::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.12) 50%, transparent 75%) !important;
+  border-radius: 9999px !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.glass-pill-container .capsule-nav-list {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  list-style: none !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Add very faint vertical dividers between list items */
+.glass-pill-container .capsule-nav-list li {
+  position: relative !important;
+  border-right: none !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.glass-pill-container .capsule-nav-list li:not(:last-child)::after {
+  content: '' !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 25% !important;
+  height: 50% !important;
+  width: 1px !important;
+  background: linear-gradient(180deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.38) 50%, 
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
+  pointer-events: none !important;
+}
+
+/* ====================================================
+   DROPDOWN VISIBILITY FIX
+   ==================================================== */
+.home-header,
+.header-master-wrapper,
+.header-bottom-row,
+.glass-pill-container,
+.glass-pill-container .floating-nav-capsule,
+.glass-pill-container .capsule-nav-menu,
+.glass-pill-container .nav-glass-strip,
+.glass-pill-container .capsule-nav-list,
+.glass-pill-container .nav-item {
+  overflow: visible !important;
+}
+
+.locations-discovery-panel {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 999999 !important;
+}
+
+/* ====================================================
+   NAVIGATION TEXT & ICONS
+   ==================================================== */
+.glass-pill-container .capsule-nav-item {
+  color: #ffffff !important; /* crisp white text */
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  letter-spacing: -0.01em !important;
+  padding: 6px 12px !important;
+  border-radius: 9999px !important;
+  background: transparent !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  white-space: nowrap !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Nav Item Icons */
+.glass-pill-container .capsule-nav-item .nav-btn-icon {
+  width: 19px !important;
+  height: 19px !important;
+  flex-shrink: 0 !important;
+  opacity: 0.95 !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35)) !important;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, filter 0.2s ease !important;
+}
+
+/* Remove old green/blue line pseudo-elements */
+.glass-pill-container .capsule-nav-item::before,
+.glass-pill-container .capsule-nav-item::after {
+  display: none !important;
+  background: transparent !important;
+  opacity: 0 !important;
+}
+
+/* Hover state: slight cyan/blue glass + soft glow */
+.glass-pill-container .capsule-nav-item:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: inset 0 1px 1.5px rgba(255, 255, 255, 0.6) !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+.glass-pill-container .capsule-nav-item:hover .nav-btn-icon {
+  opacity: 1 !important;
+  transform: scale(1.15) translateY(-0.5px) !important;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.85)) !important;
+}
+
+/* ====================================================
+   ACTIVE HOME BUTTON
+   ==================================================== */
+.glass-pill-container .capsule-nav-item.active {
+  /* rich Omni blue + electric blue glossy pill */
+  background: linear-gradient(180deg, #0088ff 0%, #0066dc 100%) !important;
+  color: #ffffff !important;
+  /* bright glass border, inner glow, soft blue outer glow */
+  border: 1.5px solid rgba(255, 255, 255, 0.75) !important;
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.85),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.25),
+    0 0 16px rgba(0, 136, 255, 0.5) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+  padding: 6px 16px !important;
+  transform: none !important;
+}
+
+.glass-pill-container .capsule-nav-item.active .nav-btn-icon {
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.9)) !important;
+}
+
+/* ====================================================
+   DROPDOWNS
+   ==================================================== */
+.locations-nav-wrapper .locations-discovery-panel {
+  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(24px) !important;
+  box-shadow: 0 20px 50px rgba(0, 82, 204, 0.15) !important;
+  border: 1px solid rgba(0, 155, 229, 0.2) !important;
+  margin-top: 10px !important;
+}
+
+/* ====================================================
+   RESPONSIVE
+   ==================================================== */
+@media (max-width: 1024px) {
+  .glass-pill-container {
+    border-radius: 0 0 28px 28px !important;
+    padding: 8px !important;
+  }
+  .glass-pill-container::before {
+    border-radius: 0 0 30px 30px !important;
+  }
+  .nav-glass-strip {
+    overflow: visible !important;
+    white-space: nowrap !important;
+    border-radius: 16px !important;
+  }
+  .glass-pill-container .capsule-nav-list {
+    width: max-content !important;
+  }
+  .header-appointment-cta-pill .appt-label-full { display: none !important; }
+  .header-appointment-cta-pill .appt-label-short { display: inline-block !important; }
+}
+
+/* ====================================================
+   SCROLLED STATE OVERRIDES (DESKTOP ONLY)
+   ==================================================== */
+@media (min-width: 769px) {
+  /* Container layout on scroll */
+  .home-header.scrolled .glass-pill-container {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    max-width: 1560px !important;
+    width: 100% !important;
+    padding: 6px 16px !important;
+    gap: 12px !important;
+  }
+
+  .home-header.scrolled .glass-pill-container .header-logo-pod {
+    flex-shrink: 0 !important;
+  }
+
+  /* 1. Remove the background from top row in scrolled state */
+  .home-header.scrolled .glass-pill-container .header-top-row {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* 2. Allow full flexible width for the navigation pill in scrolled state */
+  .home-header.scrolled .glass-pill-container .header-bottom-row {
+    flex: 1 1 auto !important;
+    max-width: 100% !important;
+    width: auto !important;
+    margin-left: 16px !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+  }
+
+  .home-header.scrolled .glass-pill-container .floating-nav-capsule {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .home-header.scrolled .glass-pill-container .nav-glass-strip {
+    width: 100% !important;
+  }
+
+  .home-header.scrolled .glass-pill-container .capsule-nav-list {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  /* 3. Text & Active state colors in scrolled state */
+  .home-header.scrolled .glass-pill-container .capsule-nav-item,
+  .home-header.scrolled .glass-pill-container .capsule-nav-item.active {
+    color: #ffffff !important;
+  }
+}
+
+/* Scaling adjustments for intermediate desktop viewports */
+@media (min-width: 769px) and (max-width: 1380px) {
+  .glass-pill-container .capsule-nav-item,
+  .home-header.scrolled .glass-pill-container .capsule-nav-item {
+    padding: 5px 8px !important;
+    font-size: 12.5px !important;
+    gap: 4px !important;
+  }
+  .glass-pill-container .capsule-nav-item .nav-btn-icon,
+  .home-header.scrolled .glass-pill-container .capsule-nav-item .nav-btn-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .glass-pill-container .capsule-nav-item.active,
+  .home-header.scrolled .glass-pill-container .capsule-nav-item.active {
+    padding: 5px 12px !important;
+  }
+}
+@media (max-width: 768px) {
+  .glass-pill-container {
+    border-radius: 0 0 24px 24px !important; /* Mobile attach to top */
+  }
+  .glass-pill-container::before {
+    border-radius: 0 0 26px 26px !important;
+  }
+  .glass-pill-container .header-bottom-row,
+  .home-header.scrolled .glass-pill-container .header-bottom-row { 
+    display: none !important; 
+  }
+  .header-phone-action-card .phone-number-bold-text { display: none !important; }
+  .header-emergency-glow-card .emergency-info-lines { display: none !important; }
+}
+.mobile-drawer { pointer-events: auto !important; }

@@ -1,0 +1,34 @@
+import fs from 'fs';
+
+const svg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" width="1200" height="120">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#005eb8" />
+      <stop offset="25%" stop-color="#0078d4" />
+      <stop offset="55%" stop-color="#009ebd" />
+      <stop offset="85%" stop-color="#42ad26" />
+      <stop offset="100%" stop-color="#62be28" />
+    </linearGradient>
+    <pattern id="dotPattern" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="1.2" fill="rgba(255,255,255,0.22)" />
+    </pattern>
+  </defs>
+
+  <!-- Gradient Background -->
+  <rect x="0" y="0" width="1200" height="120" rx="20" ry="20" fill="url(#headerGrad)" />
+  <rect x="0" y="0" width="1200" height="120" rx="20" ry="20" fill="url(#dotPattern)" />
+
+  <!-- White Logo Area with Smooth Sweeping Curve -->
+  <path d="M 0,0 L 290,0 C 325,20 335,55 285,95 C 260,115 220,120 180,120 L 0,120 Z" fill="#FFFFFF" />
+
+  <!-- Cyan/Blue Accent Swoosh -->
+  <path d="M 290,0 C 325,20 335,55 285,95 C 260,115 220,120 180,120" fill="none" stroke="#00A3FF" stroke-width="4.5" stroke-linecap="round" />
+
+  <!-- Green Accent Swoosh -->
+  <path d="M 295,0 C 332,22 342,58 291,98 C 265,118 224,120 184,120" fill="none" stroke="#70BE44" stroke-width="4.5" stroke-linecap="round" />
+</svg>
+`;
+
+fs.writeFileSync('scratch/full_header_bg.svg', svg);
+console.log('Saved scratch/full_header_bg.svg');

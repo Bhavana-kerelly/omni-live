@@ -1,0 +1,326 @@
+/* ==========================================================================
+   IMPACT STATISTICS SECTION — LIGHT PREMIUM HEALTHCARE STYLING
+   ========================================================================== */
+
+.impact-statistics-section {
+  position: relative;
+  padding: 4.8rem 2rem 2.25rem;
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 50%, #F4F8FD 100%);
+  overflow: hidden;
+}
+
+/* Ambient Background Glows */
+.impact-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glow-top {
+  top: -100px;
+  left: -80px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(1, 144, 222, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(60px);
+}
+
+.glow-bottom {
+  bottom: -120px;
+  right: -80px;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(112, 190, 68, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(60px);
+}
+
+/* Background Particle Grids */
+.impact-bg-particles {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background-image: radial-gradient(rgba(1, 144, 222, 0.12) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.particles-left {
+  top: 40px;
+  left: 30px;
+}
+
+.particles-right {
+  bottom: 40px;
+  right: 30px;
+}
+
+/* Connecting Curved Line (SVG) */
+.impact-connecting-lines {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subconscious Giant Watermark */
+.impact-watermark-text {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(3.2rem, 5.8vw, 5.8rem);
+  font-weight: 900;
+  font-family: var(--font-display, serif);
+  color: #0190DE;
+  opacity: 0.16;
+  letter-spacing: 10px;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+/* Section Container */
+.impact-statistics-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Cards Grid */
+.impact-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Individual Stat Card */
+.impact-stat-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(210, 226, 245, 0.85);
+  border-radius: 22px;
+  padding: 1.85rem 1.6rem 1.65rem;
+  min-height: 190px;
+  box-shadow: 0 14px 35px -15px rgba(0, 50, 120, 0.05), 0 3px 10px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.is-in-view .impact-stat-card {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.impact-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 45px -15px rgba(1, 144, 222, 0.12), 0 6px 20px rgba(0, 0, 0, 0.03);
+  border-color: rgba(1, 144, 222, 0.4);
+}
+
+/* Radial Top Glow Inside Card */
+.card-top-radial-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: radial-gradient(circle at 50% 0%, rgba(1, 144, 222, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.card-green .card-top-radial-glow,
+.card-teal .card-top-radial-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(112, 190, 68, 0.08) 0%, transparent 65%);
+}
+
+/* Header Area: Icon & Big Number */
+.stat-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.95rem;
+}
+
+/* Icon Container */
+.stat-icon-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(1, 144, 222, 0.08);
+  border: 1.5px solid rgba(1, 144, 222, 0.25);
+  box-shadow: 0 4px 12px rgba(1, 144, 222, 0.08);
+  transition: all 0.35s ease;
+}
+
+.card-green .stat-icon-wrapper,
+.card-teal .stat-icon-wrapper {
+  background: rgba(112, 190, 68, 0.08);
+  border-color: rgba(112, 190, 68, 0.25);
+  box-shadow: 0 4px 12px rgba(112, 190, 68, 0.08);
+}
+
+.impact-stat-card:hover .stat-icon-wrapper {
+  transform: scale(1.06);
+  background: rgba(1, 144, 222, 0.14);
+  border-color: #0190DE;
+  box-shadow: 0 6px 18px rgba(1, 144, 222, 0.18);
+}
+
+.card-green:hover .stat-icon-wrapper,
+.card-teal:hover .stat-icon-wrapper {
+  background: rgba(112, 190, 68, 0.14);
+  border-color: #70BE44;
+  box-shadow: 0 6px 18px rgba(112, 190, 68, 0.18);
+}
+
+.stat-icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  color: #0190DE;
+  transition: color 0.3s ease;
+}
+
+.card-green .stat-icon,
+.card-teal .stat-icon {
+  color: #70BE44;
+}
+
+/* Big Number Typography */
+.stat-number-display {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+  font-family: var(--font-display, serif);
+  line-height: 1;
+}
+
+.stat-number {
+  font-size: 1.85rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0077B8 0%, #0190DE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.card-green .stat-number,
+.card-teal .stat-number {
+  background: linear-gradient(135deg, #5CA832 0%, #70BE44 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-suffix {
+  font-size: 1.25rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0077B8 0%, #0190DE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 2px;
+  display: inline-block;
+}
+
+.card-green .stat-suffix,
+.card-teal .stat-suffix {
+  background: linear-gradient(135deg, #5CA832 0%, #70BE44 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient Divider */
+.stat-divider {
+  width: 44px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #0077B8, #0190DE);
+  margin-bottom: 0.85rem;
+  transition: width 0.35s ease;
+}
+
+.card-green .stat-divider,
+.card-teal .stat-divider {
+  background: linear-gradient(90deg, #5CA832, #70BE44);
+}
+
+.impact-stat-card:hover .stat-divider {
+  width: 60px;
+}
+
+.impact-stat-card:hover .stat-divider {
+  width: 65px;
+}
+
+/* Description Typography */
+.stat-description {
+  font-size: 1.025rem;
+  line-height: 1.55;
+  color: #52647C;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .impact-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .impact-watermark-text {
+    font-size: 5.5rem;
+    letter-spacing: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .impact-statistics-section {
+    padding: 2.25rem 1.25rem 2rem;
+  }
+
+  .impact-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .impact-watermark-text {
+    display: none;
+  }
+
+  .stat-number {
+    font-size: 1.85rem;
+  }
+
+  .stat-suffix {
+    font-size: 1.25rem;
+  }
+
+  .impact-stat-card {
+    padding: 1.5rem 1.35rem;
+  }
+}

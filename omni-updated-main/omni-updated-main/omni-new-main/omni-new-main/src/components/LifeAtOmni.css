@@ -1,0 +1,387 @@
+/* ===========================================================================
+   CULTURE & VALUES / LIFE AT OMNI SECTION (PREMIUM EDITORIAL REDESIGN)
+   =========================================================================== */
+
+.life-at-omni-redesign {
+  position: relative;
+  width: 100%;
+  padding: 48px 60px 54px;
+  background: linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 100%);
+  overflow: hidden;
+}
+
+.life-section-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Background Oversized OMNI Watermark */
+.life-omni-watermark {
+  position: absolute;
+  top: 10px;
+  right: 2%;
+  font-family: var(--font-display), "Playfair Display", Georgia, serif;
+  font-size: clamp(7rem, 20vw, 17rem);
+  font-weight: 800;
+  color: #0878E8;
+  opacity: 0.045;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  line-height: 1;
+}
+
+/* Background Dotted Pattern & Plus Symbols */
+.life-bg-dots-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 340px;
+  height: 340px;
+  background-image: radial-gradient(#0878E8 1.2px, transparent 1.2px);
+  background-size: 16px 16px;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.life-plus-symbol {
+  position: absolute;
+  color: #0878E8;
+  opacity: 0.14;
+  font-size: 1.8rem;
+  font-weight: 300;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.plus-1 { top: 90px; left: 28%; }
+.plus-2 { top: 45px; right: 10%; }
+.plus-3 { bottom: 110px; right: 3%; }
+
+/* Flowing Wave SVG */
+.life-bg-wave-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===========================================================================
+   HEADER AREA
+   =========================================================================== */
+
+.life-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.life-header-left {
+  max-width: 520px;
+}
+
+.life-eyebrow-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.life-eyebrow-text {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0878E8;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.life-eyebrow-line {
+  width: 32px;
+  height: 2px;
+  background: #0878E8;
+  border-radius: 2px;
+}
+
+.life-main-heading {
+  font-family: var(--font-display), "Playfair Display", Georgia, serif;
+  font-size: clamp(2.0rem, 3.8vw, 3.0rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.heading-navy {
+  color: #0B1F41;
+}
+
+.heading-blue-gradient {
+  background: linear-gradient(135deg, #0878E8 0%, #35A9E8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.life-lead-subtitle {
+  color: #536B88;
+  font-size: 0.94rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.life-journey-intro-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 440px;
+  padding-bottom: 4px;
+}
+
+.journey-title-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.journey-line {
+  flex: 1;
+  max-width: 65px;
+  height: 1px;
+  background: #0878E8;
+  opacity: 0.35;
+}
+
+.journey-eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0B1F41;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.journey-sub-copy {
+  color: #536B88;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* ===========================================================================
+   CONNECTED JOURNEY TIMELINE & VALUES GRID
+   =========================================================================== */
+
+.life-journey-timeline {
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-connector-line {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  right: calc(25% - 17px);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(8, 120, 232, 0.3) 0%, rgba(8, 120, 232, 0.85) 50%, rgba(8, 120, 232, 0.3) 100%);
+  z-index: 1;
+}
+
+.life-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.life-value-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Circular Number Node */
+.value-num-node {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid #0878E8;
+  color: #0878E8;
+  font-weight: 700;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 14px rgba(8, 120, 232, 0.25);
+  margin-bottom: 14px;
+  margin-left: 0;
+  z-index: 3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.life-value-card:hover .value-num-node {
+  transform: scale(1.12);
+  background: #0878E8;
+  color: #FFFFFF;
+  box-shadow: 0 0 18px rgba(8, 120, 232, 0.45);
+}
+
+/* Icon Bubble */
+.value-icon-bubble {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #EBF4FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0878E8;
+  margin-bottom: 12px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.life-value-card:hover .value-icon-bubble {
+  background: #0878E8;
+  color: #FFFFFF;
+  transform: translateY(-3px);
+}
+
+.value-title {
+  font-size: 1.0rem;
+  font-weight: 800;
+  color: #0B1F41;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.life-value-card:hover .value-title {
+  color: #0878E8;
+}
+
+.value-title-underline {
+  width: 24px;
+  height: 2px;
+  background: #0878E8;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.value-desc {
+  color: #536B88;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  min-height: 76px;
+}
+
+/* Image Frame */
+.value-image-frame {
+  width: 100%;
+  height: 145px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background: #E2E8F0;
+  box-shadow: 0 8px 20px rgba(11, 31, 65, 0.06);
+  border: 1px solid rgba(218, 230, 245, 0.8);
+}
+
+.value-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-out-expo, ease);
+}
+
+.life-value-card:hover .value-img {
+  transform: scale(1.06);
+}
+
+.image-bottom-accent-line {
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  right: 15%;
+  height: 3px;
+  background: linear-gradient(90deg, #0878E8, #35A9E8);
+  border-radius: 3px 3px 0 0;
+}
+
+/* ===========================================================================
+   RESPONSIVE BREAKPOINTS
+   =========================================================================== */
+
+@media (max-width: 1024px) {
+  .life-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .life-journey-intro-box {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .journey-title-row {
+    justify-content: flex-start;
+  }
+
+  .timeline-connector-line {
+    display: none;
+  }
+
+  .life-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+
+  .value-desc {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .life-at-omni-redesign {
+    padding: 60px 18px 70px;
+  }
+
+  .life-values-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-left: 20px;
+    border-left: 2px solid rgba(8, 120, 232, 0.25);
+  }
+
+  .value-num-node {
+    margin-left: -41px;
+    margin-bottom: 16px;
+  }
+
+  .value-image-frame {
+    height: 190px;
+  }
+}

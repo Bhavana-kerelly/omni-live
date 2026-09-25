@@ -1,0 +1,12 @@
+import fs from 'fs';
+
+const svg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" width="100" height="90">
+  <path d="M 0,0 L 55,0 C 88,18 95,50 62,82 C 45,96 15,100 0,100 Z" fill="#FFFFFF" />
+  <path d="M 55,0 C 88,18 95,50 62,82 C 45,96 15,100 0,100" fill="none" stroke="#00A3FF" stroke-width="4" stroke-linecap="round" />
+  <path d="M 59,0 C 92,20 99,53 66,85 C 48,99 18,100 0,100" fill="none" stroke="#70BE44" stroke-width="4" stroke-linecap="round" />
+</svg>
+`;
+
+fs.writeFileSync('scratch/curve.svg', svg);
+console.log('Saved scratch/curve.svg');

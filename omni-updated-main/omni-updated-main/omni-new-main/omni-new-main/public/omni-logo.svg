@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <!-- OMNI Text in Vivid Ocean Blue (#0084E6) -->
+  <!-- O -->
+  <path fill="#0084E6" d="M 45 15 C 28 15 15 28 15 45 C 15 62 28 75 45 75 C 62 75 75 62 75 45 C 75 28 62 15 45 15 Z M 45 29 C 54 29 61 36 61 45 C 61 54 54 61 45 61 C 36 61 29 54 29 45 C 29 36 36 29 45 29 Z" />
+  
+  <!-- M (Left stem in Blue, Green Leaf fold, Right stem in Blue) -->
+  <!-- Left stem of M -->
+  <path fill="#0084E6" d="M 83 17 L 97 17 L 97 73 L 83 73 Z" />
+  <!-- Green leaf accent fold in M (#70B737) -->
+  <path fill="#70B737" d="M 97 17 L 115 47 L 105 56 L 97 34 Z" />
+  <!-- Center blue fold in M (#0066C4) -->
+  <path fill="#0066C4" d="M 115 47 L 132 17 L 122 17 L 105 56 Z" opacity="0.9" />
+  <!-- Right stem of M -->
+  <path fill="#0084E6" d="M 132 17 L 146 17 L 146 73 L 132 73 Z" />
+
+  <!-- N -->
+  <path fill="#0084E6" d="M 154 17 L 168 17 L 195 56 L 195 17 L 208 17 L 208 73 L 194 73 L 167 34 L 167 73 L 154 73 Z" />
+
+  <!-- I -->
+  <path fill="#0084E6" d="M 216 17 L 230 17 L 230 73 L 216 73 Z" />
+
+  <!-- Hospitals Text in Slate Grey (#5A6065) -->
+  <text x="48" y="93" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="21" fill="#5A6065" letter-spacing="0.5">Hospitals</text>
+</svg>
