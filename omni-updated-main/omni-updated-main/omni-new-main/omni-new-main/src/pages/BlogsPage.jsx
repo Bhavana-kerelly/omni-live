@@ -12,32 +12,33 @@ import {
   Filter,
   CheckCircle2
 } from 'lucide-react';
-import { BLOGS_DATA, BLOG_CATEGORIES } from '../data/blogsData';
+import { useBlogs } from '../services/blogService';
 import { getAssetUrl } from '../utils/getAssetUrl';
 import './BlogsPage.css';
 
 export default function BlogsPage({ onNavigate, onSelectBlog }) {
+  const { blogs, categories: BLOG_CATEGORIES } = useBlogs();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortBy, setSortBy] = useState('newest'); // 'newest', 'readTime'
 
   // Filter & Sort Logic
   const filteredBlogs = useMemo(() => {
-    return BLOGS_DATA.filter((blog) => {
+    return blogs.filter((blog) => {
       const matchesCategory = selectedCategory === 'All' || blog.category === selectedCategory;
       const matchesSearch = 
         blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         blog.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        blog.doctor.name.toLowerCase().includes(searchQuery.toLowerCase());
+        (blog.doctor && blog.doctor.name && blog.doctor.name.toLowerCase().includes(searchQuery.toLowerCase()));
       return matchesCategory && matchesSearch;
     }).sort((a, b) => {
-      if (sortBy === 'newest') return b.id - a.id;
-      if (sortBy === 'readTime') return parseInt(a.readTime) - parseInt(b.readTime);
+      if (sortBy === 'newest') return (b.id || 0) - (a.id || 0);
+      if (sortBy === 'readTime') return parseInt(a.readTime || 4) - parseInt(b.readTime || 4);
       return 0;
     });
-  }, [searchQuery, selectedCategory, sortBy]);
+  }, [blogs, searchQuery, selectedCategory, sortBy]);
 
-  const featuredBlog = BLOGS_DATA[0]; // Blog 1 as featured spotlight
+  const featuredBlog = blogs.find(b => b.featured) || blogs[0];
 
   const handleBlogClick = (e, blog) => {
     e.preventDefault();
@@ -142,6 +143,7 @@ export default function BlogsPage({ onNavigate, onSelectBlog }) {
                   alt={featuredBlog.title} 
                   className="featured-hero-img"
                   onError={(e) => {
+                    e.target.onerror = null;
                     e.target.src = getAssetUrl('/images/cardiology.jpg');
                   }}
                 />
@@ -202,6 +204,7 @@ export default function BlogsPage({ onNavigate, onSelectBlog }) {
                       alt={blog.title} 
                       className="card-thumb-img" 
                       onError={(e) => {
+                        e.target.onerror = null;
                         e.target.src = getAssetUrl('/images/cardiology.jpg');
                       }}
                     />

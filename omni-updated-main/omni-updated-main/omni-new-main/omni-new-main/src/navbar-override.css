@@ -7,6 +7,10 @@
   border-radius: 0 !important;
   pointer-events: none !important; /* allow clicks to pass through empty areas */
   padding-top: 0 !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+  padding-left: env(safe-area-inset-left, 0px) !important;
+  padding-right: env(safe-area-inset-right, 0px) !important;
 }
 
 /* ====================================================
@@ -77,10 +81,10 @@
    LOGO AREA
    ==================================================== */
 .white-glass-bg {
-  background: rgba(255, 255, 255, 0.75) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
   backdrop-filter: blur(12px) !important;
-  border-radius: 20px !important;
-  padding: 6px 16px !important;
+  border-radius: 18px !important;
+  padding: 6px 14px !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 1) !important;
   border: 1px solid rgba(255, 255, 255, 0.6) !important;
   display: flex !important;
@@ -88,8 +92,27 @@
 }
 
 .white-glass-bg .header-brand-img {
-  height: 40px !important;
-  object-fit: contain;
+  height: 38px !important;
+  max-height: 40px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  transform: none !important;
+  transition: height 0.2s ease;
+}
+
+.home-header.scrolled .white-glass-bg .header-brand-img,
+.home-header.scrolled .header-brand-img,
+.cinematic-hero-navbar.is-scrolled .header-brand-img {
+  height: 45px !important;
+  max-height: 48px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+.home-header.scrolled .header-logo-pod,
+.home-header.scrolled .white-glass-bg {
+  padding: 5px 16px !important;
+  border-radius: 9999px !important;
 }
 
 /* ====================================================
@@ -380,31 +403,16 @@
 /* ====================================================
    RESPONSIVE
    ==================================================== */
-@media (max-width: 1024px) {
-  .glass-pill-container {
-    border-radius: 0 0 28px 28px !important;
-    padding: 8px !important;
-  }
-  .glass-pill-container::before {
-    border-radius: 0 0 30px 30px !important;
-  }
-  .nav-glass-strip {
-    overflow: visible !important;
-    white-space: nowrap !important;
-    border-radius: 16px !important;
-  }
-  .glass-pill-container .capsule-nav-list {
-    width: max-content !important;
-  }
-  .header-appointment-cta-pill .appt-label-full { display: none !important; }
-  .header-appointment-cta-pill .appt-label-short { display: inline-block !important; }
-}
-
 /* ====================================================
-   SCROLLED STATE OVERRIDES (DESKTOP ONLY)
+   DESKTOP ONLY SCROLLED STATE (>= 1025px)
    ==================================================== */
-@media (min-width: 769px) {
-  /* Container layout on scroll */
+@media (min-width: 1025px) {
+  /* Hide mobile hamburger toggle button on desktop */
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  /* Scrolled layout: merge into a single horizontal bar */
   .home-header.scrolled .glass-pill-container {
     flex-direction: row !important;
     align-items: center !important;
@@ -419,7 +427,6 @@
     flex-shrink: 0 !important;
   }
 
-  /* 1. Remove the background from top row in scrolled state */
   .home-header.scrolled .glass-pill-container .header-top-row {
     background: transparent !important;
     backdrop-filter: none !important;
@@ -431,7 +438,6 @@
     flex-shrink: 0 !important;
   }
 
-  /* 2. Allow full flexible width for the navigation pill in scrolled state */
   .home-header.scrolled .glass-pill-container .header-bottom-row {
     flex: 1 1 auto !important;
     max-width: 100% !important;
@@ -455,7 +461,6 @@
     justify-content: space-between !important;
   }
 
-  /* 3. Text & Active state colors in scrolled state */
   .home-header.scrolled .glass-pill-container .capsule-nav-item,
   .home-header.scrolled .glass-pill-container .capsule-nav-item.active {
     color: #ffffff !important;
@@ -463,7 +468,7 @@
 }
 
 /* Scaling adjustments for intermediate desktop viewports */
-@media (min-width: 769px) and (max-width: 1380px) {
+@media (min-width: 1025px) and (max-width: 1380px) {
   .glass-pill-container .capsule-nav-item,
   .home-header.scrolled .glass-pill-container .capsule-nav-item {
     padding: 5px 8px !important;
@@ -480,18 +485,711 @@
     padding: 5px 12px !important;
   }
 }
-@media (max-width: 768px) {
+
+/* ====================================================
+   TABLET & MOBILE (<= 1024px): HAMBURGER NAVIGATION
+   ==================================================== */
+@media (max-width: 1024px) {
   .glass-pill-container {
-    border-radius: 0 0 24px 24px !important; /* Mobile attach to top */
+    border-radius: 0 0 28px 28px !important;
+    padding: 8px max(14px, env(safe-area-inset-right, 14px)) 8px max(12px, env(safe-area-inset-left, 12px)) !important;
   }
   .glass-pill-container::before {
-    border-radius: 0 0 26px 26px !important;
+    border-radius: 0 0 30px 30px !important;
   }
+
+  /* Always keep top actions and hamburger menu visible whether scrolled or not */
+  .home-header.scrolled .header-top-actions,
+  .home-header.transparent .header-top-actions,
+  .cinematic-hero-navbar.is-scrolled .header-top-actions,
+  .glass-pill-container .header-top-actions {
+    display: flex !important;
+  }
+
+  /* Hide static NABH seal on tablet & mobile headers to preserve navigation space */
+  .header-nabh-seal-wrapper {
+    display: none !important;
+  }
+
+  /* Hide bottom capsule bar in favor of mobile drawer */
   .glass-pill-container .header-bottom-row,
   .home-header.scrolled .glass-pill-container .header-bottom-row { 
     display: none !important; 
   }
+
+  /* Show and style the mobile 3-line hamburger button */
+  .mobile-menu-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    padding: 0 !important;
+    background: rgba(255, 255, 255, 0.28) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.7) !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7), 0 3px 10px rgba(0, 0, 0, 0.15) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    flex-shrink: 0 !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 100 !important;
+    margin-left: 2px !important;
+    margin-right: max(2px, env(safe-area-inset-right, 2px)) !important;
+  }
+  .mobile-menu-toggle:hover,
+  .mobile-menu-toggle:active {
+    background: rgba(255, 255, 255, 0.45) !important;
+    border-color: #ffffff !important;
+    transform: scale(1.05) !important;
+  }
+  .mobile-menu-toggle svg {
+    width: 22px !important;
+    height: 22px !important;
+    stroke: #ffffff !important;
+    stroke-width: 2.4 !important;
+    display: block !important;
+  }
+
+  .header-appointment-cta-pill .appt-label-full { display: none !important; }
+  .header-appointment-cta-pill .appt-label-short { display: inline-block !important; }
+}
+
+/* Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+  .glass-pill-container {
+    border-radius: 0 0 24px 24px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 6px max(14px, env(safe-area-inset-right, 14px)) 6px max(10px, env(safe-area-inset-left, 10px)) !important;
+  }
+  .glass-pill-container .header-top-row {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 4px !important;
+    min-height: 48px !important;
+    gap: 6px !important;
+    overflow: visible !important;
+  }
+  .header-logo-pod.white-glass-bg {
+    padding: 4px 10px !important;
+    max-width: 130px !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+  }
+  .header-logo-pod .header-brand-img {
+    height: 32px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+  .glass-pill-container .header-top-actions {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+    max-width: calc(100% - 100px) !important;
+    overflow: visible !important;
+  }
   .header-phone-action-card .phone-number-bold-text { display: none !important; }
   .header-emergency-glow-card .emergency-info-lines { display: none !important; }
 }
-.mobile-drawer { pointer-events: auto !important; }
+
+/* Narrow & Curved Edge Mobiles (<= 540px) */
+@media (max-width: 540px) {
+  /* On compact/curved mobiles, prevent double calling buttons that eat up space;
+     Keep Phone Call Orb (888 0101 000), Book Appointment button, and 3-lines menu button */
+  .header-emergency-glow-card {
+    display: none !important;
+  }
+  .header-logo-pod.white-glass-bg {
+    padding: 3px 8px !important;
+    max-width: 115px !important;
+  }
+  .header-logo-pod .header-brand-img {
+    height: 28px !important;
+  }
+  .glass-pill-container {
+    padding: 5px max(12px, env(safe-area-inset-right, 12px)) 5px max(8px, env(safe-area-inset-left, 8px)) !important;
+  }
+  .glass-pill-container .header-top-actions {
+    gap: 5px !important;
+  }
+  .glass-pill-container .header-phone-action-card {
+    padding: 4px 7px !important;
+    border-radius: 16px !important;
+  }
+  .glass-pill-container .header-appointment-cta-pill {
+    padding: 5px 8px !important;
+    gap: 4px !important;
+  }
+  .mobile-menu-toggle {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    border-radius: 10px !important;
+    margin-right: max(4px, env(safe-area-inset-right, 4px)) !important;
+  }
+  .mobile-menu-toggle svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+/* Very narrow or ultra-zoomed mobile screens (<= 360px) */
+@media (max-width: 360px) {
+  .header-logo-pod.white-glass-bg {
+    max-width: 95px !important;
+    padding: 2px 6px !important;
+  }
+  .header-logo-pod .header-brand-img {
+    height: 24px !important;
+  }
+  .glass-pill-container {
+    padding: 4px max(10px, env(safe-area-inset-right, 10px)) 4px max(6px, env(safe-area-inset-left, 6px)) !important;
+  }
+  .glass-pill-container .header-top-actions {
+    gap: 4px !important;
+  }
+  .glass-pill-container .header-phone-action-card {
+    padding: 4px 5px !important;
+  }
+  .glass-pill-container .header-appointment-cta-pill {
+    padding: 4px 6px !important;
+  }
+  .header-appointment-cta-pill .appt-label-short {
+    font-size: 11px !important;
+  }
+  .mobile-menu-toggle {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+    border-radius: 9px !important;
+  }
+  .mobile-menu-toggle svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+/* ====================================================
+   MOBILE DRAWER PORTAL & NAVIGATION STYLES
+   ==================================================== */
+.mobile-drawer-portal-root {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 999999 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  transition: visibility 0.25s ease !important;
+}
+
+.mobile-drawer-portal-root.is-active {
+  pointer-events: auto !important;
+  visibility: visible !important;
+}
+
+/* Dark blurred backdrop */
+.mobile-drawer-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(10, 25, 45, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  z-index: 1 !important;
+  opacity: 0;
+  transition: opacity 0.25s ease !important;
+  cursor: pointer !important;
+}
+
+.mobile-drawer-portal-root.is-active .mobile-drawer-backdrop {
+  opacity: 1 !important;
+}
+
+/* Sliding Drawer Panel */
+.mobile-drawer {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 86% !important;
+  max-width: 360px !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  background: #ffffff !important;
+  z-index: 2 !important;
+  box-shadow: -10px 0 35px rgba(0, 20, 60, 0.25) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  pointer-events: auto !important;
+  transform: translateX(100%) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  padding-right: env(safe-area-inset-right, 0px) !important;
+  padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+}
+
+.mobile-drawer-portal-root.is-active .mobile-drawer {
+  transform: translateX(0) !important;
+}
+
+/* Drawer Header with Logo & Close button */
+.mobile-drawer-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 16px 20px !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #edf4fc 100%) !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  flex-shrink: 0 !important;
+}
+
+.mobile-drawer-brand {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.mobile-drawer-logo {
+  height: 38px !important;
+  max-height: 40px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+.mobile-drawer-close {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #475569 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.mobile-drawer-close:hover {
+  background: #fee2e2 !important;
+  border-color: #fca5a5 !important;
+  color: #dc2626 !important;
+  transform: rotate(90deg) !important;
+}
+
+/* Drawer Body with All Inner Page Links */
+.mobile-drawer-body {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  padding: 14px 14px !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-nav-list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+}
+
+.mobile-nav-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 14px !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  color: #1e293b !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.mobile-nav-link:hover {
+  background: #f1f5f9 !important;
+  color: #0077d6 !important;
+}
+
+.mobile-nav-link.active {
+  background: linear-gradient(90deg, rgba(0, 119, 214, 0.1) 0%, rgba(0, 180, 216, 0.05) 100%) !important;
+  border-color: rgba(0, 119, 214, 0.25) !important;
+  color: #0077d6 !important;
+  font-weight: 700 !important;
+}
+
+.mobile-link-icon-wrap {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px !important;
+  background: #f0f7ff !important;
+  color: #0077d6 !important;
+  flex-shrink: 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.mobile-nav-link.active .mobile-link-icon-wrap {
+  background: #0077d6 !important;
+  color: #ffffff !important;
+}
+
+.mobile-link-text {
+  flex: 1 1 auto !important;
+  text-align: left !important;
+}
+
+/* Accordion for Locations */
+.mobile-accordion-li {
+  list-style: none !important;
+}
+
+.mobile-accordion-header {
+  border: 1px solid transparent !important;
+}
+
+.mobile-chevron {
+  color: #94a3b8 !important;
+  transition: transform 0.25s ease !important;
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.mobile-chevron.open {
+  transform: rotate(180deg) !important;
+  color: #0077d6 !important;
+}
+
+.mobile-sub-locations-container {
+  margin: 6px 0 8px 16px !important;
+  padding: 6px 0 6px 12px !important;
+  border-left: 2px solid #bae6fd !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  animation: subMenuSlide 0.2s ease-out !important;
+}
+
+@keyframes subMenuSlide {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-sub-locations-list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.mobile-sub-location-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 8px 10px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  background: #f8fafc !important;
+  border: 1px solid #f1f5f9 !important;
+  color: #334155 !important;
+  transition: all 0.2s ease !important;
+}
+
+.mobile-sub-location-link:hover {
+  background: #e0f2fe !important;
+  color: #0077d6 !important;
+  border-color: #bae6fd !important;
+}
+
+.mobile-sub-num {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #0077d6 !important;
+  background: rgba(0, 119, 214, 0.1) !important;
+  padding: 2px 5px !important;
+  border-radius: 4px !important;
+  line-height: 1 !important;
+}
+
+.mobile-sub-info {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  text-align: left !important;
+}
+
+.mobile-sub-name {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: inherit !important;
+  line-height: 1.2 !important;
+}
+
+.mobile-sub-city {
+  font-size: 11px !important;
+  color: #64748b !important;
+}
+
+.mobile-sub-arrow {
+  color: #94a3b8 !important;
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.mobile-view-all-locations-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 8px 12px !important;
+  margin-top: 4px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #0077d6 !important;
+  background: #f0f9ff !important;
+  border-radius: 6px !important;
+  border: 1px dashed #7dd3fc !important;
+  text-decoration: none !important;
+}
+
+.mobile-view-all-locations-btn:hover {
+  background: #e0f2fe !important;
+}
+
+/* Drawer Footer */
+.mobile-drawer-footer {
+  padding: 16px 18px !important;
+  background: #f8fafc !important;
+  border-top: 1px solid #e2e8f0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+.mobile-drawer-book-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  padding: 12px 16px !important;
+  background: linear-gradient(135deg, #0052cc 0%, #009be5 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(0, 119, 214, 0.35) !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.mobile-drawer-book-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(0, 119, 214, 0.45) !important;
+}
+
+.mobile-drawer-emergency-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+}
+
+.mobile-drawer-call-btn {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex: 1 1 auto !important;
+  padding: 9px 12px !important;
+  background: #ecfdf5 !important;
+  border: 1px solid #a7f3d0 !important;
+  border-radius: 10px !important;
+  color: #065f46 !important;
+  text-decoration: none !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+.mobile-drawer-call-btn:hover {
+  background: #d1fae5 !important;
+}
+
+.mobile-drawer-em-badge {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 9px 12px !important;
+  background: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+  border-radius: 10px !important;
+  color: #b91c1c !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+
+/* ====================================================
+   MOBILE LANDSCAPE ORIENTATION ONLY
+   Strictly applied only when a mobile device is rotated horizontally
+   ==================================================== */
+@media (max-width: 1024px) and (orientation: landscape) and (max-height: 520px) {
+  /* Make drawer panel slightly wider in landscape so content has full breathing room */
+  .mobile-drawer {
+    width: 88% !important;
+    max-width: 400px !important;
+    padding-right: max(8px, env(safe-area-inset-right, 0px)) !important;
+    padding-bottom: max(6px, env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  /* Compact Drawer Header */
+  .mobile-drawer-header {
+    padding: 8px 16px !important;
+    min-height: auto !important;
+  }
+  .mobile-drawer-logo {
+    height: 26px !important;
+    max-height: 28px !important;
+  }
+  .mobile-drawer-close {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .mobile-drawer-close svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* Fully scrollable body with ample room for all inner pages */
+  .mobile-drawer-body {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 8px 12px !important;
+  }
+  .mobile-nav-list {
+    gap: 3px !important;
+  }
+  .mobile-nav-link {
+    padding: 6px 10px !important;
+    font-size: 13px !important;
+    border-radius: 8px !important;
+    gap: 8px !important;
+  }
+  .mobile-link-icon-wrap {
+    width: 26px !important;
+    height: 26px !important;
+    border-radius: 6px !important;
+  }
+  .mobile-link-icon-wrap svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  /* Decreased size for Drawer Footer and Action Buttons */
+  .mobile-drawer-footer {
+    padding: 6px 14px !important;
+    gap: 5px !important;
+  }
+
+  /* Decreased Book an Appointment Button */
+  .mobile-drawer-book-btn {
+    padding: 6px 12px !important;
+    font-size: 12.5px !important;
+    border-radius: 8px !important;
+    gap: 6px !important;
+    min-height: 32px !important;
+    box-shadow: 0 2px 8px rgba(0, 119, 214, 0.25) !important;
+  }
+  .mobile-drawer-book-btn svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Decreased Mobile Number & Emergency Buttons */
+  .mobile-drawer-emergency-row {
+    gap: 6px !important;
+  }
+  .mobile-drawer-call-btn {
+    padding: 5px 8px !important;
+    font-size: 11px !important;
+    border-radius: 7px !important;
+    gap: 4px !important;
+    min-height: 28px !important;
+  }
+  .mobile-drawer-call-btn svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+  .mobile-drawer-em-badge {
+    padding: 5px 8px !important;
+    font-size: 11px !important;
+    border-radius: 7px !important;
+    gap: 4px !important;
+    min-height: 28px !important;
+  }
+  .mobile-drawer-em-badge svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* Sub-locations inside landscape drawer */
+  .mobile-sub-locations-container {
+    margin: 4px 0 6px 12px !important;
+    padding: 4px 0 4px 8px !important;
+  }
+  .mobile-sub-location-link {
+    padding: 5px 8px !important;
+  }
+
+  /* Compact top navbar header when mobile is rotated */
+  .glass-pill-container .header-top-row {
+    min-height: 40px !important;
+  }
+  .header-logo-pod.white-glass-bg {
+    padding: 2px 8px !important;
+    max-width: 110px !important;
+  }
+  .header-logo-pod .header-brand-img {
+    height: 26px !important;
+  }
+  .glass-pill-container .header-phone-action-card {
+    padding: 3px 6px !important;
+  }
+  .glass-pill-container .header-appointment-cta-pill {
+    padding: 3px 7px !important;
+    font-size: 12px !important;
+  }
+  .mobile-menu-toggle {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+  }
+}

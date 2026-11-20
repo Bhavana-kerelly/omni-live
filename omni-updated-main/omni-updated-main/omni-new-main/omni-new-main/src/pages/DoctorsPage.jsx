@@ -373,14 +373,15 @@ export default function DoctorsPage({ onNavigate, onBookAppointment }) {
               {filteredDoctors.length > 0 ? (
                 <div className="apollo-doctors-grid">
                   {filteredDoctors.map((doc) => (
-                    <div key={doc.id} className="apollo-doctor-card">
+                    <div 
+                      key={doc.id} 
+                      className="apollo-doctor-card"
+                      onClick={() => setSelectedDoctorModal(doc)}
+                      style={{ cursor: 'pointer' }}
+                    >
                       
                       {/* Top Body (Image Left + Info Right) */}
-                      <div 
-                        className="card-top-body"
-                        onClick={() => setSelectedDoctorModal(doc)}
-                        style={{ cursor: 'pointer' }}
-                      >
+                      <div className="card-top-body">
                         {/* Left Doctor Image Frame */}
                         <div className="card-left-img-col">
                           <img 
@@ -433,7 +434,11 @@ export default function DoctorsPage({ onNavigate, onBookAppointment }) {
                             className="btn-book-appointment"
                             onClick={(e) => {
                               e.stopPropagation();
-                              openWhatsAppAppointment(doc);
+                              if (onBookAppointment) {
+                                onBookAppointment(doc);
+                              } else {
+                                openWhatsAppAppointment(doc);
+                              }
                             }}
                           >
                             <span>Book Appointment</span>
@@ -476,6 +481,7 @@ export default function DoctorsPage({ onNavigate, onBookAppointment }) {
         <DoctorProfileModal 
           doctor={selectedDoctorModal}
           onClose={() => setSelectedDoctorModal(null)}
+          onBookAppointment={onBookAppointment}
         />
       )}
 

@@ -72,6 +72,13 @@ export default function SpecialtyConditions({ specialty, onNavigate }) {
         if (idx === 0) { treatedBy = 'Stroke Neurologists'; specialistDesc = '24/7 Emergency stroke intervention'; }
         else if (idx === 1) { treatedBy = 'Neurosurgeons'; specialistDesc = 'Microsurgical brain tumor resection'; }
         else if (idx === 2) { treatedBy = 'Epileptologists'; specialistDesc = 'Advanced EEG & seizure control'; }
+      } else if (specSlug === 'urology') {
+        if (idx === 0) { treatedBy = 'Endourologists'; specialistDesc = 'Laser stone fragmentation & RIRS'; }
+        else if (idx === 1) { treatedBy = 'Uro-Surgeons'; specialistDesc = 'Prostate laser enucleation & TURP'; }
+        else if (idx === 2) { treatedBy = 'Urologists'; specialistDesc = 'UTI clinical care & bladder therapeutics'; }
+        else if (idx === 3) { treatedBy = 'Uro-Oncologists'; specialistDesc = 'Minimally invasive urological oncology'; }
+        else if (idx === 4) { treatedBy = 'Andrologists'; specialistDesc = 'Men\'s reproductive health & micro-surgery'; }
+        else if (idx === 5) { treatedBy = 'Reconstructive Urologists'; specialistDesc = 'Urethral reconstructive surgery & repair'; }
       }
 
       return {

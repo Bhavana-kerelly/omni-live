@@ -894,6 +894,7 @@ button {
   transition: backdrop-filter 0.1s linear, background 0.1s linear;
 }
 
+
 /* ==========================================================================
    Specialty Detailed Information Section (Post-Hero Content)
    ========================================================================== */
@@ -1252,7 +1253,15 @@ button {
 
   .details-container {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
+  }
+
+  .details-left-sticky {
+    position: static !important;
+    top: auto !important;
+    align-self: auto !important;
+    height: auto !important;
+    z-index: auto !important;
   }
 }
 
@@ -1271,55 +1280,22 @@ button {
     left: 1.25rem;
   }
 
-  .specialty-info-container {
-    left: 1.25rem;
-    right: 1.25rem;
-    bottom: 4rem;
-    max-width: 100%;
-    gap: 0.75rem;
-  }
-
-  .specialty-title {
-    font-size: 2.1rem;
-  }
-
-  .specialty-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .specialty-description {
-    font-size: 0.825rem;
-    line-height: 1.5;
-  }
-
-  .specialty-nav-container {
-    position: absolute;
-    right: 1.25rem;
-    top: 4.5rem;
-    transform: none;
-  }
-
-  .specialty-nav-list {
-    gap: 0.6rem;
-  }
-
-  .specialty-nav-item.inactive {
-    display: none;
-  }
-
-  .active-indicator {
-    display: none;
-  }
-
-  .specialty-nav-item.active {
-    background: rgba(0, 210, 255, 0.12);
-    border: 1px solid rgba(0, 210, 255, 0.3);
-    padding: 0.3rem 0.7rem;
-    border-radius: 20px;
-  }
 
   .specialty-details-section {
     padding: 3.5rem 1.25rem;
+  }
+
+  .details-container {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .details-left-sticky {
+    position: static !important;
+    top: auto !important;
+    align-self: auto !important;
+    height: auto !important;
+    z-index: auto !important;
   }
 
   .highlights-grid {
@@ -3015,12 +2991,18 @@ main,
 
 .mobile-menu-toggle,
 .mobile-toggle {
-  display: none;
   background: transparent;
   border: none;
   color: #FFFFFF;
   cursor: pointer;
   padding: 0.4rem;
+}
+
+@media (min-width: 1025px) {
+  .mobile-menu-toggle,
+  .mobile-toggle {
+    display: none !important;
+  }
 }
 
 /* 3. Hero Section */
@@ -7454,12 +7436,13 @@ main,
   will-change: transform;
 }
 
-/* DO NOT PAUSE ON HOVER — Keeps scrolling continuously doctor by doctor */
+/* PAUSE ON HOVER — Pause scrolling when pointing in this section or hovering over cards */
 .specialists-editorial-section:hover .specialists-infinite-track,
+.specialists-carousel-row-container:hover .specialists-infinite-track,
 .specialists-infinite-wrapper:hover .specialists-infinite-track,
 .specialists-infinite-track:hover,
 .specialist-grid-card:hover {
-  animation-play-state: running !important;
+  animation-play-state: paused !important;
 }
 
 @keyframes smoothContinuousDoctorsScroll {
@@ -7528,6 +7511,7 @@ main,
   display: flex;
   flex-direction: column;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
 }
 
 .specialist-grid-card:hover {
@@ -13350,5 +13334,326 @@ main,
   .whatsapp-message-bubble {
     max-width: 240px !important;
     padding: 12px 32px 12px 14px !important;
+  }
+}
+
+/* ==========================================================================
+   DEFINITIVE MOBILE OVERRIDE: SPECIALTIES OVERVIEW & HERO SECTION
+   Ensures final CSS cascade priority for mobile screens (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. HERO SECTION PINNED VIEWPORT */
+  .specialties-pin {
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+  }
+
+  /* 3D Cinematic Video Layer (Heart / Brain / Bone / Digestive / Respiratory) */
+  .specialty-video-layer {
+    position: absolute !important;
+    top: 4.2rem !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 38vh !important;
+    min-height: 250px !important;
+    max-height: 340px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 90%, transparent 100%) !important;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 90%, transparent 100%) !important;
+  }
+
+  .specialty-video-item {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 60% center !important;
+    display: block !important;
+  }
+
+  /* Soft Gradient for Bottom Text Readability */
+  .text-readability-overlay {
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 65% !important;
+    background: linear-gradient(
+      0deg,
+      rgba(6, 8, 12, 0.98) 0%,
+      rgba(6, 8, 12, 0.92) 55%,
+      rgba(6, 8, 12, 0.20) 85%,
+      transparent 100%
+    ) !important;
+    z-index: 2 !important;
+  }
+
+  .dark-gradient-overlay,
+  .vignette-frame,
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  /* Top Left Branding */
+  .top-left-brand {
+    top: 4.5rem !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    gap: 0.12rem !important;
+    z-index: 25 !important;
+  }
+
+  .brand-title {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.2em !important;
+  }
+
+  .brand-subtitle {
+    font-size: 0.72rem !important;
+    letter-spacing: 0.22em !important;
+  }
+
+  /* 2. 5 SPECIALTY NAVIGATION PILLS - VERTICALLY STACKED */
+  .specialty-progress-nav,
+  .specialty-nav-container {
+    position: absolute !important;
+    top: calc(4.2rem + 38vh + 0.35rem) !important;
+    bottom: auto !important;
+    left: 1rem !important;
+    right: auto !important;
+    transform: none !important;
+    width: auto !important;
+    max-width: calc(100% - 2rem) !important;
+    z-index: 30 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    pointer-events: auto !important;
+  }
+
+  .specialty-progress-list,
+  .specialty-nav-list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .specialty-progress-list::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .specialty-progress-item,
+  .specialty-nav-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 3px 10px !important;
+    border-radius: 999px !important;
+    width: fit-content !important;
+    flex-shrink: 0 !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    transition: all 0.25s ease !important;
+  }
+
+  .specialty-progress-item.inactive,
+  .specialty-nav-item.inactive {
+    display: inline-flex !important;
+    background: rgba(10, 16, 28, 0.75) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  .specialty-progress-item.inactive .nav-number {
+    font-size: 0.70rem !important;
+    font-weight: 700 !important;
+    color: #70BE44 !important;
+    opacity: 0.9 !important;
+  }
+
+  .specialty-progress-item.inactive .nav-label {
+    font-size: 0.70rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-transform: uppercase !important;
+  }
+
+  .specialty-progress-item.active,
+  .specialty-nav-item.active {
+    display: inline-flex !important;
+    background: rgba(0, 120, 215, 0.5) !important;
+    border: 1px solid #00F0FF !important;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.35) !important;
+    transform: none !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  .specialty-progress-item.active .nav-number {
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    color: #00F0FF !important;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.8) !important;
+  }
+
+  .specialty-progress-item.active .nav-label {
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    color: #FFFFFF !important;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.7) !important;
+  }
+
+  .active-dash-indicator,
+  .active-indicator {
+    display: none !important;
+  }
+
+  /* 3. GROUPED SPECIALTY TEXT CONTENT - ANCHORED TOWARD LOWER PORTION WITH BALANCED BOTTOM MARGIN */
+  .specialty-content-wrapper,
+  .specialty-info-wrapper {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 2rem !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    width: auto !important;
+    max-width: calc(100% - 2rem) !important;
+    height: auto !important;
+    z-index: 25 !important;
+    pointer-events: none !important;
+  }
+
+  .specialty-info-card,
+  .specialty-info-container {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+    gap: 0.22rem !important;
+  }
+
+  .specialty-counter {
+    display: none !important;
+  }
+
+  .specialty-eyebrow {
+    font-size: 0.68rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.14em !important;
+    color: #33A1F0 !important;
+    margin: 0 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .specialty-title {
+    font-size: clamp(1.35rem, 5.2vw, 1.7rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    margin: 0 !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9) !important;
+  }
+
+  .specialty-subtitle {
+    font-size: clamp(0.78rem, 3vw, 0.88rem) !important;
+    line-height: 1.3 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0 !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .specialty-description {
+    font-size: 0.76rem !important;
+    line-height: 1.4 !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .specialty-cta-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    margin: 0 !important;
+    margin-top: 0.3rem !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    padding: 0.48rem 1.15rem !important;
+    border-radius: 100px !important;
+    width: fit-content !important;
+    pointer-events: auto !important;
+    box-shadow: 0 4px 14px rgba(0, 120, 215, 0.5) !important;
+  }
+
+  /* 4. SECOND SECTION (SPECIALTY DETAILS DIRECTORY) - NO STICKY OVERLAPPING */
+  .specialty-details-section {
+    padding: 3rem 1.25rem !important;
+    position: relative !important;
+    z-index: 20 !important;
+    background-color: #FAFCFF !important;
+  }
+
+  .details-container {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+  }
+
+  .details-left-sticky {
+    position: static !important;
+    top: auto !important;
+    align-self: auto !important;
+    height: auto !important;
+    z-index: auto !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .highlights-grid-wrapper {
+    width: 100% !important;
+  }
+
+  .visual-specialties-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .specialty-visual-card {
+    height: 320px !important;
+  }
+
+  .specialty-visual-card:nth-child(even) {
+    margin-top: 0 !important;
   }
 }

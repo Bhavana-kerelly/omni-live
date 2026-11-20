@@ -25,6 +25,13 @@ const ALL_SPECIALTIES = [
     fallback: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80'
   },
   { 
+    id: 'urology',
+    name: 'Urology',
+    subtitle: 'Advanced Laser Stone Removal, Prostate & Uro Care',
+    image: '/images/urology.jpg',
+    fallback: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80'
+  },
+  { 
     id: 'emergency-medicine',
     name: 'Emergency Medicine & Critical Care',
     subtitle: '24/7 Level-1 Emergency Trauma & High-Dependency ICUs',
@@ -128,7 +135,7 @@ export default function SpecialtyDetailsSection({ onNavigate }) {
         {/* STICKY LEFT SIDE — EDITORIAL HEADER */}
         <div className="details-left-sticky">
           <span className="details-header-tag">Complete Care Directory</span>
-          <h2 className="details-title">14+ Centres of Excellence & Specialities</h2>
+          <h2 className="details-title">15+ Centres of Excellence & Specialities</h2>
           <p className="details-subtitle">
             One Destination for Complete Medical Care
           </p>

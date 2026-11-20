@@ -122,7 +122,7 @@ export const DOCTORS_DATA = [
     "deptTag": "OBSTETRICS & GYNAECOLOGY",
     "designation": "Gynaecologist and Obstetrician",
     "qualifications": "MBBS, DGO(MRCOG) OBSTETRICS & GYNAECOLOGY",
-    "experience": "15+ Years",
+    "experience": "25+ Years",
     "branch": "OMNI Kukatpally",
     "location": "Kukatpally",
     "languages": [
@@ -261,7 +261,6 @@ export const DOCTORS_DATA = [
     "image": "/images/doctors/dr-ravinder-reddy.jpg",
     "bio": "Specialist in laser kidney stone treatment, endourology, reconstructive urology, and prostate laser surgeries."
   },
-
   {
     "id": "doc-nagavender-rao-m",
     "name": "Dr Nagavender Rao M",
@@ -513,6 +512,120 @@ export const DOCTORS_DATA = [
     "featured": false,
     "image": "/images/doctors/dr-sahitya-rao-thandra.jpg",
     "bio": "NIMS-trained Cardiac & Thoracic Imaging Specialist leading diagnostic radiology, MRI, CT scans, and ultrasound."
+  },
+  {
+    "id": "doc-dr-mounika-sadhula-pt",
+    "name": "Dr Mounika Sadhula (PT)",
+    "slug": "dr-mounika-sadhula-pt",
+    "specialty": "Physiotherapy & Rehabilitation",
+    "deptTag": "PHYSIOTHERAPY",
+    "designation": "Head of Department & Consultant Physiotherapist, Pelvic Floor Specialist",
+    "qualifications": "MPT (Neurology), FRCPT, MIAP",
+    "experience": "8+ Years",
+    "branch": "OMNI Kukatpally",
+    "location": "Kukatpally",
+    "languages": [],
+    "availability": null,
+    "featured": false,
+    "image": "/images/doctors/dr-mounika-sadhula-pt.jpg",
+    "bio": "Head of Department and Consultant Physiotherapist specializing in pelvic floor therapy at OMNI Hospitals, Kukatpally."
+  },
+  {
+    "id": "doc-dt-sk-reshma",
+    "name": "Dt. Sk. Reshma",
+    "slug": "dt-sk-reshma",
+    "specialty": "Clinical Nutrition & Dietetics",
+    "deptTag": "CLINICAL NUTRITION",
+    "designation": "Senior Clinical Dietitian & HOD Department of Dietetics",
+    "qualifications": "IDA-Life Member (Indian Dietetics Association), FSSAI & IAPEN Certified, Scientific Symposium PEPTAQUEST - Award Winner",
+    "experience": "5+ Years",
+    "branch": "OMNI Kukatpally",
+    "location": "Kukatpally",
+    "languages": [],
+    "availability": null,
+    "featured": false,
+    "image": "/images/doctors/dt-sk-reshma.jpg",
+    "bio": "Senior Clinical Dietitian and Head of the Department of Dietetics at OMNI Hospitals, Kukatpally."
+  },
+  {
+    "id": "doc-dr-t-sunil-kumar",
+    "name": "Dr T Sunil Kumar",
+    "slug": "dr-t-sunil-kumar",
+    "specialty": "Pediatrics",
+    "deptTag": "PEDIATRICS",
+    "designation": "Senior Consultant Pediatrician",
+    "qualifications": "MBBS, DCH, PGPN",
+    "experience": "18+ Years",
+    "branch": "OMNI Kukatpally",
+    "location": "Kukatpally",
+    "languages": [],
+    "availability": null,
+    "featured": false,
+    "image": "/images/doctors/dr-t-sunil-kumar.jpg",
+    "bio": "Senior Consultant Pediatrician at OMNI Hospitals, Kukatpally."
+  },
+  {
+    "id": "doc-dr-ponna-mrudula",
+    "name": "Dr. Ponna Mrudula",
+    "slug": "dr-ponna-mrudula",
+    "specialty": "Anesthesia",
+    "deptTag": "ANESTHESIA",
+    "designation": "Consultant Anaesthesiologist",
+    "qualifications": "MBBS, DA in Anesthesiology",
+    "experience": "10+ Years",
+    "branch": "OMNI Kukatpally",
+    "location": "Kukatpally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 09:00 AM - 05:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-ponna-mrudula.jpg",
+    "bio": "Consultant Anaesthesiologist at OMNI Hospitals, Kukatpally, specializing in perioperative care, surgical anesthesia, and pain management."
+  },
+  {
+    "id": "doc-dr-kiranmayi-kathi",
+    "name": "Dr. Kiranmayi Kathi",
+    "slug": "dr-kiranmayi-kathi",
+    "specialty": "Anesthesia",
+    "deptTag": "ANESTHESIA",
+    "designation": "Consultant Anaesthesiologist",
+    "qualifications": "MBBS, DA Anaesthesia",
+    "experience": "10+ Years",
+    "branch": "OMNI Kukatpally",
+    "location": "Kukatpally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 09:00 AM - 05:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-kiranmayi-kathi.jpg",
+    "bio": "Consultant Anaesthesiologist at OMNI Hospitals, Kukatpally, dedicated to advanced surgical anaesthesia, critical patient monitoring, and post-operative pain relief."
+  },
+  {
+    "id": "doc-dr-naresh",
+    "name": "Dr. Naresh",
+    "slug": "dr-naresh",
+    "specialty": "Critical Care",
+    "deptTag": "CRITICAL CARE",
+    "designation": "Critical Care Specialist",
+    "qualifications": "MBBS(Osm.), FICCM, FICC",
+    "experience": "15+ Years",
+    "branch": "OMNI Kukatpally",
+    "location": "Kukatpally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "24/7 Emergency & ICU Care",
+    "featured": false,
+    "image": "/images/doctors/dr-naresh.jpg",
+    "bio": "Critical Care Specialist with 15 years of experience in intensive care management, emergency resuscitation, and multi-organ critical support at OMNI Hospitals, Kukatpally."
   },
   {
     "id": "doc-dr-m-vijaykanth",
@@ -1047,7 +1160,7 @@ export const DOCTORS_DATA = [
     "deptTag": "ANESTHESIA",
     "designation": "Anaesthesiologist",
     "qualifications": "MBBS, M.D.- Anaesthesiology",
-    "experience": 29,
+    "experience": "29+ Years",
     "branch": "OMNI Kothapet",
     "location": "Kothapet",
     "languages": [
@@ -1068,7 +1181,7 @@ export const DOCTORS_DATA = [
     "deptTag": "ANESTHESIA",
     "designation": "Anaesthesiologist",
     "qualifications": "MBBS, DA, FCCM-Anaesthesiology",
-    "experience": 15,
+    "experience": "15+ Years",
     "branch": "OMNI Kothapet",
     "location": "Kothapet",
     "languages": [
@@ -1089,7 +1202,7 @@ export const DOCTORS_DATA = [
     "deptTag": "ANESTHESIA",
     "designation": "Anaesthesiologist",
     "qualifications": "MBBS, MD, Anaesthesiology",
-    "experience": 18,
+    "experience": "18+ Years",
     "branch": "OMNI Kothapet",
     "location": "Kothapet",
     "languages": [
@@ -1120,7 +1233,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": true,
-    "image": "/images/doctors/dr-sudharshana-reddy-g.jpg",
+    "image": "/images/doctors/dr-sudharshana-reddy.jpg",
     "bio": "Dr. Sudharshana Reddy G is a consultant Cardiologist in Cardiology at OMNI Hospitals, Kothapet, holding qualifications in MBBS, MD-General Medicine, DNB-Cardiology."
   },
   {
@@ -1236,7 +1349,7 @@ export const DOCTORS_DATA = [
     "deptTag": "GENERAL SURGERY",
     "designation": "General Surgeon",
     "qualifications": "MBBS, MS General Surgery",
-    "experience": 10,
+    "experience": "10+ Years",
     "branch": "OMNI Kothapet",
     "location": "Kothapet",
     "languages": [
@@ -1278,7 +1391,7 @@ export const DOCTORS_DATA = [
     "deptTag": "INTERNAL MEDICINE",
     "designation": "General Physician",
     "qualifications": "MBBS, M.D-General Medicine",
-    "experience": 20,
+    "experience": "20+ Years",
     "branch": "OMNI Kothapet",
     "location": "Kothapet",
     "languages": [
@@ -1297,7 +1410,7 @@ export const DOCTORS_DATA = [
     "slug": "dr-shiva-prasad",
     "specialty": "General Medicine",
     "deptTag": "INTERNAL MEDICINE",
-    "designation": "General Physician",
+    "designation": "General Medicine",
     "qualifications": "MBBS, DNB-General Medicine",
     "experience": null,
     "branch": "OMNI Kothapet",
@@ -1310,7 +1423,7 @@ export const DOCTORS_DATA = [
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
     "image": "/images/doctors/dr-shiva-prasad.jpg",
-    "bio": "Dr. Shiva Prasad is a consultant General Physician in General Medicine at OMNI Hospitals, Kothapet, holding qualifications in MBBS, DNB-General Medicine."
+    "bio": "Dr. Shiva Prasad is a consultant in General Medicine at OMNI Hospitals, Kothapet, holding qualifications in MBBS, DNB-General Medicine."
   },
   {
     "id": "doc-dr-radlam-padma-kumari",
@@ -1320,7 +1433,7 @@ export const DOCTORS_DATA = [
     "deptTag": "GYNECOLOGY",
     "designation": "Gynaecologist",
     "qualifications": "MBBS, M.D. Obstetrics and Gynaecology",
-    "experience": 25,
+    "experience": "25+ Years",
     "branch": "OMNI Kothapet",
     "location": "Kothapet",
     "languages": [
@@ -1425,7 +1538,7 @@ export const DOCTORS_DATA = [
     "deptTag": "ORTHOPAEDICS",
     "designation": "Orthopedic Surgeon",
     "qualifications": "MBBS, DNB - Orthopaedic Surgery",
-    "experience": 20,
+    "experience": "20+ Years",
     "branch": "OMNI Kothapet",
     "location": "Kothapet",
     "languages": [
@@ -1509,7 +1622,7 @@ export const DOCTORS_DATA = [
     "deptTag": "PULMONOLOGY",
     "designation": "Pulmonologist",
     "qualifications": "MBBS, M.D (Pulmonary Medicine)",
-    "experience": 11,
+    "experience": "11+ Years",
     "branch": "OMNI Kothapet",
     "location": "Kothapet",
     "languages": [
@@ -1526,11 +1639,11 @@ export const DOCTORS_DATA = [
     "id": "doc-dr-pavan",
     "name": "Dr. Pavan",
     "slug": "dr-pavan",
-    "specialty": "General Medicine",
+    "specialty": "Radiology",
     "deptTag": "RADIOLOGY",
     "designation": "Radiologist",
     "qualifications": "MBBS, DMRD, DNB-Radiology",
-    "experience": 10,
+    "experience": "10+ Years",
     "branch": "OMNI Kothapet",
     "location": "Kothapet",
     "languages": [
@@ -1551,7 +1664,7 @@ export const DOCTORS_DATA = [
     "deptTag": "UROLOGY",
     "designation": "Urologist",
     "qualifications": "MBBS, M.Ch-Urology",
-    "experience": 11,
+    "experience": "11+ Years",
     "branch": "OMNI Kothapet",
     "location": "Kothapet",
     "languages": [
@@ -1645,7 +1758,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr N. Shishira is a consultant General Physician at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MD."
   },
   {
@@ -1666,7 +1779,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr A. M. Ilias Basha is a consultant Orthosurgeon at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MS."
   },
   {
@@ -1687,7 +1800,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr B. Ravi Teja is a consultant Surgical Oncologist at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MS, DrNB."
   },
   {
@@ -1708,7 +1821,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr B. Surendra Babu is a consultant Neurologist at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MD, DM."
   },
   {
@@ -1729,7 +1842,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr C. Indhu Prakash Reddy is a consultant Interventional Cardiologist at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MD, DM."
   },
   {
@@ -1750,7 +1863,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1594824813566-78a933758f46?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr D. Mounish is a consultant Orthosurgeon at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MS."
   },
   {
@@ -1771,7 +1884,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/Dr. Naveen.jpeg",
+    "image": "",
     "bio": "Dr G. Naveen Kumar is a consultant Interventional Radiologist at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MD, FVIR."
   },
   {
@@ -1792,7 +1905,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr G. R. Chandra Sekhar is a consultant Neurosurgeon at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MS, MCh."
   },
   {
@@ -1813,7 +1926,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr J. Bhulaxmi is a consultant Plastic Surgeon at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MS, MCh."
   },
   {
@@ -1834,7 +1947,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr K. Niharika is a consultant ENT Surgeon at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MS."
   },
   {
@@ -1855,7 +1968,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr M. Sreedhar Sharma is a consultant Nephrologist at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MD, DM."
   },
   {
@@ -1876,7 +1989,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/dr-kolloju-srikanth.jpg",
+    "image": "",
     "bio": "Dr M. Srikanth is a consultant Anaesthetist at OMNI Hospitals, Kurnool, holding qualifications in MBBS, DA."
   },
   {
@@ -1897,7 +2010,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr N. Nanda Kishore is a consultant Pediatrician at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MD."
   },
   {
@@ -1918,7 +2031,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr P. Srinija is a consultant Radiologist at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MDRD."
   },
   {
@@ -1939,7 +2052,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr R. Sai Prashant is a consultant Gastroenterologist at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MD, DM."
   },
   {
@@ -1960,7 +2073,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr S. Rahul Rao is a consultant General Physician at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MD."
   },
   {
@@ -1981,29 +2094,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr S. Siddharth is a consultant Cardiothoracic Surgeon at OMNI Hospitals, Kurnool, holding qualifications in MBBS, DrNB."
-  },
-  {
-    "id": "doc-dr-s-venkatesh",
-    "name": "Dr S. Venkatesh",
-    "slug": "dr-s-venkatesh",
-    "specialty": "General Medicine",
-    "deptTag": "CRITICAL CARE",
-    "designation": "Critical Care",
-    "qualifications": "MBBS, MD, DM",
-    "experience": "12+ Years",
-    "branch": "OMNI Kurnool",
-    "location": "Kurnool",
-    "languages": [
-      "English",
-      "Telugu",
-      "Hindi"
-    ],
-    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
-    "featured": false,
-    "image": "/images/doctors/dr-l-venkatesh.jpg",
-    "bio": "Dr S. Venkatesh is a consultant Critical Care Specialist at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MD, DM."
   },
   {
     "id": "doc-dr-shaik-imran-azad",
@@ -2023,7 +2115,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr Shaik Imran Azad is a consultant General Surgeon at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MS, FMAS."
   },
   {
@@ -2044,7 +2136,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr T. Trinath is a consultant General Surgeon at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MS."
   },
   {
@@ -2065,7 +2157,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr V. Swetha Reddy is a consultant Gynecologist at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MD (DGO)."
   },
   {
@@ -2086,7 +2178,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=800&auto=format&fit=crop",
+    "image": "",
     "bio": "Dr V. Venkata Mahesh Naik is a consultant Urologist at OMNI Hospitals, Kurnool, holding qualifications in MBBS, MS, MCh."
   },
   {
@@ -2097,7 +2189,7 @@ export const DOCTORS_DATA = [
     "deptTag": "ORTHOPAEDICS",
     "designation": "Chairman & Chief of Orthopaedics – Paediatric Orthopaedic Specialist",
     "qualifications": "MB, FRCS (Eng) UK",
-    "experience": 65,
+    "experience": "65+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2107,7 +2199,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": true,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-ved-prakash.jpg",
     "bio": "Dr. Ved Prakash is a senior Chairman & Chief of Orthopaedics – Paediatric Orthopaedic Specialist at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications MB, FRCS (Eng) UK."
   },
   {
@@ -2116,9 +2208,9 @@ export const DOCTORS_DATA = [
     "slug": "dr-raghava-dutt-mulukutla",
     "specialty": "Spine & Orthopedics",
     "deptTag": "SPINE SURGERY",
-    "designation": "Director & Chief of Spine Surgery Unit",
-    "qualifications": "MBBS, MS (Ortho), FRCS (Edin), MCh (Ortho) Liv. UK",
-    "experience": 40,
+    "designation": "Director & Chief of Spine Unit & Senior Consultant Orthopaedic & Spine Surgeon",
+    "qualifications": "MS (Ortho), FRCS (Edin), MCh (Ortho)",
+    "experience": "40+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2128,8 +2220,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": true,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Raghava Dutt Mulukutla is a senior Director & Chief of Spine Surgery Unit at UDAI OMNI Hospitals, Nampally, specializing in Spine & Orthopedics with qualifications MBBS, MS (Ortho), FRCS (Edin), MCh (Ortho) Liv. UK."
+    "image": "/images/doctors/dr-raghava-dutt-mulukutla.jpg",
+    "bio": "Dr. Raghava Dutt Mulukutla is Director & Chief of Spine Unit & Senior Consultant Orthopaedic & Spine Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Spine & Orthopedics with qualifications MS (Ortho), FRCS (Edin), MCh (Ortho)."
   },
   {
     "id": "doc-dr-udai-prakash",
@@ -2137,9 +2229,9 @@ export const DOCTORS_DATA = [
     "slug": "dr-udai-prakash",
     "specialty": "Orthopedics",
     "deptTag": "JOINT REPLACEMENT",
-    "designation": "Director & Chief of Joint Replacement Surgery & Sports Injuries Unit",
-    "qualifications": "MBBS, FRCS (Eng.), FRCS (Edin.), FRCS (Tr & Ortho.) UK, CCST, UK",
-    "experience": 25,
+    "designation": "Director & Chief of Joint Replacement Surgery, Trauma & Sports Injuries Unit & Senior Consultant Orthopaedic Surgeon",
+    "qualifications": "FRCS (Eng.), FRCS (Edin.), FRCS (Tr & Orth) UK, CCST (UK), Fellowship in Lower Limb (Joint Replacement & Arthroscopy) Aus., CSST (The Certificate of Completion of Specialist Training) UK",
+    "experience": "25+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2149,8 +2241,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": true,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Udai Prakash is a senior Director & Chief of Joint Replacement Surgery & Sports Injuries Unit at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications MBBS, FRCS (Eng.), FRCS (Edin.), FRCS (Tr & Ortho.) UK, CCST, UK."
+    "image": "/images/doctors/dr-udai-prakash.jpg",
+    "bio": "Dr. Udai Prakash is Director & Chief of Joint Replacement Surgery, Trauma & Sports Injuries Unit & Senior Consultant Orthopaedic Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications FRCS (Eng.), FRCS (Edin.), FRCS (Tr & Orth) UK, CCST (UK), Fellowship in Lower Limb (Joint Replacement & Arthroscopy) Aus., CSST (The Certificate of Completion of Specialist Training) UK."
   },
   {
     "id": "doc-dr-s-t-ramanuja-chari",
@@ -2158,9 +2250,9 @@ export const DOCTORS_DATA = [
     "slug": "dr-s-t-ramanuja-chari",
     "specialty": "Orthopedics",
     "deptTag": "ORTHOPAEDICS",
-    "designation": "Sr. Consultant Orthopaedic Surgeon",
-    "qualifications": "MBBS, MS",
-    "experience": 44,
+    "designation": "Senior Consultant Orthopaedic & Trauma Surgeon",
+    "qualifications": "MS (Ortho)",
+    "experience": "44+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2170,8 +2262,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": true,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. S. T. Ramanuja Chari is a senior Sr. Consultant Orthopaedic Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications MBBS, MS."
+    "image": "/images/doctors/dr-s-t-ramanuja-chari.jpg",
+    "bio": "Dr. S. T. Ramanuja Chari is a Senior Consultant Orthopaedic & Trauma Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications MS (Ortho)."
   },
   {
     "id": "doc-dr-girish-narayan",
@@ -2179,9 +2271,9 @@ export const DOCTORS_DATA = [
     "slug": "dr-girish-narayan",
     "specialty": "Nephrology",
     "deptTag": "NEPHROLOGY",
-    "designation": "Senior Consultant & Chief Nephrologist",
+    "designation": "Chief of Nephrology & Senior Consultant Nephrologist & Andrologist",
     "qualifications": "MD (General Medicine), DM (Nephro), MNAMS (Nephro)",
-    "experience": 48,
+    "experience": "48+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2191,8 +2283,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": true,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Girish Narayan is a senior Senior Consultant & Chief Nephrologist at UDAI OMNI Hospitals, Nampally, specializing in Nephrology with qualifications MD (General Medicine), DM (Nephro), MNAMS (Nephro)."
+    "image": "/images/doctors/dr-girish-narayan.png",
+    "bio": "Dr. Girish Narayan is Chief of Nephrology & Senior Consultant Nephrologist & Andrologist at UDAI OMNI Hospitals, Nampally, specializing in Nephrology & Andrology with qualifications MD (General Medicine), DM (Nephro), MNAMS (Nephro)."
   },
   {
     "id": "doc-dr-b-varun-prabhakar",
@@ -2212,7 +2304,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/r-varun-kommalapati.jpg",
+    "image": "/images/doctors/dr-varun-kommalapati.jpg",
     "bio": "Dr. B. Varun Prabhakar is a senior Consultant Medical Gastroenterologist at UDAI OMNI Hospitals, Nampally, specializing in Gastroenterology with qualifications MBBS, MD (Gen Med), DrNB (Med Gastro)."
   },
   {
@@ -2221,9 +2313,9 @@ export const DOCTORS_DATA = [
     "slug": "dr-sudheer-beemarapu",
     "specialty": "Neurology",
     "deptTag": "NEUROLOGY",
-    "designation": "Consultant Neurologist",
+    "designation": "Consultant Neurophysician",
     "qualifications": "MBBS, MD, DrNB (Neurology)",
-    "experience": 4,
+    "experience": "4+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2234,7 +2326,7 @@ export const DOCTORS_DATA = [
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
     "image": "/images/doctors/dr-sudheer-beemarapu.jpg",
-    "bio": "Dr. Sudheer Beemarapu is a senior Consultant Neurologist at UDAI OMNI Hospitals, Nampally, specializing in Neurology with qualifications MBBS, MD, DrNB (Neurology)."
+    "bio": "Dr. Sudheer Beemarapu is a Consultant Neurophysician at UDAI OMNI Hospitals, Nampally, specializing in Neurology with qualifications MBBS, MD, DrNB (Neurology)."
   },
   {
     "id": "doc-dr-varun-kommalapati",
@@ -2244,7 +2336,7 @@ export const DOCTORS_DATA = [
     "deptTag": "FOOT & ANKLE",
     "designation": "Consultant Orthopaedic Foot & Ankle Surgeon",
     "qualifications": "MBBS, MS Orth, MRCS, Fellowship in Foot & Ankle Surgery",
-    "experience": 9,
+    "experience": "9+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2254,7 +2346,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-b-varun-prabhakar.jpg",
     "bio": "Dr. Varun Kommalapati is a senior Consultant Orthopaedic Foot & Ankle Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications MBBS, MS Orth, MRCS, Fellowship in Foot & Ankle Surgery."
   },
   {
@@ -2265,7 +2357,7 @@ export const DOCTORS_DATA = [
     "deptTag": "CARDIOLOGY",
     "designation": "Consultant & Intervention Cardiologist",
     "qualifications": "MBBS, DNB, DM (Cardiology)",
-    "experience": 8,
+    "experience": "8+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2275,50 +2367,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-mohammed-shoeb-ahmed.jpg",
     "bio": "Dr. Mohammed Shoeb Ahmed is a senior Consultant & Intervention Cardiologist at UDAI OMNI Hospitals, Nampally, specializing in Cardiology with qualifications MBBS, DNB, DM (Cardiology)."
-  },
-  {
-    "id": "doc-dr-arvind-umarani",
-    "name": "Dr. Arvind Umarani",
-    "slug": "dr-arvind-umarani",
-    "specialty": "Spine & Orthopedics",
-    "deptTag": "SPINE SURGERY",
-    "designation": "Consultant Spine Surgeon",
-    "qualifications": "MBBS, MS (Ortho), Fellow in UBE Endoscopic Surgery, Fellow in Advanced Spine Surgery & Navigation",
-    "experience": 4,
-    "branch": "UDAI OMNI – Nampally",
-    "location": "Nampally",
-    "languages": [
-      "English",
-      "Telugu",
-      "Hindi"
-    ],
-    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
-    "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Arvind Umarani is a senior Consultant Spine Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Spine & Orthopedics with qualifications MBBS, MS (Ortho), Fellow in UBE Endoscopic Surgery, Fellow in Advanced Spine Surgery & Navigation."
-  },
-  {
-    "id": "doc-dr-g-dattaprasad",
-    "name": "Dr. G. Dattaprasad",
-    "slug": "dr-g-dattaprasad",
-    "specialty": "Cardiology",
-    "deptTag": "CARDIOLOGY",
-    "designation": "Consultant & Intervention Cardiologist",
-    "qualifications": "MBBS, MD (General Medicine), DNB (General Medicine), DM (Cardiology)",
-    "experience": 2,
-    "branch": "UDAI OMNI – Nampally",
-    "location": "Nampally",
-    "languages": [
-      "English",
-      "Telugu",
-      "Hindi"
-    ],
-    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
-    "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. G. Dattaprasad is a senior Consultant & Intervention Cardiologist at UDAI OMNI Hospitals, Nampally, specializing in Cardiology with qualifications MBBS, MD (General Medicine), DNB (General Medicine), DM (Cardiology)."
   },
   {
     "id": "doc-dr-p-godha-siri",
@@ -2328,7 +2378,7 @@ export const DOCTORS_DATA = [
     "deptTag": "ORTHOPAEDICS",
     "designation": "Consultant Ilizarov, Deformity Correction & Limb Reconstruction Surgeon",
     "qualifications": "MBBS, MS Orthopaedics (Osmania)",
-    "experience": 12,
+    "experience": "12+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2343,13 +2393,13 @@ export const DOCTORS_DATA = [
   },
   {
     "id": "doc-dr-santhi-a",
-    "name": "Dr. Santhi A",
-    "slug": "dr-santhi-a",
+    "name": "Dr. A. Shanti",
+    "slug": "dr-a-shanti",
     "specialty": "Gynecology & Obstetrics",
     "deptTag": "GYNECOLOGY",
-    "designation": "Consultant Gastroenterologist*",
-    "qualifications": "MBBS, MD (Obstetrics & Gynaecology)",
-    "experience": 18,
+    "designation": "Consultant Gynaecologist",
+    "qualifications": "MS (Obstetrics & Gynaecology)",
+    "experience": "18+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2359,18 +2409,18 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Santhi A is a senior Consultant Gynecologist at UDAI OMNI Hospitals, Nampally, specializing in Gynecology & Obstetrics with qualifications MBBS, MD (Obstetrics & Gynaecology)."
+    "image": "/images/doctors/dr-santhi-a.jpg",
+    "bio": "Dr. A. Shanti is a Consultant Gynaecologist at UDAI OMNI Hospitals, Nampally, specializing in Gynecology & Obstetrics with qualifications MS (Obstetrics & Gynaecology)."
   },
   {
     "id": "doc-dr-pavan-kumar-a",
-    "name": "Dr. Pavan Kumar A",
-    "slug": "dr-pavan-kumar-a",
+    "name": "Dr. Pavan Kumar Goud",
+    "slug": "dr-pavan-kumar-goud",
     "specialty": "Orthopedics",
     "deptTag": "ORTHOPAEDICS",
-    "designation": "Consultant Orthopaedic Surgeon",
-    "qualifications": "MBBS, D.Ortho",
-    "experience": 28,
+    "designation": "Senior Consultant Orthopaedic & Trauma Surgeon",
+    "qualifications": "D (Ortho)",
+    "experience": "28+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2380,18 +2430,18 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Pavan Kumar A is a senior Consultant Orthopaedic Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications MBBS, D.Ortho."
+    "image": "/images/doctors/dr-pavan-kumar-a.jpg",
+    "bio": "Dr. Pavan Kumar Goud is a Senior Consultant Orthopaedic & Trauma Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications D (Ortho)."
   },
   {
     "id": "doc-dr-gandhi-govind-jugalkishor",
-    "name": "Dr. Gandhi Govind Jugalkishor",
-    "slug": "dr-gandhi-govind-jugalkishor",
+    "name": "Dr. Gandhi Govind Jugalkishore",
+    "slug": "dr-gandhi-govind-jugalkishore",
     "specialty": "Orthopedics",
-    "deptTag": "JOINT REPLACEMENT",
-    "designation": "Consultant Trauma & Joint Replacement Surgeon",
-    "qualifications": "MBBS, DNB Ortho",
-    "experience": 8,
+    "deptTag": "ORTHOPAEDICS",
+    "designation": "Consultant Orthopaedic Surgeon",
+    "qualifications": "DNB (Ortho), FTARS",
+    "experience": "8+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2401,18 +2451,18 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Gandhi Govind Jugalkishor is a senior Consultant Trauma & Joint Replacement Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications MBBS, DNB Ortho."
+    "image": "/images/doctors/dr-gandhi-govind-jugalkishor.jpg",
+    "bio": "Dr. Gandhi Govind Jugalkishore is a Consultant Orthopaedic Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications DNB (Ortho), FTARS."
   },
   {
     "id": "doc-dr-ambadas-p-kathare",
-    "name": "Dr. Ambadas P. Kathare",
-    "slug": "dr-ambadas-p-kathare",
+    "name": "Dr. Ambadas Prabhakar Kathare",
+    "slug": "dr-ambadas-prabhakar-kathare",
     "specialty": "Spine & Orthopedics",
     "deptTag": "SPINE SURGERY",
-    "designation": "Consultant Spine Surgery",
+    "designation": "Senior Consultant Spine Surgeon",
     "qualifications": "D (Ortho), DNB (Ortho), MS (Ortho), MNAMS",
-    "experience": 18,
+    "experience": "18+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2422,8 +2472,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Ambadas P. Kathare is a senior Consultant Spine Surgery at UDAI OMNI Hospitals, Nampally, specializing in Spine & Orthopedics with qualifications D (Ortho), DNB (Ortho), MS (Ortho), MNAMS."
+    "image": "/images/doctors/dr-ambadas-p-kathare.jpg",
+    "bio": "Dr. Ambadas Prabhakar Kathare is a Senior Consultant Spine Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Spine & Orthopedics with qualifications D (Ortho), DNB (Ortho), MS (Ortho), MNAMS."
   },
   {
     "id": "doc-dr-p-k-kartik-yelamarthy",
@@ -2433,7 +2483,7 @@ export const DOCTORS_DATA = [
     "deptTag": "SPINE SURGERY",
     "designation": "Consultant Spine & Orthopedic Surgeon",
     "qualifications": "MBBS, MS (Ortho), DNB (Ortho), FNB (Spine Surgery)",
-    "experience": 12,
+    "experience": "12+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2454,7 +2504,7 @@ export const DOCTORS_DATA = [
     "deptTag": "PEDIATRIC ORTHO",
     "designation": "Consultant Pediatric Orthopedic Surgeon",
     "qualifications": "MBBS, MS, Fellowship Pediatric Orthopedics",
-    "experience": 13,
+    "experience": "13+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2464,7 +2514,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-vidyasagar-chandankere.jpg",
     "bio": "Dr. Vidyasagar Chandankere is a senior Consultant Pediatric Orthopedic Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications MBBS, MS, Fellowship Pediatric Orthopedics."
   },
   {
@@ -2473,9 +2523,9 @@ export const DOCTORS_DATA = [
     "slug": "dr-rajeev-reddy",
     "specialty": "Orthopedics",
     "deptTag": "ORTHO ONCOLOGY",
-    "designation": "Consultant Orthopaedic Oncosurgeon",
-    "qualifications": "MBBS, D Ortho, DNB Ortho, FAGE, MNAMS, FOLS, FMO",
-    "experience": 11,
+    "designation": "Consultant Orthopaedic Oncosurgeon & Sarcoma Specialist",
+    "qualifications": "D (Ortho), DNB (Ortho), FAGE, MNAMS, FOLS, FMO",
+    "experience": "11+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2485,8 +2535,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Rajeev Reddy is a senior Consultant Orthopaedic Oncosurgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications MBBS, D Ortho, DNB Ortho, FAGE, MNAMS, FOLS, FMO."
+    "image": "/images/doctors/dr-rajeev-reddy.jpg",
+    "bio": "Dr. Rajeev Reddy is a Consultant Orthopaedic Oncosurgeon & Sarcoma Specialist at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications D (Ortho), DNB (Ortho), FAGE, MNAMS, FOLS, FMO."
   },
   {
     "id": "doc-dr-mirza-shahrukh-baig",
@@ -2496,7 +2546,7 @@ export const DOCTORS_DATA = [
     "deptTag": "ORTHOPAEDICS",
     "designation": "Consultant Orthopaedic Surgeon",
     "qualifications": "DNB (Ortho), FIJR",
-    "experience": 8,
+    "experience": "8+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2506,7 +2556,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-mirza-shahrukh-baig.jpg",
     "bio": "Dr. Mirza Shahrukh Baig is a senior Consultant Orthopaedic Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications DNB (Ortho), FIJR."
   },
   {
@@ -2515,9 +2565,9 @@ export const DOCTORS_DATA = [
     "slug": "dr-pradeep-moonot",
     "specialty": "Orthopedics",
     "deptTag": "FOOT & ANKLE",
-    "designation": "Consultant Foot & Ankle Surgeon",
-    "qualifications": "MBBS (Bom), MS (Ortho)(Bom), DNB (Orth), MRCS (UK), FRCS (Ortho) (UK)",
-    "experience": 20,
+    "designation": "Consultant Orthopaedic Surgeon (Foot & Ankle) Specialist",
+    "qualifications": "MS Ortho (Bom), DNB (Ortho), MRCS, FRCS (Ortho) UK",
+    "experience": "20+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2527,29 +2577,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Pradeep Moonot is a senior Consultant Foot & Ankle Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications MBBS (Bom), MS (Ortho)(Bom), DNB (Orth), MRCS (UK), FRCS (Ortho) (UK)."
-  },
-  {
-    "id": "doc-dr-gopinath-bandari",
-    "name": "Dr. Gopinath Bandari",
-    "slug": "dr-gopinath-bandari",
-    "specialty": "Orthopedics",
-    "deptTag": "HAND & WRIST",
-    "designation": "Consultant Hand & Wrist Surgeon",
-    "qualifications": "D. Ortho (Manipal), DNB, FHMS (Ganga), FIWA (Spain)",
-    "experience": "15+ Years",
-    "branch": "UDAI OMNI – Nampally",
-    "location": "Nampally",
-    "languages": [
-      "English",
-      "Telugu",
-      "Hindi"
-    ],
-    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
-    "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Gopinath Bandari is a senior Consultant Hand & Wrist Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications D. Ortho (Manipal), DNB, FHMS (Ganga), FIWA (Spain)."
+    "image": "/images/doctors/dr-pradeep-moonot.jpg",
+    "bio": "Dr. Pradeep Moonot is a Consultant Orthopaedic Surgeon (Foot & Ankle) Specialist at UDAI OMNI Hospitals, Nampally, specializing in Orthopedics with qualifications MS Ortho (Bom), DNB (Ortho), MRCS, FRCS (Ortho) UK."
   },
   {
     "id": "doc-dr-vimal-rai",
@@ -2557,9 +2586,9 @@ export const DOCTORS_DATA = [
     "slug": "dr-vimal-rai",
     "specialty": "General Medicine",
     "deptTag": "INTERNAL MEDICINE",
-    "designation": "Sr. Consultant & HOD – Department of Medicine",
-    "qualifications": "MBBS, MD",
-    "experience": 48,
+    "designation": "Chief of Medicine & Senior Consultant General Physician",
+    "qualifications": "MD (General Medicine)",
+    "experience": "48+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2569,8 +2598,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Vimal Rai is a senior Sr. Consultant & HOD – Department of Medicine at UDAI OMNI Hospitals, Nampally, specializing in General Medicine with qualifications MBBS, MD."
+    "image": "/images/doctors/dr-vimal-rai.jpg",
+    "bio": "Dr. Vimal Rai is Chief of Medicine & Senior Consultant General Physician at UDAI OMNI Hospitals, Nampally, specializing in General Medicine with qualifications MD (General Medicine)."
   },
   {
     "id": "doc-dr-srirang-abkari",
@@ -2578,9 +2607,9 @@ export const DOCTORS_DATA = [
     "slug": "dr-srirang-abkari",
     "specialty": "General Medicine",
     "deptTag": "INTERNAL MEDICINE",
-    "designation": "Consultant General Medicine",
+    "designation": "Senior Consultant General Physician",
     "qualifications": "MBBS, MD (General Medicine)",
-    "experience": 19,
+    "experience": "19+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2591,7 +2620,7 @@ export const DOCTORS_DATA = [
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
     "image": "/images/doctors/dr-srirang-abkari.jpg",
-    "bio": "Dr. Srirang Abkari is a senior Consultant General Medicine at UDAI OMNI Hospitals, Nampally, specializing in General Medicine with qualifications MBBS, MD (General Medicine)."
+    "bio": "Dr. Srirang Abkari is a Senior Consultant General Physician at UDAI OMNI Hospitals, Nampally, specializing in General Medicine with qualifications MBBS, MD (General Medicine)."
   },
   {
     "id": "doc-dr-dilip-p-bhanushali",
@@ -2599,9 +2628,9 @@ export const DOCTORS_DATA = [
     "slug": "dr-dilip-p-bhanushali",
     "specialty": "General Medicine",
     "deptTag": "FAMILY MEDICINE",
-    "designation": "Consultant Family Physician",
-    "qualifications": "MBBS, MNNS, FCGP, FAIMS, MAIMS",
-    "experience": 40,
+    "designation": "Senior Consultant Family Physician",
+    "qualifications": "MNNS, FCGP, FAIMS, MAIMS",
+    "experience": "40+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2611,8 +2640,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Dilip P. Bhanushali is a senior Consultant Family Physician at UDAI OMNI Hospitals, Nampally, specializing in General Medicine with qualifications MBBS, MNNS, FCGP, FAIMS, MAIMS."
+    "image": "/images/doctors/dr-dilip-p-bhanushali.jpg",
+    "bio": "Dr. Dilip P. Bhanushali is a Senior Consultant Family Physician at UDAI OMNI Hospitals, Nampally, specializing in Family Medicine with qualifications MNNS, FCGP, FAIMS, MAIMS."
   },
   {
     "id": "doc-dr-md-fawad-ali",
@@ -2620,9 +2649,9 @@ export const DOCTORS_DATA = [
     "slug": "dr-md-fawad-ali",
     "specialty": "General Medicine",
     "deptTag": "INTERNAL MEDICINE",
-    "designation": "Consultant Physician & Diabetologist",
-    "qualifications": "MBBS, MD, Dip. Diabetes, John Hopkins, USA",
-    "experience": 6,
+    "designation": "Consultant Physician & Diabetes Specialist",
+    "qualifications": "MD (Internal Medicine), Dip.Diabetes, John Hopkins (USA)",
+    "experience": "6+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2632,8 +2661,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Md Fawad Ali is a senior Consultant Physician & Diabetologist at UDAI OMNI Hospitals, Nampally, specializing in General Medicine with qualifications MBBS, MD, Dip. Diabetes, John Hopkins, USA."
+    "image": "/images/doctors/dr-md-fawad-ali.jpg",
+    "bio": "Dr. Md Fawad Ali is a Consultant Physician & Diabetes Specialist at UDAI OMNI Hospitals, Nampally, specializing in Internal Medicine & Diabetes with qualifications MD (Internal Medicine), Dip.Diabetes, John Hopkins (USA)."
   },
   {
     "id": "doc-dr-khaja-abdul-muqeet",
@@ -2643,7 +2672,7 @@ export const DOCTORS_DATA = [
     "deptTag": "GENERAL SURGERY",
     "designation": "Expert General & Laparoscopic Surgeon",
     "qualifications": "MBBS, MS (Gen. Surgery), FAIS",
-    "experience": 39,
+    "experience": "39+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2653,7 +2682,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-khaja-abdul-muqeet.jpg",
     "bio": "Dr. Khaja Abdul Muqeet is a senior Expert General & Laparoscopic Surgeon at UDAI OMNI Hospitals, Nampally, specializing in General Surgery with qualifications MBBS, MS (Gen. Surgery), FAIS."
   },
   {
@@ -2674,18 +2703,18 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-surendra-ugale.jpg",
     "bio": "Dr. Surendra Ugale is a senior Consultant Bariatric & Metabolic Surgeon at UDAI OMNI Hospitals, Nampally, specializing in General Surgery with qualifications MBBS, MS (General Surgery)."
   },
   {
     "id": "doc-dr-majid-adil",
-    "name": "Dr. Majid Adil",
-    "slug": "dr-majid-adil",
+    "name": "Dr. M.A. Majid Adil",
+    "slug": "dr-m-a-majid-adil",
     "specialty": "Urology",
     "deptTag": "UROLOGY",
-    "designation": "Urologist & Andrologist",
-    "qualifications": "MBBS, MS (General Surgery), DNB (Urology), MCh (Urology)",
-    "experience": 32,
+    "designation": "Senior Consultant Urologist & Andrologist",
+    "qualifications": "MS (General Surgery), MCh (Urology)",
+    "experience": "32+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2695,8 +2724,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Majid Adil is a senior Urologist & Andrologist at UDAI OMNI Hospitals, Nampally, specializing in Urology with qualifications MBBS, MS (General Surgery), DNB (Urology), MCh (Urology)."
+    "image": "/images/doctors/dr-majid-adil.jpg",
+    "bio": "Dr. M.A. Majid Adil is a Senior Consultant Urologist & Andrologist at UDAI OMNI Hospitals, Nampally, specializing in Urology with qualifications MS (General Surgery), MCh (Urology)."
   },
   {
     "id": "doc-dr-malchetty-vikas",
@@ -2706,7 +2735,7 @@ export const DOCTORS_DATA = [
     "deptTag": "PULMONOLOGY",
     "designation": "Consultant Pulmonologist",
     "qualifications": "MBBS, MD, EDARM (Europe)",
-    "experience": 6,
+    "experience": "6+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2716,7 +2745,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-malchetty-vikas.jpg",
     "bio": "Dr. Malchetty Vikas is a senior Consultant Pulmonologist at UDAI OMNI Hospitals, Nampally, specializing in Pulmonology with qualifications MBBS, MD, EDARM (Europe)."
   },
   {
@@ -2727,7 +2756,7 @@ export const DOCTORS_DATA = [
     "deptTag": "NEUROLOGY",
     "designation": "Consultant Neuro Physician",
     "qualifications": "MBBS, DNB (General Medicine), DNB (Neurology)",
-    "experience": 20,
+    "experience": "20+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2748,7 +2777,7 @@ export const DOCTORS_DATA = [
     "deptTag": "UROLOGY",
     "designation": "Urology Specialist Consultant",
     "qualifications": "MBBS, MS (General Surgery), DNB (Urology)",
-    "experience": 10,
+    "experience": "10+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2762,56 +2791,14 @@ export const DOCTORS_DATA = [
     "bio": "Dr. Muqqurab Ali Khan is a senior Urology Specialist Consultant at UDAI OMNI Hospitals, Nampally, specializing in Urology with qualifications MBBS, MS (General Surgery), DNB (Urology)."
   },
   {
-    "id": "doc-dr-m-srinivasa-rao",
-    "name": "Dr. M. Srinivasa Rao",
-    "slug": "dr-m-srinivasa-rao",
-    "specialty": "Cardiology",
-    "deptTag": "CARDIOLOGY",
-    "designation": "Consultant Interventional Cardiologist",
-    "qualifications": "MD (Internal Medicine), DM (Cardiology), FACC (USA), FESC, FSCAI (USA)",
-    "experience": "15+ Years",
-    "branch": "UDAI OMNI – Nampally",
-    "location": "Nampally",
-    "languages": [
-      "English",
-      "Telugu",
-      "Hindi"
-    ],
-    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
-    "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. M. Srinivasa Rao is a senior Consultant Interventional Cardiologist at UDAI OMNI Hospitals, Nampally, specializing in Cardiology with qualifications MD (Internal Medicine), DM (Cardiology), FACC (USA), FESC, FSCAI (USA)."
-  },
-  {
-    "id": "doc-dr-sunil-kapoor",
-    "name": "Dr. Sunil Kapoor",
-    "slug": "dr-sunil-kapoor",
-    "specialty": "Cardiology",
-    "deptTag": "CARDIOLOGY",
-    "designation": "Consultant Interventional Cardiologist",
-    "qualifications": "DM (Cardiology), MD (General Medicine), MNAMS, FACC (USA)",
-    "experience": "15+ Years",
-    "branch": "UDAI OMNI – Nampally",
-    "location": "Nampally",
-    "languages": [
-      "English",
-      "Telugu",
-      "Hindi"
-    ],
-    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
-    "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Sunil Kapoor is a senior Consultant Interventional Cardiologist at UDAI OMNI Hospitals, Nampally, specializing in Cardiology with qualifications DM (Cardiology), MD (General Medicine), MNAMS, FACC (USA)."
-  },
-  {
     "id": "doc-dr-chinthamadaka-sai-ram",
-    "name": "Dr. Chinthamadaka Sai Ram",
-    "slug": "dr-chinthamadaka-sai-ram",
+    "name": "Dr. Sai Ram Chinthamadaka",
+    "slug": "dr-sai-ram-chinthamadaka",
     "specialty": "Oncology",
     "deptTag": "ONCOLOGY",
-    "designation": "Consultant Oncologist",
-    "qualifications": "MBBS, DMRT (MDRT) (KMIO), FIAMS",
-    "experience": 30,
+    "designation": "Senior Consultant Medical Oncologist",
+    "qualifications": "DMRT (MDRT) (KMIO), FIAMS",
+    "experience": "30+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2822,17 +2809,17 @@ export const DOCTORS_DATA = [
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
     "image": "/images/doctors/dr-chinthamadaka-sai-ram.jpg",
-    "bio": "Dr. Chinthamadaka Sai Ram is a senior Consultant Oncologist at UDAI OMNI Hospitals, Nampally, specializing in Oncology with qualifications MBBS, DMRT (MDRT) (KMIO), FIAMS."
+    "bio": "Dr. Sai Ram Chinthamadaka is a Senior Consultant Medical Oncologist at UDAI OMNI Hospitals, Nampally, specializing in Oncology with qualifications DMRT (MDRT) (KMIO), FIAMS."
   },
   {
     "id": "doc-dr-touseef-raza-mohammed",
     "name": "Dr. Touseef Raza Mohammed",
     "slug": "dr-touseef-raza-mohammed",
-    "specialty": "Rheumatology",
-    "deptTag": "RHEUMATOLOGY",
-    "designation": "Consultant Rheumatologist & Orthopedic Surgeon",
-    "qualifications": "MS (Orthopaedics), FTJR, CRJD, PGCR (Switzerland)",
-    "experience": 7,
+    "specialty": "Orthopedics",
+    "deptTag": "JOINT REPLACEMENT & RHEUMATOLOGY",
+    "designation": "Consultant Trauma, Joint Replacement Surgeon & Rheumatologist",
+    "qualifications": "MS (Ortho), CRJD, FTJR, PGCR (Switz.)",
+    "experience": "7+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2843,17 +2830,17 @@ export const DOCTORS_DATA = [
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
     "image": "/images/doctors/dr-touseef-raza-mohammed.jpg",
-    "bio": "Dr. Touseef Raza Mohammed is a senior Consultant Rheumatologist & Orthopedic Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Rheumatology with qualifications MS (Orthopaedics), FTJR, CRJD, PGCR (Switzerland)."
+    "bio": "Dr. Touseef Raza Mohammed is a Consultant Trauma, Joint Replacement Surgeon & Rheumatologist at UDAI OMNI Hospitals, Nampally, specializing in Trauma, Joint Replacement & Rheumatology with qualifications MS (Ortho), CRJD, FTJR, PGCR (Switz.)."
   },
   {
     "id": "doc-dr-a-ravi-chander-rao",
-    "name": "Dr. A. Ravi Chander Rao",
-    "slug": "dr-a-ravi-chander-rao",
+    "name": "Dr. Ravi Chander Rao",
+    "slug": "dr-ravi-chander-rao",
     "specialty": "Plastic Surgery",
     "deptTag": "PLASTIC SURGERY",
-    "designation": "Consultant Plastic & Cosmetic Surgeon",
-    "qualifications": "MBBS, MS (General Surgery), MCh (Plastic Surgery)",
-    "experience": 22,
+    "designation": "Senior Consultant Plastic Aesthetic, Microvascular Reconstructive Surgeon",
+    "qualifications": "MS (General Surgery), MCh (Plastic Surgery)",
+    "experience": "22+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2863,8 +2850,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. A. Ravi Chander Rao is a senior Consultant Plastic & Cosmetic Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Plastic Surgery with qualifications MBBS, MS (General Surgery), MCh (Plastic Surgery)."
+    "image": "/images/doctors/dr-a-ravi-chander-rao.jpg",
+    "bio": "Dr. Ravi Chander Rao is a Senior Consultant Plastic Aesthetic, Microvascular Reconstructive Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Plastic Surgery with qualifications MS (General Surgery), MCh (Plastic Surgery)."
   },
   {
     "id": "doc-dr-divya-sai-narsingam",
@@ -2874,7 +2861,7 @@ export const DOCTORS_DATA = [
     "deptTag": "PLASTIC SURGERY",
     "designation": "Consultant Plastic Surgeon",
     "qualifications": "MBBS, MS, MCh",
-    "experience": 8,
+    "experience": "8+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -2884,50 +2871,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-divya-sai-narsingam.jpg",
     "bio": "Dr. Divya Sai Narsingam is a senior Consultant Plastic Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Plastic Surgery with qualifications MBBS, MS, MCh."
-  },
-  {
-    "id": "doc-dr-avinash-chaitanya-s",
-    "name": "Dr. Avinash Chaitanya S",
-    "slug": "dr-avinash-chaitanya-s",
-    "specialty": "ENT",
-    "deptTag": "ENT",
-    "designation": "Consultant ENT Surgeon & Head & Neck Oncologist",
-    "qualifications": "MBBS, MS, FHNSO",
-    "experience": 12,
-    "branch": "UDAI OMNI – Nampally",
-    "location": "Nampally",
-    "languages": [
-      "English",
-      "Telugu",
-      "Hindi"
-    ],
-    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
-    "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Avinash Chaitanya S is a senior Consultant ENT Surgeon & Head & Neck Oncologist at UDAI OMNI Hospitals, Nampally, specializing in ENT with qualifications MBBS, MS, FHNSO."
-  },
-  {
-    "id": "doc-dr-sanjeeva-rao-k",
-    "name": "Dr. Sanjeeva Rao K",
-    "slug": "dr-sanjeeva-rao-k",
-    "specialty": "Vascular Surgery",
-    "deptTag": "VASCULAR SURGERY",
-    "designation": "Consultant Vascular & Endovascular Surgeon",
-    "qualifications": "MBBS, DNB (Gen. Surg.), MNAMS, DNB (Vascular Surg.-NIMS), FEVS (Austria), FIVS",
-    "experience": "15+ Years",
-    "branch": "UDAI OMNI – Nampally",
-    "location": "Nampally",
-    "languages": [
-      "English",
-      "Telugu",
-      "Hindi"
-    ],
-    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
-    "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Sanjeeva Rao K is a senior Consultant Vascular & Endovascular Surgeon at UDAI OMNI Hospitals, Nampally, specializing in Vascular Surgery with qualifications MBBS, DNB (Gen. Surg.), MNAMS, DNB (Vascular Surg.-NIMS), FEVS (Austria), FIVS."
   },
   {
     "id": "doc-dr-mohd-niaz-ahmed",
@@ -2947,29 +2892,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-mohd-niaz-ahmed.jpg",
     "bio": "Dr. Mohd Niaz Ahmed is a senior Venereologist, Cosmetologist & Dermatosurgeon at UDAI OMNI Hospitals, Nampally, specializing in Dermatology with qualifications MBBS, MD (Dermatology)."
-  },
-  {
-    "id": "doc-dr-rishi-raj-mohammed",
-    "name": "Dr. Rishi Raj Mohammed",
-    "slug": "dr-rishi-raj-mohammed",
-    "specialty": "General Medicine",
-    "deptTag": "PSYCHIATRY",
-    "designation": "Consultant Psychiatrist",
-    "qualifications": "MBBS, MD (Psychiatry)",
-    "experience": 10,
-    "branch": "UDAI OMNI – Nampally",
-    "location": "Nampally",
-    "languages": [
-      "English",
-      "Telugu",
-      "Hindi"
-    ],
-    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
-    "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Rishi Raj Mohammed is a senior Consultant Psychiatrist at UDAI OMNI Hospitals, Nampally, specializing in General Medicine with qualifications MBBS, MD (Psychiatry)."
   },
   {
     "id": "doc-dr-syed-askar-ahmed",
@@ -2989,18 +2913,18 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-syed-askar-ahmed.jpg",
     "bio": "Dr. Syed Askar Ahmed is a senior Consultant ENT & Head and Neck Surgeon at UDAI OMNI Hospitals, Nampally, specializing in ENT with qualifications MBBS, MS (ENT)."
   },
   {
     "id": "doc-dr-mohd-hameed-shareef",
-    "name": "Dr. Mohd Hameed Shareef",
-    "slug": "dr-mohd-hameed-shareef",
+    "name": "Dr. Md Abdul Hameed Shareef",
+    "slug": "dr-md-abdul-hameed-shareef",
     "specialty": "Neurology",
     "deptTag": "NEURO SURGERY",
-    "designation": "Consultant Neurosurgeon",
-    "qualifications": "MBBS, MS (General Surgery), MCh (Neurosurgery)",
-    "experience": 7,
+    "designation": "Consultant Neuro Surgeon (Brain & Spine)",
+    "qualifications": "MBBS, MS, MCh (Neurosurgery)",
+    "experience": "7+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -3010,8 +2934,8 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
-    "bio": "Dr. Mohd Hameed Shareef is a senior Consultant Neurosurgeon at UDAI OMNI Hospitals, Nampally, specializing in Neurology with qualifications MBBS, MS (General Surgery), MCh (Neurosurgery)."
+    "image": "/images/doctors/dr-mohd-hameed-shareef.jpg",
+    "bio": "Dr. Md Abdul Hameed Shareef is a Consultant Neuro Surgeon (Brain & Spine) at UDAI OMNI Hospitals, Nampally, specializing in Neurosurgery with qualifications MBBS, MS, MCh (Neurosurgery)."
   },
   {
     "id": "doc-dr-nadeem-ahmed-dastagir",
@@ -3031,7 +2955,7 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-nadeem-ahmed-dastagir.jpg",
     "bio": "Dr. Nadeem Ahmed Dastagir is a senior Medical Oncologist & Hematologist at UDAI OMNI Hospitals, Nampally, specializing in Oncology with qualifications MBBS, MD (Radiation Oncology), DM (Medical Oncology)."
   },
   {
@@ -3042,7 +2966,7 @@ export const DOCTORS_DATA = [
     "deptTag": "MAXILLOFACIAL",
     "designation": "Consultant Maxillofacial Surgeon & Implantologist; Associate Professor",
     "qualifications": "MDS, FICOI, Diplomate ICOI (USA), MFD1 (UK), FIBOI (USA), PhD",
-    "experience": 16,
+    "experience": "16+ Years",
     "branch": "UDAI OMNI – Nampally",
     "location": "Nampally",
     "languages": [
@@ -3052,8 +2976,407 @@ export const DOCTORS_DATA = [
     ],
     "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
     "featured": false,
-    "image": "/images/doctors/doctor-avatar-male.svg",
+    "image": "/images/doctors/dr-b-s-sheraz.jpg",
     "bio": "Dr. B. S. Sheraz is a senior Consultant Maxillofacial Surgeon & Implantologist; Associate Professor at UDAI OMNI Hospitals, Nampally, specializing in General Surgery with qualifications MDS, FICOI, Diplomate ICOI (USA), MFD1 (UK), FIBOI (USA), PhD."
+  },
+  {
+    "id": "doc-dr-rajendra-reddy",
+    "name": "Dr. Rajendra Reddy",
+    "slug": "dr-rajendra-reddy",
+    "specialty": "Spine & Orthopedics",
+    "deptTag": "SPINE SURGERY",
+    "designation": "Consultant Endoscopic Spine Surgeon",
+    "qualifications": "MS (Ortho), FRGUHS (Fellowship in Spine Surgery)",
+    "experience": "8+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-rajendra-reddy.jpg",
+    "bio": "Dr. Rajendra Reddy is a Consultant Endoscopic Spine Surgeon at UDAI OMNI Hospitals, Nampally, holding qualifications in MS (Ortho), FRGUHS (Fellowship in Spine Surgery)."
+  },
+  {
+    "id": "doc-dr-r-suneel",
+    "name": "Dr. R. Suneel",
+    "slug": "dr-r-suneel",
+    "specialty": "Orthopedics",
+    "deptTag": "HAND SURGERY",
+    "designation": "Consultant Hand Surgeon",
+    "qualifications": "D (Ortho), DNB, FHMS, FIWA",
+    "experience": "12+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-r-suneel.jpg",
+    "bio": "Dr. R. Suneel is a Consultant Hand Surgeon at UDAI OMNI Hospitals, Nampally, holding qualifications in D (Ortho), DNB, FHMS, FIWA."
+  },
+  {
+    "id": "doc-dr-sunil-apsingi",
+    "name": "Dr. Sunil Apsingi",
+    "slug": "dr-sunil-apsingi",
+    "specialty": "Orthopedics",
+    "deptTag": "ORTHOPAEDICS",
+    "designation": "Consultant Orthopaedic & Shoulder Specialist",
+    "qualifications": "MS (Ortho), MRCS (UK)",
+    "experience": "35+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-sunil-apsingi.jpg",
+    "bio": "Dr. Sunil Apsingi is a senior Consultant Orthopaedic & Shoulder Specialist at UDAI OMNI Hospitals, Nampally, holding qualifications in MS (Ortho), MRCS (UK)."
+  },
+  {
+    "id": "doc-dt-zehra-nayeem",
+    "name": "Dt. Zehra Nayeem",
+    "slug": "dt-zehra-nayeem",
+    "specialty": "General Medicine",
+    "deptTag": "CLINICAL NUTRITION",
+    "designation": "Consultant Dietician",
+    "qualifications": "MSc (Nutrition & Dietetics)",
+    "experience": "2+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dt-zehra-nayeem.jpg",
+    "bio": "Dt. Zehra Nayeem is a Consultant Dietician at UDAI OMNI Hospitals, Nampally, holding qualifications in MSc (Nutrition & Dietetics)."
+  },
+  {
+    "id": "doc-dr-shakeeb-ahrar",
+    "name": "Dr. Shakeeb Ahrar",
+    "slug": "dr-shakeeb-ahrar",
+    "specialty": "Neurology",
+    "deptTag": "NEUROLOGY",
+    "designation": "Consultant Neurophysician",
+    "qualifications": "DNB Medicine, MD Neurology",
+    "experience": "12+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-shakeeb-ahrar.jpg",
+    "bio": "Dr. Shakeeb Ahrar is a Consultant Neurophysician at UDAI OMNI Hospitals, Nampally, holding qualifications in DNB Medicine, MD Neurology."
+  },
+  {
+    "id": "doc-dr-bala-chandra",
+    "name": "Dr. Bala Chandra",
+    "slug": "dr-bala-chandra",
+    "specialty": "Plastic Surgery",
+    "deptTag": "PLASTIC SURGERY",
+    "designation": "Consultant Plastic Surgeon",
+    "qualifications": "MS surgery, Mch (Plastic Surgery)",
+    "experience": "10+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-bala-chandra.jpg",
+    "bio": "Dr. Bala Chandra is a Consultant Plastic Surgeon at UDAI OMNI Hospitals, Nampally, holding qualifications in MS surgery, Mch (Plastic Surgery)."
+  },
+  {
+    "id": "doc-dr-nazia",
+    "name": "Dr. Nazia",
+    "slug": "dr-nazia",
+    "specialty": "Plastic Surgery",
+    "deptTag": "PLASTIC SURGERY",
+    "designation": "Consultant Plastic Surgeon",
+    "qualifications": "MS surgery, Mch (Plastic Surgery)",
+    "experience": "5+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-nazia.jpg",
+    "bio": "Dr. Nazia is a Consultant Plastic Surgeon at UDAI OMNI Hospitals, Nampally, holding qualifications in MS surgery, Mch (Plastic Surgery)."
+  },
+  {
+    "id": "doc-dr-shanti-laxmi",
+    "name": "Dr. Shanti Laxmi",
+    "slug": "dr-shanti-laxmi",
+    "specialty": "Urology",
+    "deptTag": "UROLOGY",
+    "designation": "Consultant Urologist",
+    "qualifications": "MS (General Surgery), MCh (Urology)",
+    "experience": "8+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-shanti-laxmi.jpg",
+    "bio": "Dr. Shanti Laxmi is a Consultant Urologist at UDAI OMNI Hospitals, Nampally, holding qualifications in MS (General Surgery), MCh (Urology)."
+  },
+  {
+    "id": "doc-dr-syed-mohammed-ali-ahmed",
+    "name": "Dr. Syed Mohammed Ali Ahmed",
+    "slug": "dr-syed-mohammed-ali-ahmed",
+    "specialty": "Vascular Surgery",
+    "deptTag": "VASCULAR SURGERY",
+    "designation": "Consultant Vascular Surgeon (Varicose Vein Specialist)",
+    "qualifications": "MCh (Vascular Surgery)",
+    "experience": "14+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-syed-mohammed-ali-ahmed.jpg",
+    "bio": "Dr. Syed Mohammed Ali Ahmed is a Consultant Vascular Surgeon & Varicose Vein Specialist at UDAI OMNI Hospitals, Nampally, holding qualifications in MCh (Vascular Surgery)."
+  },
+  {
+    "id": "doc-dr-mazher-ali",
+    "name": "Dr. Mazher Ali",
+    "slug": "dr-mazher-ali",
+    "specialty": "General Medicine",
+    "deptTag": "PSYCHIATRY",
+    "designation": "Consultant Psychiatrist",
+    "qualifications": "MD Psychiatry",
+    "experience": "20+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-mazher-ali.jpg",
+    "bio": "Dr. Mazher Ali is a senior Consultant Psychiatrist at UDAI OMNI Hospitals, Nampally, holding qualifications in MD Psychiatry."
+  },
+  {
+    "id": "doc-dr-ankit-vijay-agarwal",
+    "name": "Dr. Ankit Vijay Agarwal",
+    "slug": "dr-ankit-vijay-agarwal",
+    "specialty": "Gastroenterology",
+    "deptTag": "GASTROENTEROLOGY",
+    "designation": "Consultant Gastroenterologist & Hepatologist",
+    "qualifications": "MD Medicine, DNB",
+    "experience": "14+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-ankit-vijay-agarwal.jpg",
+    "bio": "Dr. Ankit Vijay Agarwal is a Consultant Gastroenterologist & Hepatologist at UDAI OMNI Hospitals, Nampally, holding qualifications in MD Medicine, DNB."
+  },
+  {
+    "id": "doc-dr-md-mujtaba-ali",
+    "name": "Dr. Md Mujtaba Ali",
+    "slug": "dr-md-mujtaba-ali",
+    "specialty": "Oncology",
+    "deptTag": "SURGICAL ONCOLOGY",
+    "designation": "Senior Surgical Oncologist",
+    "qualifications": "DNB Surgery, Mch (Surgical Oncology)",
+    "experience": "13+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-md-mujtaba-ali.jpg",
+    "bio": "Dr. Md Mujtaba Ali is a Senior Surgical Oncologist at UDAI OMNI Hospitals, Nampally, holding qualifications in DNB Surgery, Mch (Surgical Oncology)."
+  },
+  {
+    "id": "doc-dr-praveen-kumar",
+    "name": "Dr. Praveen Kumar",
+    "slug": "dr-praveen-kumar",
+    "specialty": "General Medicine",
+    "deptTag": "RADIOLOGY",
+    "designation": "Consultant Radiologist",
+    "qualifications": "MBBS, MD Radiology",
+    "experience": "14+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-praveen-kumar.jpg",
+    "bio": "Dr. Praveen Kumar is a Consultant Radiologist at UDAI OMNI Hospitals, Nampally, holding qualifications in MBBS, MD Radiology."
+  },
+  {
+    "id": "doc-dr-sameer",
+    "name": "Dr. Sameer",
+    "slug": "dr-sameer",
+    "specialty": "Gastroenterology",
+    "deptTag": "GASTROENTEROLOGY",
+    "designation": "Consultant Medical Gastroenterologist",
+    "qualifications": "DNB Medicine, MCH Medical Gastroenterology",
+    "experience": "8+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-sameer.jpg",
+    "bio": "Dr. Sameer is a Consultant Medical Gastroenterologist at UDAI OMNI Hospitals, Nampally, holding qualifications in DNB Medicine, MCH Medical Gastroenterology."
+  },
+  {
+    "id": "doc-dr-shehzad-ruman",
+    "name": "Dr. Shehzad Ruman",
+    "slug": "dr-shehzad-ruman",
+    "specialty": "General Medicine",
+    "deptTag": "ENDOCRINOLOGY",
+    "designation": "Senior Endocrinologist",
+    "qualifications": "MD General Medicine, Fellowship in Endocrinology",
+    "experience": "14+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-shehzad-ruman.jpg",
+    "bio": "Dr. Shehzad Ruman is a Senior Endocrinologist at UDAI OMNI Hospitals, Nampally, holding qualifications in MD General Medicine, Fellowship in Endocrinology."
+  },
+  {
+    "id": "doc-dr-basalath",
+    "name": "Dr. Basalath",
+    "slug": "dr-basalath",
+    "specialty": "Oncology",
+    "deptTag": "MEDICAL ONCOLOGY",
+    "designation": "Consultant Medical Oncologist",
+    "qualifications": "MD Medicine, MCh (Oncology)",
+    "experience": "6+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-basalath.jpg",
+    "bio": "Dr. Basalath is a Consultant Medical Oncologist at UDAI OMNI Hospitals, Nampally, holding qualifications in MD Medicine, MCh (Oncology)."
+  },
+  {
+    "id": "doc-dr-ravi-kumar",
+    "name": "Dr. Ravi Kumar",
+    "slug": "dr-ravi-kumar",
+    "specialty": "Oncology",
+    "deptTag": "MEDICAL ONCOLOGY",
+    "designation": "Senior Medical Oncologist & Hematologist",
+    "qualifications": "MD Medicine, MCh (Oncology)",
+    "experience": "27+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-ravi-kumar.jpg",
+    "bio": "Dr. Ravi Kumar is a Senior Medical Oncologist & Hematologist at UDAI OMNI Hospitals, Nampally, holding qualifications in MD Medicine, MCh (Oncology)."
+  },
+  {
+    "id": "doc-dr-mutaher",
+    "name": "Dr. Mutaher",
+    "slug": "dr-mutaher",
+    "specialty": "Cardiology",
+    "deptTag": "CARDIOLOGY",
+    "designation": "Consultant Interventional Cardiologist",
+    "qualifications": "MBBS, MD (General Medicine), DM (Cardiology)",
+    "experience": "5+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-mutaher.jpg",
+    "bio": "Dr. Mutaher is a Consultant Interventional Cardiologist at UDAI OMNI Hospitals, Nampally, holding qualifications in MBBS, MD (General Medicine), DM (Cardiology)."
+  },
+  {
+    "id": "doc-dr-pnsvs-prasad",
+    "name": "Dr. PNSVS Prasad",
+    "slug": "dr-pnsvs-prasad",
+    "specialty": "Orthopedics",
+    "deptTag": "ORTHOPAEDICS",
+    "designation": "Orthopaedic Surgeon (Ilizarov Specialist)",
+    "qualifications": "MS (Ortho)",
+    "experience": "25+ Years",
+    "branch": "UDAI OMNI – Nampally",
+    "location": "Nampally",
+    "languages": [
+      "English",
+      "Telugu",
+      "Hindi"
+    ],
+    "availability": "Mon - Sat: 10:00 AM - 04:00 PM",
+    "featured": false,
+    "image": "/images/doctors/dr-pnsvs-prasad.jpg",
+    "bio": "Dr. PNSVS Prasad is a senior Orthopaedic Surgeon & Ilizarov Specialist at UDAI OMNI Hospitals, Nampally, holding qualifications in MS (Ortho)."
   },
   {
     "id": "doc-giggles-dr-n-sridevi",
@@ -3156,9 +3479,14 @@ export const SPECIALTY_CATEGORIES = [
   "Nephrology",
   "Gastroenterology",
   "Gynecology & Obstetrics",
+  "Pediatrics",
+  "Clinical Nutrition & Dietetics",
+  "Physiotherapy & Rehabilitation",
   "Urology",
   "Pulmonology",
-  "Dermatology"
+  "Dermatology",
+  "Critical Care",
+  "Anesthesia"
 ];
 
 export const LOCATION_OPTIONS = [

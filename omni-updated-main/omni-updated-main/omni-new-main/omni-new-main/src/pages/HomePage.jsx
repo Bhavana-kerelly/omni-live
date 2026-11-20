@@ -123,7 +123,8 @@ export default function HomePage({ onNavigate, onBookAppointment }) {
 
         {/* 5. Doctor Search & Faculty Suite */}
         <DoctorSearchSection
-          onBookDoctor={() => scrollToSection('doctors')}
+          onNavigate={onNavigate}
+          onBookAppointment={onBookAppointment}
         />
 
         {/* 6. Medical Knowledge Insights Platform */}

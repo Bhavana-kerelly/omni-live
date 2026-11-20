@@ -315,10 +315,11 @@ export default function HomeFooter({ onNavigate, onBookAppointment }) {
                     onClick={(e) => {
                       e.preventDefault();
                       if (card.id === 'book-appointment') {
+                        const saved = typeof window !== 'undefined' ? localStorage.getItem('omni_preferred_location') : null;
                         if (onBookAppointment) {
-                          onBookAppointment();
+                          onBookAppointment(saved);
                         } else {
-                          window.dispatchEvent(new CustomEvent('open-appointment-modal'));
+                          window.dispatchEvent(new CustomEvent('open-appointment-modal', { detail: { location: saved } }));
                         }
                       } else {
                         handleNavClick(e, card.view);

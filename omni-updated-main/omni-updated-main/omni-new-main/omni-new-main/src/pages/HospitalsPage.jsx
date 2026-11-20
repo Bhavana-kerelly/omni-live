@@ -17,7 +17,7 @@ const LOCATIONS_DATA = [
     city: 'Hyderabad',
     shortDesc: 'Multi-specialty center of excellence serving East Hyderabad with round-the-clock emergency services, keyhole surgical suites, and comprehensive clinical care.',
     fullStory: 'Established as a cornerstone of healthcare in East Hyderabad, OMNI Kothapet combines advanced emergency response with specialized centers in Pulmonology, Gastroenterology, and Orthopedics. Built around patient-first workflows, the facility ensures rapid triage and precision interventions.',
-    beds: '180+ Beds',
+    beds: '150+ Beds',
     specialists: '65+ Doctors',
     majorFacilities: '24/7 Trauma, ICU, Cath Lab & Dialysis',
     accreditation: 'NABH Accredited',
@@ -173,7 +173,22 @@ const FACILITIES_DATA = [
 ];
 
 export default function HospitalsPage({ onNavigate, onBookAppointment }) {
-  const [selectedId, setSelectedId] = useState('kothapet');
+  const getInitialId = () => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('omni_preferred_location');
+      if (saved) {
+        const found = LOCATIONS_DATA.find((l) => 
+          l.id === saved || 
+          l.name.toLowerCase().includes(saved.toLowerCase()) ||
+          saved.toLowerCase().includes(l.id)
+        );
+        if (found) return found.id;
+      }
+    }
+    return 'kothapet';
+  };
+
+  const [selectedId, setSelectedId] = useState(getInitialId);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const selectedLoc = LOCATIONS_DATA.find((item) => item.id === selectedId) || LOCATIONS_DATA[0];
@@ -181,6 +196,10 @@ export default function HospitalsPage({ onNavigate, onBookAppointment }) {
   const handleSelectLocation = (id) => {
     if (id === selectedId) return;
     setIsAnimating(true);
+    if (typeof window !== 'undefined') {
+      const loc = LOCATIONS_DATA.find((l) => l.id === id);
+      localStorage.setItem('omni_preferred_location', loc?.name || id);
+    }
     setTimeout(() => {
       setSelectedId(id);
       setIsAnimating(false);
@@ -193,14 +212,22 @@ export default function HospitalsPage({ onNavigate, onBookAppointment }) {
 
   const handleAppointmentClick = (e) => {
     if (e) e.preventDefault();
-    if (onBookAppointment) onBookAppointment();
+    const branchName = selectedLoc?.name || selectedId;
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('omni_preferred_location', branchName);
+    }
+    if (onBookAppointment) onBookAppointment(branchName);
     else openWhatsAppAppointment(selectedLoc ? { location: selectedLoc.name } : null);
   };
 
   return (
     <div className="hospitals-page-wrapper">
       {/* Header */}
-      <HomeHeader currentView="hospitals" onNavigate={onNavigate} onBookAppointment={onBookAppointment} />
+      <HomeHeader 
+        currentView="hospitals" 
+        onNavigate={onNavigate} 
+        onBookAppointment={onBookAppointment} 
+      />
 
       <main className="hospitals-main-content">
         {/* =========================================================================
@@ -532,7 +559,10 @@ export default function HospitalsPage({ onNavigate, onBookAppointment }) {
       </main>
 
       {/* Footer */}
-      <HomeFooter onNavigate={onNavigate} onBookAppointment={onBookAppointment} />
+      <HomeFooter 
+        onNavigate={onNavigate} 
+        onBookAppointment={() => onBookAppointment && onBookAppointment(selectedLoc?.name || selectedId)} 
+      />
     </div>
   );
 }

@@ -30,7 +30,7 @@ const LOCATIONS_LIST = [
     phone: '040-67369999 / 8096369999',
     mapLink: 'https://maps.google.com/?q=OMNI+Hospitals+Kothapet+Hyderabad',
     image: '/images/hospitals/kothapet-card.jpg',
-    beds: '180+ Beds',
+    beds: '150+ Beds',
     specialists: '75+ Doctors'
   },
   {
@@ -113,9 +113,12 @@ export default function LocationsPage({ onNavigate, onBookAppointment }) {
     }
   };
 
-  const handleAppointmentClick = (e) => {
-    if (e) e.preventDefault();
-    if (onBookAppointment) onBookAppointment();
+  const handleAppointmentClick = (locOrId) => {
+    const loc = typeof locOrId === 'string' ? locOrId : (LOCATIONS_LIST[activeIndex]?.name || 'Kothapet');
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('omni_preferred_location', loc);
+    }
+    if (onBookAppointment) onBookAppointment(loc);
     else openWhatsAppAppointment();
   };
 
@@ -129,7 +132,11 @@ export default function LocationsPage({ onNavigate, onBookAppointment }) {
   return (
     <div className="omni-locations-page-wrapper">
       {/* Website Header Navigation */}
-      <HomeHeader currentView="locations" onNavigate={onNavigate} onBookAppointment={onBookAppointment} />
+      <HomeHeader 
+        currentView="locations" 
+        onNavigate={onNavigate} 
+        onBookAppointment={onBookAppointment} 
+      />
 
       <main className="locations-main-content">
         {/* =========================================================================
@@ -228,7 +235,7 @@ export default function LocationsPage({ onNavigate, onBookAppointment }) {
                             <button
                               type="button"
                               className="btn-appointment-green"
-                              onClick={handleAppointmentClick}
+                              onClick={() => handleAppointmentClick(item.heading || item.id)}
                             >
                               <Calendar size={15} />
                               <span>Book an Appointment</span>
@@ -259,7 +266,10 @@ export default function LocationsPage({ onNavigate, onBookAppointment }) {
       </main>
 
       {/* Website Footer */}
-      <HomeFooter onNavigate={onNavigate} onBookAppointment={onBookAppointment} />
+      <HomeFooter 
+        onNavigate={onNavigate} 
+        onBookAppointment={() => onBookAppointment && onBookAppointment(LOCATIONS_LIST[activeIndex]?.name || 'Kothapet')} 
+      />
     </div>
   );
 }

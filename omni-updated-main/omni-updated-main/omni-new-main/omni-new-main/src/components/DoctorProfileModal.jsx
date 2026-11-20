@@ -31,17 +31,18 @@ export default function DoctorProfileModal({ doctor, onClose, onBookAppointment 
   // Specialty dept tag uppercase
   const specialtyTag = (doctor.deptTag || doctor.specialty || 'MEDICAL SPECIALIST').toUpperCase();
 
-  // Experience text formatting
-  const expText = doctor.experience && doctor.experience !== '-'
-    ? (doctor.experience.includes('Years') ? doctor.experience : `${doctor.experience} Years Experience`)
-    : (doctor.experience === '-' ? '-' : '15+ Years Experience');
+  // Experience text formatting (supports numbers, strings, and null)
+  const rawExp = doctor.experience != null ? String(doctor.experience).trim() : '';
+  const expText = rawExp && rawExp !== '-'
+    ? (rawExp.toLowerCase().includes('year') ? rawExp : `${rawExp}+ Years Experience`)
+    : (rawExp === '-' ? '-' : '15+ Years Experience');
 
   // Format About paragraphs
-  const bioParagraphs = doctor.bio
+  const bioParagraphs = doctor.bio && typeof doctor.bio === 'string'
     ? doctor.bio.split('\n\n').filter(Boolean)
     : [
         `${doctor.name} is a distinguished ${doctor.designation || 'Consultant'} at OMNI Hospitals with extensive clinical mastery.`,
-        `Specializing in ${doctor.specialty || 'advanced medical care'}, ${doctor.name.split(' ')[1] || 'the doctor'} is committed to providing evidence-based, compassionate care for all patients.`
+        `Specializing in ${doctor.specialty || 'advanced medical care'}, ${doctor.name?.split(' ')[1] || 'the doctor'} is committed to providing evidence-based, compassionate care for all patients.`
       ];
 
 

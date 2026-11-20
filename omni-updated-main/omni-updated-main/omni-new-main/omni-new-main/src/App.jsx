@@ -17,8 +17,8 @@ import BlogsPage from './pages/BlogsPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import WhatsAppFloatingBtn from './components/WhatsAppFloatingBtn';
 import AppointmentModal from './components/AppointmentModal';
-import PreloaderAnnouncement from './components/PreloaderAnnouncement';
-import FloatingAnnouncementBtn from './components/FloatingAnnouncementBtn';
+import { initAnalytics, trackPageView } from './utils/analytics';
+import { SEO_METADATA, updatePageSEO } from './utils/seoData';
 
 export default function App() {
   const getInitialState = () => {
@@ -58,23 +58,149 @@ export default function App() {
   const [currentJobSlug, setCurrentJobSlug] = useState(initialState.slug || null);
   const [currentBlogSlug, setCurrentBlogSlug] = useState(initialState.slug || '');
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
-  const [showPreloader, setShowPreloader] = useState(true);
+  const [appointmentModalData, setAppointmentModalData] = useState({
+    location: null,
+    specialty: null,
+    doctor: null,
+    fromNavbar: false
+  });
 
+  // Initialize Google Analytics on mount
   useEffect(() => {
-    let timer;
-    if (showPreloader) {
-      timer = setTimeout(() => {
-        setShowPreloader(false);
-      }, 8500);
-    }
-    return () => clearTimeout(timer);
-  }, [showPreloader]);
+    initAnalytics();
+  }, []);
 
-  const openAppointmentModal = () => setIsAppointmentModalOpen(true);
+  // Set page titles and meta descriptions dynamically for browser tabs, SEO and Google Analytics
+  useEffect(() => {
+    let title = SEO_METADATA.home.title;
+    let description = SEO_METADATA.home.description;
+    let canonical = window.location.pathname || '/';
+
+    if (currentView === 'specialty-detail') {
+      const slugKey = (currentSpecialtySlug || 'cardiology').toLowerCase();
+      const seo = SEO_METADATA[slugKey];
+      if (seo) {
+        title = seo.title;
+        description = seo.description;
+      } else {
+        const formatted = currentSpecialtySlug ? currentSpecialtySlug.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase()) : 'Speciality';
+        title = `${formatted} | OMNI Hospitals`;
+        description = `Get advanced ${formatted} care and treatment from experienced specialists at OMNI Hospitals in Hyderabad and Andhra Pradesh. Book your consultation today.`;
+      }
+      canonical = `/specialities/${slugKey}`;
+    } else if (currentView === 'home') {
+      title = SEO_METADATA.home.title;
+      description = SEO_METADATA.home.description;
+      canonical = '/';
+    } else if (currentView === 'about') {
+      title = 'About Us | OMNI Hospitals - Excellence in Healthcare';
+      description = 'Learn about OMNI Hospitals, our mission, vision, clinical leadership, and world-class multi-speciality healthcare across Hyderabad and Andhra Pradesh.';
+      canonical = '/about';
+    } else if (currentView === 'doctors') {
+      title = 'Find a Doctor | Specialist Consultants at OMNI Hospitals';
+      description = 'Find top specialist doctors, surgeons and consultants across OMNI Hospitals network. Search by specialty, branch, or doctor name and book an appointment.';
+      canonical = '/doctors';
+    } else if (currentView === 'specialities') {
+      title = 'Centres of Clinical Excellence & Specialities | OMNI Hospitals';
+      description = 'Explore our centres of clinical excellence including Cardiology, Orthopedics, Neurology, Urology, Emergency Medicine, and more across Hyderabad and Andhra Pradesh.';
+      canonical = '/specialities';
+    } else if (currentView === 'hospitals') {
+      title = 'Our Super Speciality Hospitals | OMNI Hospitals';
+      description = 'Discover OMNI Super Speciality Hospitals located across Kothapet, Kukatpally, Nampally, Visakhapatnam, and Kurnool with state-of-the-art medical infrastructure.';
+      canonical = '/hospitals';
+    } else if (currentView === 'hospital-detail') {
+      const formatted = currentHospitalSlug ? currentHospitalSlug.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase()) : 'Hospital';
+      title = `OMNI Hospitals - ${formatted} Branch`;
+      description = `OMNI Hospitals ${formatted} branch offers advanced super speciality healthcare, 24/7 emergency services, modern diagnostics, and experienced specialist doctors.`;
+      canonical = `/hospitals/${currentHospitalSlug}`;
+    } else if (currentView === 'locations') {
+      title = 'Hospital Locations & Contact Centers | OMNI Hospitals';
+      description = 'Locate OMNI Hospitals nearest to you in Hyderabad, Visakhapatnam, and Kurnool. View contact numbers, addresses, OPD timings, and directions.';
+      canonical = '/locations';
+    } else if (currentView === 'careers') {
+      title = 'Careers & Medical Opportunities | OMNI Hospitals';
+      description = 'Join our dedicated healthcare team at OMNI Hospitals. Explore job openings for doctors, nurses, medical staff, and administrative roles.';
+      canonical = '/careers';
+    } else if (currentView === 'blogs') {
+      title = 'Health Blogs & Medical Insights | OMNI Hospitals';
+      description = 'Read expert health advice, medical insights, wellness tips, and patient awareness articles written by leading doctors at OMNI Hospitals.';
+      canonical = '/blogs';
+    } else if (currentView === 'blog-detail') {
+      title = 'Health Article & Clinical Insights | OMNI Hospitals';
+      description = 'In-depth health guide and clinical insights from specialists at OMNI Hospitals.';
+      canonical = `/blog/${currentBlogSlug}`;
+    } else if (currentView === 'insurance') {
+      title = 'Insurance Partners & Cashless TPA Empanelments | OMNI Hospitals';
+      description = 'Cashless hospitalization and insurance TPA tie-ups at OMNI Hospitals. View empanelled health insurance companies and claim assistance services.';
+      canonical = '/insurance';
+    } else if (currentView === 'contact') {
+      title = 'Contact Us & 24/7 Helpline | OMNI Hospitals';
+      description = 'Contact OMNI Hospitals for emergency care, appointments, or general inquiries. Call our 24/7 central helpline 888 0101 000 or visit our hospital locations.';
+      canonical = '/contact';
+    }
+    updatePageSEO(title, description, canonical);
+    trackPageView(window.location.pathname, title);
+  }, [currentView, currentHospitalSlug, currentSpecialtySlug, currentJobSlug, currentBlogSlug]);
+
+  const openAppointmentModal = (param) => {
+    // When opened from navbar Book Appointment button, location must be strictly empty
+    if (param && param.fromNavbar) {
+      setAppointmentModalData({
+        location: '',
+        specialty: null,
+        doctor: null,
+        fromNavbar: true
+      });
+      setIsAppointmentModalOpen(true);
+      return;
+    }
+
+    if (param) {
+      if (typeof param === 'string') {
+        setAppointmentModalData({ location: param, specialty: null, doctor: null, fromNavbar: false });
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('omni_preferred_location', param);
+        }
+      } else if (typeof param === 'object' && param !== null) {
+        setAppointmentModalData({
+          location: param.location || param.branch || null,
+          specialty: param.specialty || null,
+          doctor: param,
+          fromNavbar: false
+        });
+        if (param.location && typeof window !== 'undefined') {
+          localStorage.setItem('omni_preferred_location', param.location);
+        }
+      }
+    } else if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('omni_preferred_location');
+      setAppointmentModalData({
+        location: saved || null,
+        specialty: null,
+        doctor: null,
+        fromNavbar: false
+      });
+    }
+    setIsAppointmentModalOpen(true);
+  };
   const closeAppointmentModal = () => setIsAppointmentModalOpen(false);
 
   useEffect(() => {
-    const handleOpenAppointmentModal = () => setIsAppointmentModalOpen(true);
+    const handleOpenAppointmentModal = (e) => {
+      if (e?.detail?.fromNavbar) {
+        openAppointmentModal({ fromNavbar: true });
+        return;
+      }
+      const loc = e?.detail?.location || e?.detail?.hospitalLocation;
+      const doc = e?.detail?.doctor;
+      if (doc) {
+        openAppointmentModal(doc);
+      } else if (loc) {
+        openAppointmentModal(loc);
+      } else {
+        openAppointmentModal();
+      }
+    };
     window.addEventListener('open-appointment-modal', handleOpenAppointmentModal);
     return () => window.removeEventListener('open-appointment-modal', handleOpenAppointmentModal);
   }, []);
@@ -198,8 +324,14 @@ export default function App() {
 
   return (
     <div className="omni-app">
-      {showPreloader && <PreloaderAnnouncement onClose={() => setShowPreloader(false)} />}
-      <AppointmentModal isOpen={isAppointmentModalOpen} onClose={closeAppointmentModal} />
+      <AppointmentModal 
+        isOpen={isAppointmentModalOpen} 
+        onClose={closeAppointmentModal}
+        initialLocation={appointmentModalData.location}
+        initialSpecialty={appointmentModalData.specialty}
+        doctor={appointmentModalData.doctor}
+        fromNavbar={appointmentModalData.fromNavbar}
+      />
       {currentView === 'about' ? (
         <AboutPage onNavigate={handleNavigate} onBookAppointment={openAppointmentModal} />
       ) : currentView === 'doctors' ? (
@@ -252,8 +384,7 @@ export default function App() {
       ) : (
         <HomePage onNavigate={handleNavigate} onBookAppointment={openAppointmentModal} />
       )}
-      {!showPreloader && <WhatsAppFloatingBtn />}
-      <FloatingAnnouncementBtn onClick={() => setShowPreloader(true)} />
+      <WhatsAppFloatingBtn />
     </div>
   );
 }

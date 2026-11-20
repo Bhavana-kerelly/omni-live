@@ -307,16 +307,20 @@
   width: 120px;
   height: 235px;
   transform: translateX(510px) scale(0.58);
-  z-index: 4;
-  opacity: 0.32;
+  z-index: 1;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .clinical-doctor-card.offset--3 {
   width: 120px;
   height: 235px;
   transform: translateX(-510px) scale(0.58);
-  z-index: 4;
-  opacity: 0.32;
+  z-index: 1;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 /* Photo Box */

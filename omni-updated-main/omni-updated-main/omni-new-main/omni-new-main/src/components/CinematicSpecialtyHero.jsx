@@ -62,9 +62,20 @@ const SPECIALTIES = [
 export default function CinematicSpecialtyHero() {
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
+  const navListRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const scrollProgressRef = useRef(0);
   const animFrameId = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(typeof window !== 'undefined' && window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Passive, butter-smooth native scroll listener
   useEffect(() => {
@@ -131,6 +142,16 @@ export default function CinematicSpecialtyHero() {
     Math.floor(scrollProgress * totalCount)
   );
 
+  // Smoothly center the active specialty pill horizontally on mobile
+  useEffect(() => {
+    if (navListRef.current && typeof window !== 'undefined' && window.innerWidth <= 768) {
+      const activeEl = navListRef.current.querySelector('.specialty-progress-item.active');
+      if (activeEl) {
+        activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  }, [activeIndex]);
+
   const handleNavClick = (index) => {
     if (!sectionRef.current) return;
     const rect = sectionRef.current.getBoundingClientRect();
@@ -169,7 +190,7 @@ export default function CinematicSpecialtyHero() {
             playsInline
             preload="auto"
             style={{
-              transform: `scale(${1.04 + scrollProgress * 0.1})`,
+              transform: isMobile ? 'none' : `scale(${1.04 + scrollProgress * 0.1})`,
               filter: `brightness(${1 - scrollProgress * 0.12}) contrast(${1 + scrollProgress * 0.08})`,
               transition: 'transform 0.2s ease-out, filter 0.2s ease-out',
               pointerEvents: 'none'
@@ -253,7 +274,7 @@ export default function CinematicSpecialtyHero() {
 
         {/* RIGHT VERTICAL PROGRESS NAVIGATION */}
         <nav className="specialty-progress-nav" aria-label="Specialties Menu">
-          <ul className="specialty-progress-list">
+          <ul ref={navListRef} className="specialty-progress-list">
             {SPECIALTIES.map((spec, index) => {
               const isActive = activeIndex === index;
               return (

@@ -10,7 +10,7 @@ export const HOSPITALS_DETAIL_DATA = {
     aboutImage: '/images/hospitals/kothapet-card.jpg',
     
     // Quick info bar
-    bedsCount: '180+ Beds',
+    bedsCount: '150+ Beds',
     specialistsCount: '65+ Specialists',
     emergencyStatus: '24/7 Active',
     accreditation: 'NABH Accredited',

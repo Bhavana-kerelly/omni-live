@@ -1,11 +1,12 @@
 import React from 'react';
 import { BookOpen, ArrowRight, Clock } from 'lucide-react';
-import { BLOGS_DATA } from '../../data/blogsData';
+import { useBlogs } from '../../services/blogService';
 import { getAssetUrl } from '../../utils/getAssetUrl';
 
 export default function MedicalInsightsSection({ onNavigate }) {
-  // Take the 3 primary blogs directly from master datastore
-  const blogsList = BLOGS_DATA.slice(0, 3);
+  const { blogs } = useBlogs();
+  // Take the 3 primary blogs directly from live datastore
+  const blogsList = blogs.slice(0, 3);
   const featuredArticle = blogsList[0];
   const secondaryArticles = blogsList.slice(1);
 

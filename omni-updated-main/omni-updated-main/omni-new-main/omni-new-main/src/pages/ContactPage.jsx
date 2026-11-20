@@ -30,7 +30,35 @@ const REASONS_LIST = [
 ];
 
 export default function ContactPage({ onNavigate, onBookAppointment }) {
-  const [selectedHospitalId, setSelectedHospitalId] = useState('kothapet');
+  const getInitialBranch = () => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('omni_preferred_location');
+      if (saved) {
+        const found = LOCATIONS_LIST.find(l => 
+          l.id === saved || 
+          l.name.toLowerCase().includes(saved.toLowerCase()) ||
+          saved.toLowerCase().includes(l.id)
+        );
+        if (found) return found.name;
+      }
+    }
+    return 'Kothapet';
+  };
+
+  const [selectedHospitalId, setSelectedHospitalId] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('omni_preferred_location');
+      if (saved) {
+        const found = LOCATIONS_LIST.find(l => 
+          l.id === saved || 
+          l.name.toLowerCase().includes(saved.toLowerCase()) ||
+          saved.toLowerCase().includes(l.id)
+        );
+        if (found) return found.id;
+      }
+    }
+    return 'kothapet';
+  });
   const [selectedReason, setSelectedReason] = useState('General Enquiry');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -38,8 +66,8 @@ export default function ContactPage({ onNavigate, onBookAppointment }) {
     name: '',
     email: '',
     phone: '',
-    hospitalLocation: 'OMNI Hospitals, Kothapet',
-    preferredDept: 'Cardiology',
+    hospitalLocation: getInitialBranch(),
+    preferredDept: '',
     patientId: '',
     rating: '5',
     subject: '',
@@ -67,7 +95,7 @@ export default function ContactPage({ onNavigate, onBookAppointment }) {
       email: '',
       phone: '',
       hospitalLocation: 'OMNI Hospitals, Kothapet',
-      preferredDept: 'Cardiology',
+      preferredDept: '',
       patientId: '',
       rating: '5',
       subject: '',
@@ -86,7 +114,7 @@ export default function ContactPage({ onNavigate, onBookAppointment }) {
 
   return (
     <div className="contact-page-wrapper">
-      <HomeHeader currentView="contact" onNavigate={onNavigate} />
+      <HomeHeader currentView="contact" onNavigate={onNavigate} onBookAppointment={onBookAppointment} />
 
       <main className="contact-main-content">
         
@@ -142,7 +170,13 @@ export default function ContactPage({ onNavigate, onBookAppointment }) {
                     key={loc.id}
                     type="button"
                     className={`hosp-tab-btn ${isActive ? 'active' : ''}`}
-                    onClick={() => setSelectedHospitalId(loc.id)}
+                    onClick={() => {
+                      setSelectedHospitalId(loc.id);
+                      setFormData((prev) => ({ ...prev, hospitalLocation: loc.name }));
+                      if (typeof window !== 'undefined') {
+                        localStorage.setItem('omni_preferred_location', loc.name);
+                      }
+                    }}
                   >
                     {heroImg && <img src={getAssetUrl(heroImg)} alt="" className="tab-thumb-img" />}
                     <span>{loc.name}</span>
@@ -319,9 +353,11 @@ export default function ContactPage({ onNavigate, onBookAppointment }) {
                           onChange={(e) => setFormData({ ...formData, preferredDept: e.target.value })}
                           className="field-select"
                         >
+                          <option value="">Select Preferred Specialty</option>
                           <option value="Cardiology">Cardiology & Vascular</option>
                           <option value="Orthopedics">Orthopedics & Joint Replacement</option>
                           <option value="Neurology">Neurology & Neurosurgery</option>
+                          <option value="Urology">Urology & Andrology</option>
                           <option value="Robotic Surgery">Robotic Surgery</option>
                           <option value="Pulmonology">Pulmonology</option>
                           <option value="Gastroenterology">Gastroenterology</option>

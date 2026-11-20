@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Users, MapPin } from 'lucide-react';
 import { getAssetUrl } from '../../utils/getAssetUrl';
 import { DOCTORS_DATA } from '../../data/doctorsData';
+import { getDoctorImage, getDoctorAvatarFallback } from '../../utils/getDoctorImage';
+import DoctorProfileModal from '../DoctorProfileModal';
 
 const FEATURED_DOCTOR_IDS = [
   'doc-ranjith-nellore-mahesh',
@@ -28,7 +30,16 @@ const FEATURED_DOCTORS = FEATURED_DOCTOR_IDS.map((id) => DOCTORS_DATA.find((d) =
 const INFINITE_DOCTORS = [...FEATURED_DOCTORS, ...FEATURED_DOCTORS];
 
 
-export default function DoctorSearchSection({ onBookDoctor, onNavigate }) {
+export default function DoctorSearchSection({ onBookDoctor, onNavigate, onBookAppointment }) {
+  const [selectedDoctorModal, setSelectedDoctorModal] = useState(null);
+
+  const handleDoctorClick = (doc) => {
+    setSelectedDoctorModal(doc);
+    if (onBookDoctor) {
+      onBookDoctor(doc);
+    }
+  };
+
   return (
     <section className="specialists-editorial-section" id="doctors">
       <div className="specialists-section-container">
@@ -94,14 +105,27 @@ export default function DoctorSearchSection({ onBookDoctor, onNavigate }) {
                   .join(' ');
 
                 return (
-                  <div key={`${doc.id}-${idx}`} className="specialist-grid-card">
+                  <div 
+                    key={`${doc.id}-${idx}`} 
+                    className="specialist-grid-card"
+                    onClick={() => handleDoctorClick(doc)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleDoctorClick(doc);
+                      }
+                    }}
+                  >
                     
                     {/* Top Image Frame */}
                     <div className="card-image-wrapper">
                       <img 
-                        src={getAssetUrl(doc.image)} 
+                        src={getDoctorImage(doc)} 
                         onError={(e) => {
-                          e.currentTarget.src = 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop';
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = getDoctorAvatarFallback(doc.name);
                         }}
                         alt={doc.name} 
                         className="card-doctor-img"
@@ -122,7 +146,10 @@ export default function DoctorSearchSection({ onBookDoctor, onNavigate }) {
                       <button 
                         type="button" 
                         className="card-view-profile-btn"
-                        onClick={() => onBookDoctor && onBookDoctor(doc)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleDoctorClick(doc);
+                        }}
                       >
                         <span>View Profile →</span>
                       </button>
@@ -137,6 +164,15 @@ export default function DoctorSearchSection({ onBookDoctor, onNavigate }) {
         </div>
 
       </div>
+
+      {/* Doctor Profile Modal Popup */}
+      {selectedDoctorModal && (
+        <DoctorProfileModal
+          doctor={selectedDoctorModal}
+          onClose={() => setSelectedDoctorModal(null)}
+          onBookAppointment={onBookAppointment}
+        />
+      )}
     </section>
   );
 }

@@ -105,12 +105,31 @@ const OMNI_LOCATIONS = [
 ];
 
 export default function FinalCTASection({ onFindDoctor, onBookAppointment }) {
-  const [activeLoc, setActiveLoc] = useState(OMNI_LOCATIONS[0]);
+  const getInitialLoc = () => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('omni_preferred_location');
+      if (saved) {
+        const found = OMNI_LOCATIONS.find((l) => 
+          l.id === saved || 
+          l.name.toLowerCase() === saved.toLowerCase() ||
+          saved.toLowerCase().includes(l.id) ||
+          l.fullName.toLowerCase().includes(saved.toLowerCase())
+        );
+        if (found) return found;
+      }
+    }
+    return OMNI_LOCATIONS[0];
+  };
+
+  const [activeLoc, setActiveLoc] = useState(getInitialLoc);
   const [isFading, setIsFading] = useState(false);
 
   const handleSelectLocation = (loc) => {
     if (loc.id === activeLoc.id) return;
     setIsFading(true);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('omni_preferred_location', loc.name);
+    }
     setTimeout(() => {
       setActiveLoc(loc);
       setIsFading(false);
@@ -245,7 +264,11 @@ export default function FinalCTASection({ onFindDoctor, onBookAppointment }) {
                 type="button" 
                 className="showcase-btn-secondary"
                 onClick={(e) => {
-                  if (onBookAppointment) onBookAppointment();
+                  if (e) e.preventDefault();
+                  if (typeof window !== 'undefined') {
+                    localStorage.setItem('omni_preferred_location', activeLoc.name);
+                  }
+                  if (onBookAppointment) onBookAppointment(activeLoc.name);
                   else openWhatsAppAppointment({ location: activeLoc.name });
                 }}
               >

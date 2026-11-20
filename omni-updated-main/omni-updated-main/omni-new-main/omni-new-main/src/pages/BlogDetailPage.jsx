@@ -15,17 +15,33 @@ import {
   Copy,
   Check
 } from 'lucide-react';
-import { BLOGS_DATA } from '../data/blogsData';
+import { useBlogs, fetchLiveBlogBySlug } from '../services/blogService';
+import DOMPurify from 'dompurify';
 import { getAssetUrl } from '../utils/getAssetUrl';
 import { openWhatsAppAppointment } from '../utils/whatsappHelper';
 import './BlogsPage.css';
 
 export default function BlogDetailPage({ blogSlug, blogId, onNavigate, onSelectBlog, onBookAppointment }) {
+  const { blogs } = useBlogs();
   const [copied, setCopied] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  // Find blog by slug or ID
-  const blog = BLOGS_DATA.find(b => b.slug === blogSlug || b.id === Number(blogId)) || BLOGS_DATA[0];
+  // Find blog by slug or ID with API fallback
+  const matchedLocal = blogs.find(b => b.slug === blogSlug || b.id === Number(blogId));
+  const [liveBlog, setLiveBlog] = useState(matchedLocal || blogs[0]);
+
+  useEffect(() => {
+    const found = blogs.find(b => b.slug === blogSlug || b.id === Number(blogId));
+    if (found) {
+      setLiveBlog(found);
+    } else if (blogSlug) {
+      fetchLiveBlogBySlug(blogSlug).then(fetched => {
+        if (fetched) setLiveBlog(fetched);
+      });
+    }
+  }, [blogs, blogSlug, blogId]);
+
+  const blog = liveBlog || blogs[0];
 
   // Scroll Reading Progress Bar
   useEffect(() => {
@@ -42,7 +58,7 @@ export default function BlogDetailPage({ blogSlug, blogId, onNavigate, onSelectB
   }, []);
 
   // Related Blogs (Same category or next items - pick 4 for sidebar)
-  const relatedBlogs = BLOGS_DATA
+  const relatedBlogs = blogs
     .filter(b => b.id !== blog.id)
     .slice(0, 4);
 
@@ -150,23 +166,30 @@ export default function BlogDetailPage({ blogSlug, blogId, onNavigate, onSelectB
 
             {/* Formatted Article Body Content */}
             <div className="article-formatted-content">
-              {formattedLines.slice(1).map((line, idx) => {
-                const isHeading = line.length < 90 && !line.endsWith('.') && !line.startsWith('*');
-                const isBullet = line.startsWith('*');
+              {blog.content && (blog.content.includes('<p>') || blog.content.includes('<h')) ? (
+                <div 
+                  className="article-html-body"
+                  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.content) }} 
+                />
+              ) : (
+                formattedLines.slice(1).map((line, idx) => {
+                  const isHeading = line.length < 90 && !line.endsWith('.') && !line.startsWith('*');
+                  const isBullet = line.startsWith('*');
 
-                if (isHeading) {
-                  return <h2 key={idx} className="article-h2">{line.replace(/^[0-9]+\.\s*/, '')}</h2>;
-                }
-                if (isBullet) {
-                  return (
-                    <div key={idx} className="article-bullet-item">
-                      <span className="bullet-dot">•</span>
-                      <span className="bullet-text">{line.replace(/^\*\s*/, '')}</span>
-                    </div>
-                  );
-                }
-                return <p key={idx} className="article-p">{line}</p>;
-              })}
+                  if (isHeading) {
+                    return <h2 key={idx} className="article-h2">{line.replace(/^[0-9]+\.\s*/, '')}</h2>;
+                  }
+                  if (isBullet) {
+                    return (
+                      <div key={idx} className="article-bullet-item">
+                        <span className="bullet-dot">•</span>
+                        <span className="bullet-text">{line.replace(/^\*\s*/, '')}</span>
+                      </div>
+                    );
+                  }
+                  return <p key={idx} className="article-p">{line}</p>;
+                })
+              )}
             </div>
 
             {/* Social Sharing & Bookmark Bar */}

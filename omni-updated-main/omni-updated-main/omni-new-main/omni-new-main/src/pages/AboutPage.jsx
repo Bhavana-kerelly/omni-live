@@ -70,11 +70,6 @@ const VALUES = [
 
 const LEADERSHIP_TEAM = [
   {
-    name: 'Dr. Radha Krishna',
-    title: 'Director - Giggles',
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop'
-  },
-  {
     name: 'Dr. Ved Prakash',
     title: 'Director - Udai Omni',
     image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=600&auto=format&fit=crop'

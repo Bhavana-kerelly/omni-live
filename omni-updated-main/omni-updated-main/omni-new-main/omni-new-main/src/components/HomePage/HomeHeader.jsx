@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { 
   Home, 
   Info, 
@@ -119,6 +120,29 @@ export default function HomeHeader({ currentView = 'home', onNavigate, onBookApp
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile drawer is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
+  // Close drawer on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const handleLinkClick = (e, viewName) => {
     e.preventDefault();
     setMobileMenuOpen(false);
@@ -127,7 +151,9 @@ export default function HomeHeader({ currentView = 'home', onNavigate, onBookApp
       onNavigate(viewName);
     } else {
       if (viewName === 'home') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.location.href = '/';
+      } else {
+        window.location.href = `/${viewName}`;
       }
     }
   };
@@ -149,9 +175,32 @@ export default function HomeHeader({ currentView = 'home', onNavigate, onBookApp
     e.preventDefault();
     setIsLocationsDropdownOpen(false);
     setMobileMenuOpen(false);
+    if (typeof window !== 'undefined' && loc?.name) {
+      localStorage.setItem('omni_preferred_location', loc.name);
+    }
     if (onNavigate) {
       onNavigate(loc.targetView || 'locations');
+      setTimeout(() => {
+        const el = document.getElementById(`location-${loc.id}`);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 150);
+    } else {
+      window.location.href = '/locations';
     }
+  };
+
+  const handleApptClick = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    setMobileMenuOpen(false);
+    // When Book Appointment in the navbar is clicked, Preferred Location must be empty
+    if (onBookAppointment) {
+      onBookAppointment({ fromNavbar: true, location: '' });
+    }
+    window.dispatchEvent(new CustomEvent('open-appointment-modal', {
+      detail: { fromNavbar: true, location: '' }
+    }));
   };
 
   return (
@@ -232,7 +281,7 @@ export default function HomeHeader({ currentView = 'home', onNavigate, onBookApp
             <button 
               type="button" 
               className="header-appointment-cta-pill"
-              onClick={() => onBookAppointment ? onBookAppointment() : openWhatsAppAppointment()}
+              onClick={handleApptClick}
               title="Book an Appointment"
             >
               <div className="appointment-calendar-circle">
@@ -258,7 +307,8 @@ export default function HomeHeader({ currentView = 'home', onNavigate, onBookApp
               type="button" 
               className="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle navigation menu"
+              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -492,87 +542,218 @@ export default function HomeHeader({ currentView = 'home', onNavigate, onBookApp
 
       </div>
 
-      {/* MOBILE DRAWER MENU */}
-      {mobileMenuOpen && (
-        <div className="mobile-drawer">
-          <ul className="mobile-nav-list">
-            <li>
-              <a href="/home" onClick={(e) => handleLinkClick(e, 'home')}>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/about" onClick={(e) => handleLinkClick(e, 'about')}>
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="/specialities" onClick={(e) => handleLinkClick(e, 'specialities')}>
-                Specialities
-              </a>
-            </li>
-            <li>
-              <a href="/doctors" onClick={(e) => handleLinkClick(e, 'doctors')}>
-                Doctors
-              </a>
-            </li>
-            <li>
-              <a href="/hospitals" onClick={(e) => handleLinkClick(e, 'hospitals')}>
-                Hospitals
-              </a>
-            </li>
-            
-            {/* MOBILE EXPANDABLE LOCATIONS ACCORDION */}
-            <li className="mobile-accordion-li">
-              <button 
-                type="button"
-                className="mobile-accordion-toggle"
-                onClick={() => setMobileLocationsExpanded(!mobileLocationsExpanded)}
-              >
-                <span>Locations</span>
-                <ChevronDown size={16} className={`mobile-chevron ${mobileLocationsExpanded ? 'open' : ''}`} />
-              </button>
+      {/* MOBILE DRAWER OVERLAY & MENU (PORTAL) */}
+      {typeof document !== 'undefined' && createPortal(
+        <div className={`mobile-drawer-portal-root ${mobileMenuOpen ? 'is-active' : ''}`}>
+          <div 
+            className="mobile-drawer-backdrop" 
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
 
-              {mobileLocationsExpanded && (
-                <ul className="mobile-sub-locations-list">
-                  {LOCATIONS_DROPDOWN_DATA.map((loc) => (
-                    <li key={loc.id}>
+          <aside 
+            className="mobile-drawer"
+            aria-label="Mobile Navigation Drawer"
+            aria-hidden={!mobileMenuOpen}
+          >
+            {/* Drawer Header */}
+            <div className="mobile-drawer-header">
+              <div className="mobile-drawer-brand">
+                <img 
+                  src={getAssetUrl('/omni-logo.png')} 
+                  onError={(e) => { e.currentTarget.src = getAssetUrl('/omni-logo.svg'); }}
+                  alt="OMNI Hospitals" 
+                  className="mobile-drawer-logo"
+                />
+              </div>
+              <button 
+                type="button" 
+                className="mobile-drawer-close"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close navigation menu"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Drawer Body: All Inner Pages */}
+            <div className="mobile-drawer-body">
+              <ul className="mobile-nav-list">
+                <li>
+                  <a 
+                    href="/home" 
+                    className={`mobile-nav-link ${currentView === 'home' || !currentView || currentView === '' ? 'active' : ''}`}
+                    onClick={(e) => handleLinkClick(e, 'home')}
+                  >
+                    <span className="mobile-link-icon-wrap"><Home size={18} /></span>
+                    <span className="mobile-link-text">Home</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a 
+                    href="/about" 
+                    className={`mobile-nav-link ${currentView === 'about' ? 'active' : ''}`}
+                    onClick={(e) => handleLinkClick(e, 'about')}
+                  >
+                    <span className="mobile-link-icon-wrap"><Info size={18} /></span>
+                    <span className="mobile-link-text">About Us</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a 
+                    href="/specialities" 
+                    className={`mobile-nav-link ${currentView === 'specialities' || currentView === 'specialty-detail' ? 'active' : ''}`}
+                    onClick={(e) => handleLinkClick(e, 'specialities')}
+                  >
+                    <span className="mobile-link-icon-wrap"><Stethoscope size={18} /></span>
+                    <span className="mobile-link-text">Specialities</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a 
+                    href="/doctors" 
+                    className={`mobile-nav-link ${currentView === 'doctors' ? 'active' : ''}`}
+                    onClick={(e) => handleLinkClick(e, 'doctors')}
+                  >
+                    <span className="mobile-link-icon-wrap"><Users size={18} /></span>
+                    <span className="mobile-link-text">Doctors</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a 
+                    href="/hospitals" 
+                    className={`mobile-nav-link ${currentView === 'hospitals' || currentView === 'hospital-detail' ? 'active' : ''}`}
+                    onClick={(e) => handleLinkClick(e, 'hospitals')}
+                  >
+                    <span className="mobile-link-icon-wrap"><Building2 size={18} /></span>
+                    <span className="mobile-link-text">Hospitals</span>
+                  </a>
+                </li>
+
+                {/* LOCATIONS WITH EXPANDABLE SUB-BRANCHES ACCORDION */}
+                <li className="mobile-accordion-li">
+                  <button 
+                    type="button"
+                    className={`mobile-nav-link mobile-accordion-header ${currentView === 'locations' ? 'active' : ''}`}
+                    onClick={() => setMobileLocationsExpanded(!mobileLocationsExpanded)}
+                    aria-expanded={mobileLocationsExpanded}
+                  >
+                    <span className="mobile-link-icon-wrap"><MapPin size={18} /></span>
+                    <span className="mobile-link-text">Locations</span>
+                    <ChevronDown size={17} className={`mobile-chevron ${mobileLocationsExpanded ? 'open' : ''}`} />
+                  </button>
+
+                  {mobileLocationsExpanded && (
+                    <div className="mobile-sub-locations-container">
+                      <ul className="mobile-sub-locations-list">
+                        {LOCATIONS_DROPDOWN_DATA.map((loc) => (
+                          <li key={loc.id}>
+                            <a 
+                              href="/locations"
+                              onClick={(e) => handleLocationClick(e, loc)}
+                              className="mobile-sub-location-link"
+                            >
+                              <span className="mobile-sub-num">{loc.num}</span>
+                              <div className="mobile-sub-info">
+                                <span className="mobile-sub-name">{loc.name}</span>
+                                <span className="mobile-sub-city">{loc.city}</span>
+                              </div>
+                              <ArrowRight size={13} className="mobile-sub-arrow" />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
                       <a 
                         href="/locations"
-                        onClick={(e) => handleLocationClick(e, loc)}
-                        className="mobile-sub-location-link"
+                        onClick={(e) => handleLinkClick(e, 'locations')}
+                        className="mobile-view-all-locations-btn"
                       >
-                        <span className="sub-num">{loc.num}</span>
-                        <span className="sub-name">{loc.name} ({loc.city})</span>
+                        <span>View All Locations & Maps</span>
+                        <ArrowRight size={13} />
                       </a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
+                    </div>
+                  )}
+                </li>
 
-            <li>
-              <a href="/insurance" onClick={(e) => handleLinkClick(e, 'insurance')}>
-                Insurance
-              </a>
-            </li>
-            <li>
-              <a href="/careers" onClick={(e) => handleLinkClick(e, 'careers')}>
-                Careers
-              </a>
-            </li>
-            <li>
-              <a href="/blogs" onClick={(e) => handleLinkClick(e, 'blogs')}>
-                Blogs
-              </a>
-            </li>
-            <li>
-              <a href="/contact" onClick={(e) => handleLinkClick(e, 'contact')}>
-                Contact Us
-              </a>
-            </li>
-          </ul>
-        </div>
+                <li>
+                  <a 
+                    href="/insurance" 
+                    className={`mobile-nav-link ${currentView === 'insurance' ? 'active' : ''}`}
+                    onClick={(e) => handleLinkClick(e, 'insurance')}
+                  >
+                    <span className="mobile-link-icon-wrap"><ShieldCheck size={18} /></span>
+                    <span className="mobile-link-text">Insurance</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a 
+                    href="/careers" 
+                    className={`mobile-nav-link ${currentView === 'careers' ? 'active' : ''}`}
+                    onClick={(e) => handleLinkClick(e, 'careers')}
+                  >
+                    <span className="mobile-link-icon-wrap"><Briefcase size={18} /></span>
+                    <span className="mobile-link-text">Careers</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a 
+                    href="/blogs" 
+                    className={`mobile-nav-link ${currentView === 'blogs' || currentView === 'blog-detail' ? 'active' : ''}`}
+                    onClick={(e) => handleLinkClick(e, 'blogs')}
+                  >
+                    <span className="mobile-link-icon-wrap"><BookOpen size={18} /></span>
+                    <span className="mobile-link-text">Blogs</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a 
+                    href="/contact" 
+                    className={`mobile-nav-link ${currentView === 'contact' ? 'active' : ''}`}
+                    onClick={(e) => handleLinkClick(e, 'contact')}
+                  >
+                    <span className="mobile-link-icon-wrap"><PhoneCall size={18} /></span>
+                    <span className="mobile-link-text">Contact Us</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Drawer Footer with Quick Action CTAs */}
+            <div className="mobile-drawer-footer">
+              <button 
+                type="button" 
+                className="mobile-drawer-book-btn"
+                onClick={handleApptClick}
+              >
+                <Calendar size={18} />
+                <span>Book Appointment</span>
+              </button>
+
+              <div className="mobile-drawer-emergency-row">
+                <a 
+                  href="tel:8880101000" 
+                  className="mobile-drawer-call-btn"
+                  title="Call Omni Helpline"
+                >
+                  <Phone size={15} />
+                  <span>888 0101 000</span>
+                </a>
+                <div className="mobile-drawer-em-badge">
+                  <Siren size={14} />
+                  <span>24/7 Emergency</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>,
+        document.body
       )}
     </header>
   );

@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import HomeHeader from '../components/HomePage/HomeHeader';
 import HomeFooter from '../components/HomePage/HomeFooter';
+import DoctorProfileModal from '../components/DoctorProfileModal';
 import { HOSPITALS_DETAIL_DATA } from '../data/hospitalsDetailData';
 import { DOCTORS_DATA } from '../data/doctorsData';
 import { getAssetUrl } from '../utils/getAssetUrl';
@@ -18,6 +19,7 @@ export default function HospitalDetailPage({ locationSlug = 'kothapet', onNaviga
   const hospital = HOSPITALS_DETAIL_DATA[activeSlug];
 
   const [activeFacilityCategory, setActiveFacilityCategory] = useState('All');
+  const [selectedDoctorModal, setSelectedDoctorModal] = useState(null);
 
   // Filter doctors that belong to this location
   const locationDoctors = useMemo(() => {
@@ -42,7 +44,10 @@ export default function HospitalDetailPage({ locationSlug = 'kothapet', onNaviga
   }, [hospital, activeFacilityCategory]);
 
   const handleBookAppointment = () => {
-    if (onBookAppointment) onBookAppointment();
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('omni_preferred_location', activeSlug);
+    }
+    if (onBookAppointment) onBookAppointment(activeSlug);
     else if (onNavigate) onNavigate('contact');
   };
 
@@ -53,7 +58,11 @@ export default function HospitalDetailPage({ locationSlug = 'kothapet', onNaviga
   return (
     <div className="hospital-detail-wrapper">
       {/* Global Header */}
-      <HomeHeader currentView="hospitals" onNavigate={onNavigate} onBookAppointment={onBookAppointment} />
+      <HomeHeader 
+        currentView="hospitals" 
+        onNavigate={onNavigate} 
+        onBookAppointment={onBookAppointment} 
+      />
 
       <main className="detail-main-content">
         
@@ -257,7 +266,12 @@ export default function HospitalDetailPage({ locationSlug = 'kothapet', onNaviga
             <div className="doctors-grid">
               {locationDoctors.length > 0 ? (
                 locationDoctors.map((doc) => (
-                  <div key={doc.id} className="detail-doctor-card">
+                  <div 
+                    key={doc.id} 
+                    className="detail-doctor-card"
+                    onClick={() => setSelectedDoctorModal(doc)}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <div className="doc-avatar-box">
                       <img 
                         src={getDoctorImage(doc)} 
@@ -277,14 +291,17 @@ export default function HospitalDetailPage({ locationSlug = 'kothapet', onNaviga
                       <p className="doc-qualifications">{doc.qualifications}</p>
                       <div className="doc-experience">
                         <Award size={14} />
-                        <span>{doc.experience === '-' ? '-' : (doc.experience?.includes('Years') ? `${doc.experience} Experience` : `${doc.experience} Experience`)}</span>
-
+                        <span>{doc.experience === '-' ? '-' : (String(doc.experience).toLowerCase().includes('year') ? doc.experience : `${doc.experience} Experience`)}</span>
                       </div>
 
                       <button 
                         type="button" 
                         className="btn-card-book"
-                        onClick={handleBookAppointment}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (onBookAppointment) onBookAppointment(doc);
+                          else handleBookAppointment();
+                        }}
                       >
                         <Calendar size={14} />
                         <span>Book Consultation</span>
@@ -501,7 +518,19 @@ export default function HospitalDetailPage({ locationSlug = 'kothapet', onNaviga
       </main>
 
       {/* Global Footer */}
-      <HomeFooter onNavigate={onNavigate} onBookAppointment={onBookAppointment} />
+      <HomeFooter 
+        onNavigate={onNavigate} 
+        onBookAppointment={() => onBookAppointment && onBookAppointment(activeSlug)} 
+      />
+
+      {/* Doctor Profile Overlay Modal */}
+      {selectedDoctorModal && (
+        <DoctorProfileModal 
+          doctor={selectedDoctorModal}
+          onClose={() => setSelectedDoctorModal(null)}
+          onBookAppointment={onBookAppointment}
+        />
+      )}
     </div>
   );
 }

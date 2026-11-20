@@ -53,10 +53,11 @@ export default function SpecialtyDetailPage({ specialtySlug = 'cardiology', onNa
         (targetSlug === 'cardiology' && (docSpec.includes('cardio') || docSpec.includes('vascular') || docDept.includes('cardio'))) ||
         (targetSlug === 'orthopedics' && (docSpec.includes('ortho') || docSpec.includes('spine') || docDept.includes('ortho'))) ||
         (targetSlug === 'neurology' && (docSpec.includes('neuro') || docSpec.includes('brain') || docDept.includes('neuro'))) ||
+        (targetSlug === 'urology' && (docSpec.includes('uro') || docSpec.includes('androl') || docDept.includes('uro'))) ||
         (targetSlug === 'gastroenterology' && (docSpec.includes('gastro') || docSpec.includes('liver') || docSpec.includes('hepat') || docDept.includes('gastro'))) ||
         (targetSlug === 'obstetrics-gynaecology' && (docSpec.includes('gynaec') || docSpec.includes('gynec') || docSpec.includes('obstet') || docDept.includes('gynaec'))) ||
         (targetSlug === 'ent' && (docSpec.includes('ent') || docSpec.includes('ear') || docSpec.includes('ent'))) ||
-        (targetSlug === 'nephrology' && (docSpec.includes('nephro') || docSpec.includes('kidney') || docSpec.includes('renal') || docSpec.includes('uro') || docSpec.includes('nephro'))) ||
+        (targetSlug === 'nephrology' && (docSpec.includes('nephro') || docSpec.includes('kidney') || docSpec.includes('renal'))) ||
         (targetSlug === 'pulmonology' && (docSpec.includes('pulmo') || docSpec.includes('chest') || docSpec.includes('lung') || docSpec.includes('pulmo'))) ||
         (targetSlug === 'dermatology' && (docSpec.includes('derma') || docSpec.includes('skin') || docSpec.includes('derma'))) ||
         (targetSlug === 'psychiatry' && (docSpec.includes('psych') || docSpec.includes('mind') || docSpec.includes('psych'))) ||

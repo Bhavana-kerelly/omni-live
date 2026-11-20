@@ -1,5 +1,49 @@
+# OMNI Hospitals - Robots.txt
+# Allow search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Allow ChatGPT AI crawlers
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Allow GPTBot
+User-agent: GPTBot
+Allow: /
+
+# Allow Google AI
+User-agent: Google-Extended
+Allow: /
+
+# Allow Microsoft Copilot and Bing AI search
+# Bingbot is allowed above
+
+# Allow Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Allow Claude AI
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Allow other crawlers
 User-agent: *
 Allow: /
-Disallow: /blogs/*
 
+# XML Sitemap
 Sitemap: https://omnihospitals.in/sitemap.xml

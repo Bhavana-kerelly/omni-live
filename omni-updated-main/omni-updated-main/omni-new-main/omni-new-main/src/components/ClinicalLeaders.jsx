@@ -6,48 +6,41 @@ import './ClinicalLeaders.css';
 const CLINICAL_LEADERS_DATA = [
   {
     id: 1,
-    name: 'Dr. Radha Krishna',
-    designation: 'Director — Giggles',
-    image: '/images/doctors/dr-radha-krishna.jpg',
-    fallback: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop'
-  },
-  {
-    id: 2,
     name: 'Dr. Ved Prakash',
     designation: 'Director — UDAI OMNI',
     image: '/images/doctors/dr-ved-prakash.jpg',
     fallback: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=600&auto=format&fit=crop'
   },
   {
-    id: 3,
+    id: 2,
     name: 'Dr. Raghava Dutt M',
     designation: 'Director — UDAI OMNI',
     image: '/images/doctors/dr-raghava-dutt-m.jpg',
     fallback: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=600&auto=format&fit=crop'
   },
   {
-    id: 4,
+    id: 3,
     name: 'Dr. Udai Prakash',
     designation: 'Director — UDAI OMNI',
     image: '/images/doctors/dr-udai-prakash.jpg',
     fallback: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=600&auto=format&fit=crop'
   },
   {
-    id: 5,
+    id: 4,
     name: 'Dr. M Goutham Reddy',
     designation: 'Director — OMNI Kothapet',
     image: '/images/doctors/dr-m-goutham-reddy.jpg',
     fallback: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600&auto=format&fit=crop'
   },
   {
-    id: 6,
+    id: 5,
     name: 'Dr. E Venkat Ramana Reddy',
     designation: 'Director — OMNI Kothapet',
     image: '/images/doctors/dr-e-venkat-ramana-reddy.jpg',
     fallback: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop'
   },
   {
-    id: 7,
+    id: 6,
     name: 'Dr. Y Sandeep Reddy',
     designation: 'Director — OMNI Kothapet',
     image: '/images/doctors/dr-y-sandeep-reddy.jpg',
@@ -56,7 +49,7 @@ const CLINICAL_LEADERS_DATA = [
 ];
 
 export default function ClinicalLeaders({ onNavigate }) {
-  const [activeIndex, setActiveIndex] = useState(3); // Start with Dr. Udai Prakash (index 3) centered
+  const [activeIndex, setActiveIndex] = useState(2); // Start with Dr. Udai Prakash (index 2) centered
   const touchStartX = useRef(null);
   const mouseStartX = useRef(null);
   const isDragging = useRef(false);
@@ -121,11 +114,11 @@ export default function ClinicalLeaders({ onNavigate }) {
     mouseStartX.current = null;
   };
 
-  // Calculate relative position of card i relative to activeIndex (-3 to +3)
+  // Calculate relative position of card i relative to activeIndex
   const getCardOffset = (index) => {
     let offset = index - activeIndex;
-    if (offset > 3) offset -= total;
-    if (offset < -3) offset += total;
+    while (offset > 2) offset -= total;
+    while (offset < -3) offset += total;
     return offset;
   };
 

@@ -1,8 +1,30 @@
+DirectoryIndex index.html index.php
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # 1. Bypass rewriting completely for physical asset directories and files
+  RewriteRule ^(assets|images|videos|icons|css|js)/ - [L]
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 2. Forward Laravel backend routes to index.php (Admin, API, Livewire, Filament)
+  RewriteRule ^(admin|api|livewire|filament)(/.*)?$ index.php [L,QSA]
+  RewriteRule ^storage/(.*)$ index.php [L,QSA]
+
+  # 3. Only rewrite clean SPA page URLs (not files/folders) to index.html
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
+</IfModule>
+
+# Ensure strict MIME types for JS ES Modules and CSS on Hostinger
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType application/javascript .mjs
+  AddType text/css .css
+  AddType image/svg+xml .svg
 </IfModule>

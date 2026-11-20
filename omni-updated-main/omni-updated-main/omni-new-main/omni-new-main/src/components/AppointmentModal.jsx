@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Calendar, CheckCircle2, FileText } from 'lucide-react';
 
 const LEADSQUARED_API = 'https://api.omnihospitals.in/api/leadsquared/submit';
 
-const LOCATIONS_LIST = [
+export const LOCATIONS_LIST = [
   { id: 'kothapet', name: 'Kothapet' },
   { id: 'kukatpally', name: 'Kukatpally' },
   { id: 'udai-nampally', name: 'UDAI OMNI - Nampally' },
@@ -12,24 +12,99 @@ const LOCATIONS_LIST = [
   { id: 'giggles-vizag', name: 'Giggles Vizag' }
 ];
 
-export default function AppointmentModal({ isOpen, onClose }) {
+export function normalizeBranchName(val) {
+  if (!val) return null;
+  const str = String(val).toLowerCase().trim();
+  if (str.includes('kukatpally')) return 'Kukatpally';
+  if (str.includes('nampally') || str.includes('udai')) return 'UDAI OMNI - Nampally';
+  if (str.includes('giggles')) return 'Giggles Vizag';
+  if (str.includes('vizag') || str.includes('visakhapatnam')) return 'Vizag';
+  if (str.includes('kurnool')) return 'Kurnool';
+  if (str.includes('kothapet')) return 'Kothapet';
+  return null;
+}
+
+export default function AppointmentModal({ 
+  isOpen, 
+  onClose, 
+  initialLocation, 
+  initialSpecialty, 
+  doctor,
+  fromNavbar = false
+}) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [submitError, setSubmitError] = useState('');
+
+  const resolveLocation = () => {
+    // When opened from navbar, location must be strictly empty
+    if (fromNavbar || initialLocation === '') {
+      return '';
+    }
+    if (doctor?.location) {
+      const match = normalizeBranchName(doctor.location);
+      if (match) return match;
+    }
+    if (doctor?.branch) {
+      const match = normalizeBranchName(doctor.branch);
+      if (match) return match;
+    }
+    if (initialLocation) {
+      const match = normalizeBranchName(initialLocation);
+      if (match) return match;
+    }
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('omni_preferred_location');
+      const match = normalizeBranchName(saved);
+      if (match) return match;
+    }
+    return '';
+  };
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    hospitalLocation: 'Kothapet',
-    preferredDept: 'Cardiology',
+    hospitalLocation: resolveLocation(),
+    preferredDept: initialSpecialty || doctor?.specialty || '',
     subject: '',
     message: ''
   });
+
+  // Whenever modal opens or incoming location/doctor changes, pre-fill the selected location
+  useEffect(() => {
+    if (isOpen) {
+      const targetLoc = resolveLocation();
+      const spec = initialSpecialty || doctor?.specialty || '';
+      setFormData((prev) => ({
+        ...prev,
+        hospitalLocation: targetLoc,
+        preferredDept: spec
+      }));
+    }
+  }, [isOpen, initialLocation, initialSpecialty, doctor, fromNavbar]);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setSubmitError('');
+
+    if (!formData.hospitalLocation) {
+      setSubmitError('Please select your preferred OMNI Center.');
+      setIsLoading(false);
+      return;
+    }
+
+    if (!formData.preferredDept) {
+      setSubmitError('Please select your preferred Specialty / Department.');
+      setIsLoading(false);
+      return;
+    }
+
+    // Persist user's selected location so future visits and modals retain it
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('omni_preferred_location', formData.hospitalLocation);
+    }
 
     const leadPayload = [
       { Attribute: 'FirstName', Value: formData.name },
@@ -66,15 +141,15 @@ export default function AppointmentModal({ isOpen, onClose }) {
     setIsSubmitted(false);
     setIsLoading(false);
     setSubmitError('');
-    setFormData({
+    setFormData((prev) => ({
       name: '',
       email: '',
       phone: '',
-      hospitalLocation: 'Kothapet',
-      preferredDept: 'Cardiology',
+      hospitalLocation: resolveLocation(),
+      preferredDept: '',
       subject: '',
       message: ''
-    });
+    }));
     onClose();
   };
 
@@ -142,10 +217,18 @@ export default function AppointmentModal({ isOpen, onClose }) {
                 <div className="form-field">
                   <label className="field-label">Preferred OMNI Center *</label>
                   <select
+                    required
                     value={formData.hospitalLocation}
-                    onChange={(e) => setFormData({ ...formData, hospitalLocation: e.target.value })}
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      setFormData((prev) => ({ ...prev, hospitalLocation: val }));
+                      if (typeof window !== 'undefined' && val) {
+                        localStorage.setItem('omni_preferred_location', val);
+                      }
+                    }}
                     className="field-select"
                   >
+                    <option value="">Select Preferred Location</option>
                     {LOCATIONS_LIST.map((l) => (
                       <option key={l.id} value={l.name}>{l.name}</option>
                     ))}
@@ -154,15 +237,18 @@ export default function AppointmentModal({ isOpen, onClose }) {
               </div>
 
               <div className="form-field">
-                <label className="field-label">Preferred Specialty / Department</label>
+                <label className="field-label">Preferred Specialty / Department *</label>
                 <select
                   value={formData.preferredDept}
                   onChange={(e) => setFormData({ ...formData, preferredDept: e.target.value })}
                   className="field-select"
+                  required
                 >
+                  <option value="">Select Preferred Specialty</option>
                   <option value="Cardiology">Cardiology &amp; Vascular</option>
                   <option value="Orthopedics">Orthopedics &amp; Joint Replacement</option>
                   <option value="Neurology">Neurology &amp; Neurosurgery</option>
+                  <option value="Urology">Urology &amp; Andrology</option>
                   <option value="Robotic Surgery">Robotic Surgery</option>
                   <option value="Pulmonology">Pulmonology</option>
                   <option value="Gastroenterology">Gastroenterology</option>
@@ -204,7 +290,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
               </div>
               <h3 className="success-heading">Appointment Request Sent!</h3>
               <p className="success-text">
-                Thank you, <strong>{formData.name}</strong>. Your appointment request for <strong>{formData.preferredDept}</strong> at <strong>{formData.hospitalLocation}</strong> has been submitted.
+                Thank you, <strong>{formData.name}</strong>. Your appointment request {formData.preferredDept ? <span>for <strong>{formData.preferredDept}</strong></span> : ''} at <strong>{formData.hospitalLocation}</strong> has been submitted.
               </p>
               <p className="success-sub">Our patient care desk will get back to you shortly via phone/email.</p>
               <button
@@ -212,7 +298,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
                 className="btn-send-another"
                 onClick={() => {
                   setIsSubmitted(false);
-                  setFormData({ name: '', email: '', phone: '', hospitalLocation: 'Kothapet', preferredDept: 'Cardiology', subject: '', message: '' });
+                  setFormData({ name: '', email: '', phone: '', hospitalLocation: '', preferredDept: '', subject: '', message: '' });
                 }}
               >
                 Book Another Appointment

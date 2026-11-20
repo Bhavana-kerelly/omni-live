@@ -1,3 +1,5 @@
+import { SEO_METADATA } from '../utils/seoData.js';
+
 export const SPECIALTIES_DATA = {
   cardiology: {
     id: 'cardiology',
@@ -211,6 +213,83 @@ export const SPECIALTIES_DATA = {
     ctaTitleLine1: 'Rapid Neuro Response.',
     ctaTitleLine2: 'Trusted Expertise.',
     ctaDescription: 'Connect with senior neurologists and neurosurgeons for brain, spine, and stroke care.'
+  },
+
+  urology: {
+    id: 'urology',
+    name: 'Urology & Andrology',
+    slug: 'urology',
+    deptTag: 'UROLOGY',
+    heroTagline: 'CENTRE OF EXCELLENCE IN ADVANCED UROLOGY & ANDROLOGY',
+    titleLine1: 'Advanced Urology.',
+    titleLine2: 'Precision Laser Care.',
+    heroDescription: 'State-of-the-art laser kidney stone treatments, minimally invasive prostate care, endourology, and reconstructive urological surgery at Omni Hospitals.',
+    heroImage: '/images/urology.jpg',
+    orbitalImage: '/images/urology_center.jpg',
+
+    aboutTag: 'ABOUT UROLOGY',
+    aboutTitle: 'Advanced Urological & Andrological Care',
+    aboutDescription: [
+      'The Department of Urology & Andrology at OMNI Hospitals offers comprehensive clinical and surgical management for disorders of the urinary tract, kidneys, bladder, and male reproductive health.',
+      'Equipped with advanced Holmium Laser systems, digital flexible ureterorenoscopy (RIRS), and cutting-edge laparoscopic suites, our senior urologists provide minimally invasive procedures ensuring quick recovery and minimal discomfort.'
+    ],
+    aboutImage: '/images/urology.jpg',
+
+    stats: [
+      { label: 'Successful Procedures', value: '15,000+' },
+      { label: 'Laser Stone Removal', value: '100% Day Care' },
+      { label: 'Urological Suites', value: 'Ultra-Modern' },
+      { label: 'Patient Recovery', value: 'Rapid / 24h' }
+    ],
+
+    conditions: [
+      { name: 'Kidney & Ureteral Stones', desc: 'Calcified mineral deposits causing severe flank pain, hematuria, and urinary obstruction.' },
+      { name: 'Benign Prostatic Hyperplasia (BPH)', desc: 'Enlarged prostate leading to frequent urination, weak stream, and urinary retention.' },
+      { name: 'Urinary Tract Infections (UTI)', desc: 'Acute and recurrent bacterial infections affecting the bladder, urethra, or kidneys.' },
+      { name: 'Urological Cancers', desc: 'Malignancies of the kidney, bladder, prostate, and testes diagnosed and treated with precision.' },
+      { name: 'Male Infertility & Andrology', desc: 'Varicocele, erectile dysfunction, and male reproductive disorders treated with modern micro-surgery.' },
+      { name: 'Stricture Urethra & Reconstructive Needs', desc: 'Narrowing of the urethra requiring laser or buccal mucosal graft urethroplasty.' }
+    ],
+
+    services: [
+      { title: 'Laser Kidney Stone Surgery (RIRS / PCNL)', desc: 'Minimally invasive keyhole and retrograde intrarenal surgery using advanced Holmium laser.' },
+      { title: 'Prostate Laser Surgery (TURP / HoLEP)', desc: 'Advanced endoscopic prostate resection and laser enucleation for enlarged prostate.' },
+      { title: 'Laparoscopic & Robotic Uro-Surgery', desc: 'Keyhole surgical removal of kidney tumors, pyeloplasty, and reconstructive procedures.' },
+      { title: 'Uro-Oncology Care', desc: 'Comprehensive surgical and multi-disciplinary care for bladder, kidney, and prostate cancers.' },
+      { title: 'Andrology & Men\'s Health Clinic', desc: 'Specialized clinic for erectile dysfunction, varicocelectomy, and male fertility care.' },
+      { title: '24/7 Renal Colic Emergency Care', desc: 'Instant pain relief and emergency stenting for acute urinary stone blockages.' }
+    ],
+
+    whyOmni: [
+      { title: 'Advanced Laser Technology', desc: 'High-power Holmium laser for painless and scarless stone dusting.' },
+      { title: 'Senior Urologists', desc: 'Renowned surgeons with over 20+ years of endourology experience.' },
+      { title: 'Day-Care Interventions', desc: 'Same-day or 24-hour discharge for most laser urology procedures.' },
+      { title: 'Infection-Free Suites', desc: 'State-of-the-art modular theaters adhering to strict sterilization protocols.' },
+      { title: '24/7 Emergency Relief', desc: 'Round-the-clock emergency management for acute stone pain and retention.' }
+    ],
+
+    faqs: [
+      {
+        question: 'When should I consult a urologist?',
+        answer: 'You should consult a urologist if you experience burning during urination, blood in your urine (hematuria), severe lower back or flank pain, frequent night urination, weak urine flow, or difficulty passing urine.'
+      },
+      {
+        question: 'How are kidney stones treated at OMNI Hospitals?',
+        answer: 'Depending on the stone size and location, we utilize painless laser techniques such as RIRS (Retrograde Intrarenal Surgery), PCNL (Percutaneous Nephrolithotomy), or URSL, which require no large incisions and allow rapid recovery.'
+      },
+      {
+        question: 'Is surgery always required for an enlarged prostate (BPH)?',
+        answer: 'Not always. Mild to moderate BPH is often managed effectively with medications. For significant obstruction, advanced laser or endoscopic procedures like TURP offer fast and long-lasting relief.'
+      },
+      {
+        question: 'How do I book an appointment with an OMNI Urologist?',
+        answer: 'You can book an appointment online via our website or call our 24/7 helpline at 1800 123 4567.'
+      }
+    ],
+
+    ctaTitleLine1: 'Advanced Urological Care.',
+    ctaTitleLine2: 'Fast Relief & Recovery.',
+    ctaDescription: 'Consult our leading urologists for advanced laser stone treatments, prostate care, and men\'s health.'
   },
 
   'emergency-medicine': {
@@ -539,14 +618,233 @@ export const SPECIALTIES_DATA = {
     ctaTitleLine1: 'Complete Health Protection.',
     ctaTitleLine2: 'Book General Physician.',
     ctaDescription: 'Schedule a consultation with our senior general medicine specialists.'
+  },
+
+  pulmonology: {
+    id: 'pulmonology',
+    name: 'Pulmonology',
+    slug: 'pulmonology',
+    deptTag: 'PULMONOLOGY',
+    heroTagline: 'CENTRE OF EXCELLENCE IN RESPIRATORY MEDICINE',
+    titleLine1: 'Breathe Easy.',
+    titleLine2: 'Advanced Lung Care.',
+    heroDescription: 'Comprehensive pulmonary diagnosis, asthma & allergy management, interventional bronchoscopy, and critical respiratory care delivered by senior pulmonologists across OMNI Hospitals.',
+    heroImage: '/images/pulmonology.jpg',
+    orbitalImage: '/images/pulmonology_center.jpg',
+    aboutTag: 'ABOUT PULMONOLOGY',
+    aboutTitle: 'Advanced Care for Lungs & Breathing Disorders',
+    aboutDescription: [
+      'The Department of Pulmonology at OMNI Hospitals offers comprehensive inpatient, outpatient, and intensive care management for acute and chronic respiratory disorders.',
+      'From advanced Pulmonary Function Testing (PFT) and video bronchoscopy to dedicated respiratory ICUs and sleep medicine labs, our specialists deliver personalized treatment plans for asthma, COPD, ILD, and lung infections.'
+    ],
+    aboutImage: '/images/pulmonology.jpg',
+    stats: [
+      { label: 'Patient Recovery Rate', value: '98.5%' },
+      { label: 'Emergency Respiratory Care', value: '24/7' },
+      { label: 'Advanced PFT Labs', value: 'Equipped' },
+      { label: 'Bronchoscopy Procedures', value: '5,000+' }
+    ],
+    conditions: [
+      { name: 'Asthma & Allergic Bronchitis', desc: 'Comprehensive management of airway hyperreactivity, wheezing, and allergic triggers.' },
+      { name: 'COPD (Emphysema & Bronchitis)', desc: 'Advanced clinical therapy, bronchodilators, and pulmonary rehabilitation for chronic smokers and long-term lung damage.' },
+      { name: 'Pneumonia & Chest Infections', desc: 'Rapid microbiological diagnosis and targeted antibiotic therapy for viral and bacterial lung infections.' },
+      { name: 'Interstitial Lung Disease (ILD)', desc: 'High-resolution imaging and personalized antifibrotic therapy for pulmonary fibrosis.' },
+      { name: 'Sleep Apnea & Snoring', desc: 'Diagnostic Polysomnography (Sleep Study) and CPAP/BiPAP titration therapy.' },
+      { name: 'Pleural Effusion & Pneumothorax', desc: 'Thoracentesis, chest tube insertion, and medical pleurodesis.' }
+    ],
+    services: [
+      { title: 'Pulmonary Function Testing (PFT)', desc: 'Spirometry, DLCO, lung volumes, and 6-minute walk tests.' },
+      { title: 'Diagnostic & Therapeutic Bronchoscopy', desc: 'Fiber-optic bronchoscopy, BAL, transbronchial lung biopsy, and foreign body removal.' },
+      { title: 'Sleep Disorder Lab', desc: 'Comprehensive overnight sleep studies and obstructive sleep apnea management.' },
+      { title: 'Pulmonary Critical Care & RICU', desc: 'Dedicated mechanical ventilation, non-invasive ventilation, and ECMO support.' },
+      { title: 'Allergy Testing & Immunotherapy', desc: 'Skin prick tests and targeted allergen immunotherapy.' },
+      { title: 'Smoking Cessation Clinic', desc: 'Behavioral counseling and pharmacotherapy for tobacco de-addiction.' }
+    ],
+    whyOmni: [
+      { title: 'Senior Pulmonologists', desc: 'Experienced chest physicians and critical care respiratory experts.' },
+      { title: 'State-of-the-Art Diagnostics', desc: 'Ultra-modern video bronchoscopy suites and digital PFT systems.' },
+      { title: '24/7 Emergency Support', desc: 'Rapid response teams for acute respiratory failure and severe asthma attacks.' }
+    ],
+    faqs: [
+      { question: 'When should I consult a pulmonologist?', answer: 'You should consult a pulmonologist if you have a persistent cough lasting more than 3 weeks, unexplained shortness of breath, wheezing, coughing up blood, or frequent chest infections.' },
+      { question: 'What is a Pulmonary Function Test (PFT)?', answer: 'PFT is a non-invasive breathing test that measures lung capacity and airflow to diagnose asthma, COPD, and other lung disorders.' }
+    ],
+    ctaTitleLine1: 'Breathe Confidently.',
+    ctaTitleLine2: 'Book Pulmonology Consultation.',
+    ctaDescription: 'Schedule an appointment with senior pulmonologists and chest specialists at OMNI Hospitals.'
+  },
+
+  dermatology: {
+    id: 'dermatology',
+    name: 'Dermatology & Cosmetology',
+    slug: 'dermatology',
+    deptTag: 'DERMATOLOGY',
+    heroTagline: 'CENTRE OF EXCELLENCE IN SKIN, HAIR & NAIL CARE',
+    titleLine1: 'Radiant Skin.',
+    titleLine2: 'Advanced Clinical Care.',
+    heroDescription: 'Expert clinical dermatology, aesthetic cosmetology, and advanced laser treatments for all skin, hair, and nail conditions across OMNI Hospitals.',
+    heroImage: '/images/dermatology.jpg',
+    orbitalImage: '/images/dermatology_center.jpg',
+    aboutTag: 'ABOUT DERMATOLOGY',
+    aboutTitle: 'Comprehensive Skin, Hair & Aesthetic Solutions',
+    aboutDescription: [
+      'The Department of Dermatology at OMNI Hospitals provides world-class clinical, surgical, and cosmetic care for patients of all age groups.',
+      'Our team of qualified dermatologists treats chronic inflammatory skin conditions like psoriasis and eczema while offering state-of-the-art aesthetic procedures such as laser scar reduction, chemical peels, and hair restoration.'
+    ],
+    aboutImage: '/images/dermatology.jpg',
+    stats: [
+      { label: 'Procedures Completed', value: '15,000+' },
+      { label: 'Patient Satisfaction', value: '99.1%' },
+      { label: 'Advanced Lasers', value: 'FDA Approved' },
+      { label: 'Dermatology Specialists', value: '15+ Yrs Exp' }
+    ],
+    conditions: [
+      { name: 'Acne & Acne Scarring', desc: 'Medical therapy, chemical peels, and fractional lasers for active acne and scar remodeling.' },
+      { name: 'Psoriasis & Vitiligo', desc: 'Targeted phototherapy, biologics, systemic medications, and surgical skin grafting.' },
+      { name: 'Eczema & Atopic Dermatitis', desc: 'Allergy testing, barrier repair therapy, and long-term flare management.' },
+      { name: 'Hair Loss & Alopecia', desc: 'PRP/PRF therapy, mesotherapy, and medical treatments for androgenetic alopecia and alopecia areata.' },
+      { name: 'Fungal & Bacterial Infections', desc: 'Accurate scraping microscopy and targeted anti-infective treatment.' },
+      { name: 'Pigmentation & Melasma', desc: 'Q-switched Nd:YAG laser toning and medical depigmentation protocols.' }
+    ],
+    services: [
+      { title: 'Clinical Dermatology', desc: 'Diagnosis and management of eczema, psoriasis, hives, and complex dermatoses.' },
+      { title: 'Cosmetic Dermatology & Lasers', desc: 'Laser hair reduction, laser tattoo removal, and photo-rejuvenation.' },
+      { title: 'Hair Restoration Clinic', desc: 'Platelet-Rich Plasma (PRP) therapy and advanced trichological treatments.' },
+      { title: 'Dermatosurgery', desc: 'Mole removal, cyst excision, earlobe repair, and skin biopsies.' },
+      { title: 'Chemical Peels & Facials', desc: 'Salicylic, Glycolic, and TCA peels for hyperpigmentation and skin rejuvenation.' }
+    ],
+    whyOmni: [
+      { title: 'Board-Certified Dermatologists', desc: 'Experienced doctors trained in clinical and aesthetic dermatology.' },
+      { title: 'FDA-Approved Technology', desc: 'Safe, medical-grade laser equipment and sterilized clinical suites.' },
+      { title: 'Personalized Treatment Plans', desc: 'Customized protocols tailored to your specific skin and hair type.' }
+    ],
+    faqs: [
+      { question: 'What skin conditions do your dermatologists treat?', answer: 'We treat acne, eczema, psoriasis, vitiligo, hair loss, skin allergies, fungal infections, warts, moles, and cosmetic skin concerns.' },
+      { question: 'Is PRP therapy safe for hair loss?', answer: 'Yes, PRP therapy utilizes the patient’s own blood platelets to stimulate natural hair follicle growth and is completely biocompatible and safe.' }
+    ],
+    ctaTitleLine1: 'Healthy, Glowing Skin.',
+    ctaTitleLine2: 'Consult Top Dermatologists.',
+    ctaDescription: 'Book an appointment with certified skin and hair specialists at OMNI Hospitals.'
+  },
+
+  psychiatry: {
+    id: 'psychiatry',
+    name: 'Psychiatry & Mental Health',
+    slug: 'psychiatry',
+    deptTag: 'PSYCHIATRY',
+    heroTagline: 'CENTRE OF EXCELLENCE IN BEHAVIOURAL SCIENCES & MENTAL HEALTH',
+    titleLine1: 'Healing Minds.',
+    titleLine2: 'Compassionate Care.',
+    heroDescription: 'Comprehensive mental healthcare, psychotherapeutic counseling, and psychiatric evaluation delivered with utmost empathy and confidentiality at OMNI Hospitals.',
+    heroImage: '/images/psychiatry.jpg',
+    orbitalImage: '/images/psychiatry_center.jpg',
+    aboutTag: 'ABOUT PSYCHIATRY',
+    aboutTitle: 'Holistic Mental Health & Psychological Wellbeing',
+    aboutDescription: [
+      'The Department of Psychiatry & Behavioral Sciences at OMNI Hospitals provides supportive, confidential, and evidence-based mental healthcare for adolescents, adults, and seniors.',
+      'Our team of psychiatrists and clinical psychologists specializes in treating anxiety, depression, bipolar disorder, sleep disturbances, and addiction through medication management, psychotherapy, and behavioral counseling.'
+    ],
+    aboutImage: '/images/psychiatry.jpg',
+    stats: [
+      { label: 'Patient Consultations', value: '10,000+' },
+      { label: 'Strict Confidentiality', value: '100%' },
+      { label: 'Psychological Therapies', value: 'Evidence-Based' },
+      { label: 'Dedicated Specialists', value: 'Compassionate' }
+    ],
+    conditions: [
+      { name: 'Depression & Mood Disorders', desc: 'Compassionate medical and psychotherapeutic treatment for Major Depressive Disorder and dysthymia.' },
+      { name: 'Anxiety, Panic & Phobias', desc: 'Cognitive Behavioral Therapy (CBT) and pharmacotherapy for generalized anxiety and panic attacks.' },
+      { name: 'Stress & Sleep Disorders', desc: 'Evaluation and clinical management of chronic insomnia and stress-related fatigue.' },
+      { name: 'Bipolar & Psychotic Disorders', desc: 'Long-term mood stabilization, antipsychotic monitoring, and rehabilitation support.' },
+      { name: 'Obsessive-Compulsive Disorder (OCD)', desc: 'ERP therapy and pharmacological management for intrusive thoughts and compulsive behaviors.' },
+      { name: 'Substance De-addiction', desc: 'Medically supervised detoxification and relapse prevention counseling.' }
+    ],
+    services: [
+      { title: 'Psychiatric Evaluation & Medication', desc: 'Detailed diagnostic assessment and judicious psychotropic prescription management.' },
+      { title: 'Cognitive Behavioral Therapy (CBT)', desc: 'Structured talk therapy focusing on reframing negative thought patterns.' },
+      { title: 'Stress & Lifestyle Counseling', desc: 'Techniques for workplace burnout, emotional resilience, and mindfulness.' },
+      { title: 'Child & Adolescent Psychiatry', desc: 'Assessment and counseling for ADHD, learning difficulties, and behavioral concerns.' },
+      { title: 'Geriatric Psychiatry', desc: 'Specialized care for dementia, depression in the elderly, and memory disorders.' }
+    ],
+    whyOmni: [
+      { title: 'Complete Confidentiality', desc: 'Your privacy, dignity, and medical records are protected with 100% confidentiality.' },
+      { title: 'Empathetic Approach', desc: 'Compassionate clinical psychiatrists who listen without judgment.' },
+      { title: 'Multidisciplinary Care', desc: 'Integrated psychiatric care alongside general medicine and neurology.' }
+    ],
+    faqs: [
+      { question: 'When should I visit a psychiatrist?', answer: 'Consider seeing a psychiatrist if you experience persistent sadness, severe anxiety, panic attacks, drastic mood swings, sleep disturbances, or difficulty coping with daily life.' },
+      { question: 'Are psychiatric consultations confidential?', answer: 'Yes, all psychiatric consultations, therapy sessions, and medical details are treated with strict medical confidentiality.' }
+    ],
+    ctaTitleLine1: 'Prioritize Your Mental Well-being.',
+    ctaTitleLine2: 'Book Psychiatry Appointment.',
+    ctaDescription: 'Speak with compassionate mental health specialists and psychiatrists at OMNI Hospitals.'
+  },
+
+  'plastic-surgery': {
+    id: 'plastic-surgery',
+    name: 'Plastic & Reconstructive Surgery',
+    slug: 'plastic-surgery',
+    deptTag: 'PLASTIC SURGERY',
+    heroTagline: 'CENTRE OF EXCELLENCE IN RECONSTRUCTIVE & COSMETIC SURGERY',
+    titleLine1: 'Restoring Form.',
+    titleLine2: 'Enhancing Function.',
+    heroDescription: 'Advanced reconstructive microsurgery, trauma reconstruction, burn injury care, and aesthetic cosmetic surgical procedures at OMNI Hospitals.',
+    heroImage: '/images/plastic_surgery.jpg',
+    orbitalImage: '/images/plastic_surgery_center.jpg',
+    aboutTag: 'ABOUT PLASTIC SURGERY',
+    aboutTitle: 'Precision Surgery for Restoration & Aesthetics',
+    aboutDescription: [
+      'The Department of Plastic & Reconstructive Surgery at OMNI Hospitals is dedicated to restoring both form and function for patients affected by trauma, congenital defects, burns, or oncological resections.',
+      'Led by skilled plastic surgeons utilizing advanced microsurgical techniques and ultra-modern modular operation theaters, we perform life-changing reconstructive and aesthetic surgeries with highest safety standards.'
+    ],
+    aboutImage: '/images/plastic_surgery.jpg',
+    stats: [
+      { label: 'Reconstructive Surgeries', value: '8,000+' },
+      { label: 'Microsurgical Success', value: '99%' },
+      { label: '24/7 Trauma Plastic Care', value: 'Available' },
+      { label: 'Ultra-Modern Modular OTs', value: 'Equipped' }
+    ],
+    conditions: [
+      { name: 'Maxillofacial & Facial Trauma', desc: 'Restoration of facial fractures, soft tissue lacerations, and dental alveolar trauma.' },
+      { name: 'Burn Injuries & Post-Burn Contractures', desc: 'Acute burn critical care, skin grafting, and surgical contracture release.' },
+      { name: 'Hand Injuries & Complex Trauma', desc: 'Tendon repairs, nerve reconstruction, and replantation micro-surgeries.' },
+      { name: 'Diabetic Foot & Chronic Wounds', desc: 'Advanced microvascular flap reconstruction for limb salvage and healing.' },
+      { name: 'Congenital Anomalies (Cleft Lip/Palate)', desc: 'Pediatric plastic surgery to restore speech, feeding, and facial appearance.' },
+      { name: 'Scar Revision & Keloids', desc: 'Surgical excision, steroid injection, and laser remodeling for traumatic scars.' }
+    ],
+    services: [
+      { title: 'Reconstructive Microsurgery', desc: 'Free tissue transfers and nerve repair for trauma and post-cancer defect restoration.' },
+      { title: 'Acute Burn & Wound Management', desc: 'State-of-the-art burn ICU care and collagen/autologous skin grafting.' },
+      { title: 'Hand & Peripheral Nerve Surgery', desc: 'Tendon transfers, carpal tunnel decompression, and fracture fixation.' },
+      { title: 'Aesthetic & Cosmetic Surgery', desc: 'Rhinoplasty, gynecomastia reduction, liposuction, abdominoplasty, and scar revision.' },
+      { title: 'Limb Salvage Reconstruction', desc: 'Complex flap surgeries preventing amputation in severe trauma and diabetic foot.' }
+    ],
+    whyOmni: [
+      { title: 'Senior Plastic Surgeons', desc: 'German and internationally trained surgeons skilled in microsurgical techniques.' },
+      { title: 'Advanced Modular OTs', desc: 'Equipped with operating microscopes and specialized micro-instruments.' },
+      { title: 'Comprehensive Post-Op Rehabilitation', desc: 'Dedicated hand therapy, scar management, and functional recovery programs.' }
+    ],
+    faqs: [
+      { question: 'What is the difference between reconstructive and cosmetic surgery?', answer: 'Reconstructive surgery focuses on repairing defects caused by trauma, birth disorders, burns, or disease to restore normal function and appearance, whereas cosmetic surgery focuses primarily on enhancing aesthetic features.' },
+      { question: 'How are traumatic scars treated?', answer: 'Scars can be treated through a combination of scar revision surgery, medical silicone sheets, steroid injections, and laser resurfacing depending on the severity and age of the scar.' }
+    ],
+    ctaTitleLine1: 'Precision Surgical Excellence.',
+    ctaTitleLine2: 'Book Plastic Surgery Consult.',
+    ctaDescription: 'Schedule a consultation with senior plastic and reconstructive surgeons at OMNI Hospitals.'
   }
 };
 
 // Fallback helper to return specialty configuration or generate default schema
 export function getSpecialtyData(slug) {
   const normalized = (slug || 'cardiology').toLowerCase();
+  const seo = SEO_METADATA[normalized];
+
   if (SPECIALTIES_DATA[normalized]) {
-    return SPECIALTIES_DATA[normalized];
+    return {
+      ...SPECIALTIES_DATA[normalized],
+      seoTitle: seo?.title,
+      metaDescription: seo?.description
+    };
   }
   
   // Format readable title
@@ -566,6 +864,8 @@ export function getSpecialtyData(slug) {
     id: normalized,
     name: formattedName,
     slug: normalized,
+    seoTitle: seo?.title,
+    metaDescription: seo?.description,
     deptTag: formattedName.toUpperCase(),
     heroTagline: 'CENTRE OF EXCELLENCE AT OMNI HOSPITALS',
     titleLine1: `${formattedName} Care.`,

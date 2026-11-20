@@ -6,6 +6,7 @@ const EXISTING_DOCTOR_PHOTOS = new Set([
   'dr-ateeq-ur-rahman.jpg',
   'dr-b-jaipal-reddy.jpg',
   'dr-ch-nagaraj.jpg',
+  'dr-ch-ranjith-kumar.jpg',
   'dr-ch-saidulu.jpg',
   'dr-ch-sandeep-anand.jpg',
   'dr-e-venkat-ramana-reddy.jpg',
@@ -24,6 +25,7 @@ const EXISTING_DOCTOR_PHOTOS = new Set([
   'dr-m-goutham-reddy.jpg',
   'dr-m-rama-krishna-reddy.jpg',
   'dr-n-sridevi.jpg',
+  'dr-n-surya.jpg',
   'dr-nagavender-rao-m.jpg',
   'dr-nandyala-sreekar.jpg',
   'dr-naveen-kokula.jpg',
@@ -31,11 +33,13 @@ const EXISTING_DOCTOR_PHOTOS = new Set([
   'dr-p-pravallika.jpg',
   'dr-padmaja-subrahmanyam.jpg',
   'dr-palla-raghu-deep.jpg',
+  'dr-pavan.jpg',
   'dr-payal-chitransi.jpg',
   'dr-pranay-kumar-mehta.jpg',
   'dr-praneeth-reddy-cv.jpg',
   'dr-pss-subramanyam.jpg',
   'dr-radlam-padma-kumari.jpg',
+  'dr-ragi-prasad.jpg',
   'dr-rajesh-pathi.jpg',
   'dr-ranjith-nellore-mahesh.jpg',
   'dr-ravinder-reddy.jpg',
@@ -44,7 +48,9 @@ const EXISTING_DOCTOR_PHOTOS = new Set([
   'dr-sai-kiran-k.jpg',
   'dr-sandeep-pemira.jpg',
   'dr-seetha-katta.jpg',
+  'dr-shiva-prasad.jpg',
   'dr-srinivas-mamidala.jpg',
+  'dr-sudharshana-reddy.jpg',
   'dr-surya-prakash-reddy.jpg',
   'dr-t-y-sri-hari.jpg',
   'dr-tagore-mohan-grandhi.jpg',
@@ -52,6 +58,7 @@ const EXISTING_DOCTOR_PHOTOS = new Set([
   'dr-v-a-vani.jpg',
   'dr-vijay-kumar-kurella.jpg',
   'dr-vijaya-bhaskar-mallela.jpg',
+  'dr-vijetha.jpg',
   'dr-y-sandeep-reddy.jpg',
   'mrs-saritha.jpg'
 ]);
@@ -72,6 +79,17 @@ export function getDoctorAvatarFallback(doctorName = '') {
     nameLower.includes('vani') ||
     nameLower.includes('pravallika') ||
     nameLower.includes('payal') ||
+    nameLower.includes('vijetha') ||
+    nameLower.includes('shishira') ||
+    nameLower.includes('swetha') ||
+    nameLower.includes('mrudula') ||
+    nameLower.includes('kiranmayi') ||
+    nameLower.includes('bhulaxmi') ||
+    nameLower.includes('niharika') ||
+    nameLower.includes('srinija') ||
+    nameLower.includes('zehra') ||
+    nameLower.includes('nazia') ||
+    nameLower.includes('shanti') ||
     nameLower.includes('gynaec') ||
     nameLower.includes('obstet')
   );
