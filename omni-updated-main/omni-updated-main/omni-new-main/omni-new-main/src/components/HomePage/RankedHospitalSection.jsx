@@ -48,13 +48,13 @@ export default function RankedHospitalSection({ onBookAppointment, onNavigate })
         <div className="promo-content-row">
           
           {/* Left Text Content */}
-          <div className="promo-text-col" style={{ paddingTop: '30px' }}>
-            <h2 className="promo-main-heading" style={{ textTransform: 'none' }}>
+          <div className="promo-text-col">
+            <h2 className="promo-main-heading">
               Compassionate Care. <br />
-              <span style={{ color: '#3cb832' }}>Advanced Expertise.</span> <br />
+              <span className="promo-highlight-green">Advanced Expertise.</span> <br />
               Better Outcomes.
             </h2>
-            <p className="promo-desc" style={{ marginTop: '35px', fontSize: '1.1rem', color: '#334155', fontWeight: '500' }}>
+            <p className="promo-desc">
               “Omni Hospitals is committed to delivering world-class healthcare with cutting-edge technology and a patient-first approach.”
             </p>
 

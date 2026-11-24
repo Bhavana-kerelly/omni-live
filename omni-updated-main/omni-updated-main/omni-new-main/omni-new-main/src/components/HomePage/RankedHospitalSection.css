@@ -12,6 +12,12 @@
   z-index: 1;
 }
 
+.ranked-hospital-wrapper.reveal-on-scroll {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
 /* Base Sky Background */
 .ranked-bg-sky {
   position: absolute;
@@ -145,6 +151,7 @@
   position: relative;
   z-index: 10;
   padding-right: 20px;
+  padding-top: 30px;
 }
 
 /* Typography matching the strong condensed navy look */
@@ -155,9 +162,13 @@
   color: #0c3e7f; /* Deep navy blue */
   line-height: 1.15;
   margin: 0 0 5px 0;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: -0.02em;
   text-shadow: 0 2px 10px rgba(255, 255, 255, 1);
+}
+
+.promo-highlight-green {
+  color: #3cb832;
 }
 
 .promo-main-heading .text-blue {
@@ -174,10 +185,10 @@
 }
 
 .promo-desc {
-  font-size: 1rem;
-  color: #4b5563;
+  font-size: 1.1rem;
+  color: #334155;
   line-height: 1.5;
-  margin: 0 0 30px 0;
+  margin: 35px 0 30px 0;
   font-weight: 500;
 }
 
@@ -485,64 +496,179 @@
   .promo-img-col { flex: 0 0 50%; }
 }
 
+/* ==================================================
+   MOBILE VIEW (ALL MOBILE SCREENS <= 900px)
+   Matches the exact reference frame:
+   Header -> Wheel visual -> Compassionate Care -> Buttons
+   ================================================== */
 @media (max-width: 900px) {
-  .ranked-hospital-wrapper { padding: 50px 0 50px; }
-  .promo-content-row {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-  .promo-text-col {
-    max-width: 100%;
-    flex: none;
-    padding: 0;
+  .ranked-hospital-wrapper {
+    padding: 12px 0 30px 0 !important;
+    min-height: auto !important;
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  .promo-img-col {
-    position: relative;
-    width: 100%;
-    top: 0;
-    right: 0;
-    justify-content: center;
-  }
-  .exact-hospital-image {
-    mask-image: none;
-    -webkit-mask-image: none;
-    max-width: 100%;
-    border-radius: 20px;
-  }
-  .exact-stats-bar {
-    flex-wrap: wrap;
-    border-radius: 24px;
-    padding: 20px;
-    gap: 20px;
-  }
-  .stats-bar-shine {
-    border-radius: 24px 24px 0 0;
-  }
-  .promo-stat-item {
-    width: calc(50% - 15px);
-    flex: none;
     justify-content: flex-start;
   }
-  .exact-divider {
-    display: none;
+
+  .ranked-container {
+    padding: 0 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
-  .banner-action-sidebar { display: none; }
+
+  .promo-content-row {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 8px !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* 1. Text & Buttons AT THE TOP (order: 1) so Book Appointment is immediately visible */
+  .promo-text-col {
+    order: 1 !important;
+    max-width: 100% !important;
+    flex: none !important;
+    padding: 0 !important;
+    padding-top: 2px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 8px !important;
+  }
+
+  .promo-main-heading {
+    font-size: clamp(1.3rem, 4.8vw, 1.7rem) !important;
+    line-height: 1.2 !important;
+    margin: 2px 0 4px 0 !important;
+    text-align: center !important;
+    letter-spacing: -0.01em !important;
+    text-transform: none !important;
+  }
+
+  .promo-highlight-green {
+    color: #3cb832 !important;
+  }
+
+  .promo-desc {
+    font-size: clamp(0.78rem, 2.5vw, 0.88rem) !important;
+    line-height: 1.4 !important;
+    margin: 4px auto 12px auto !important;
+    max-width: 92% !important;
+    text-align: center !important;
+    color: #334155 !important;
+    font-weight: 500 !important;
+  }
+
+  .promo-cta-group {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    gap: 8px !important;
+    margin: 0 auto !important;
+    align-items: center !important;
+  }
+
+  .btn-exact {
+    width: 100% !important;
+    padding: 12px 20px !important;
+    font-size: 0.82rem !important;
+    font-weight: 800 !important;
+    border-radius: 9999px !important;
+    justify-content: center !important;
+    letter-spacing: 0.03em !important;
+  }
+
+  /* 2. Hospital Image Visual BELOW the text and buttons (order: 2) */
+  .promo-img-col {
+    order: 2 !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    top: 0 !important;
+    right: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 10px auto 0 auto !important;
+    pointer-events: auto !important;
+  }
+
+  .exact-hospital-image {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    width: 82% !important;
+    max-width: 260px !important;
+    max-height: 165px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    border-radius: 14px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Glass bubble & crosses scaling for mobile */
+  .giant-glass-bubble {
+    width: 220px !important;
+    height: 220px !important;
+    top: 8% !important;
+    left: 20% !important;
+    opacity: 0.6 !important;
+  }
+
+  .left-glass-cross {
+    width: 75px !important;
+    height: 75px !important;
+    top: 55% !important;
+    left: -5px !important;
+    opacity: 0.45 !important;
+  }
+
+  .exact-stats-bar {
+    flex-wrap: wrap !important;
+    border-radius: 20px !important;
+    padding: 16px 14px !important;
+    gap: 14px !important;
+    margin-top: 25px !important;
+  }
+
+  .stats-bar-shine {
+    border-radius: 20px 20px 0 0 !important;
+  }
+
+  .promo-stat-item {
+    width: calc(50% - 10px) !important;
+    flex: none !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+  }
+
+  .exact-icon-circle {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .promo-stat-number {
+    font-size: 1.25rem !important;
+  }
+
+  .promo-stat-label {
+    font-size: 0.72rem !important;
+  }
+
+  .exact-divider {
+    display: none !important;
+  }
+
+  .banner-action-sidebar {
+    display: none !important;
+  }
 }
 
 @media (max-width: 500px) {
-  .promo-cta-group {
-    flex-direction: column;
-    width: 100%;
-  }
-  .btn-exact {
-    width: 100%;
-    justify-content: center;
-  }
   .promo-stat-item {
-    width: 100%;
+    width: 100% !important;
   }
 }

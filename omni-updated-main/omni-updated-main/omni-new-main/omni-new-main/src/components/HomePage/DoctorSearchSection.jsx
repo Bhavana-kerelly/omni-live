@@ -11,9 +11,9 @@ const FEATURED_DOCTOR_IDS = [
   'doc-padmaja-subrahmanyam',
   'doc-praneeth-reddy-cv',
   'doc-dr-k-sagar-babu',
-  'doc-dr-pss-subramanyam',
+  'doc-dr-subramanyam-s-s-penneru',
   'doc-neehar-potluri',
-  'doc-dr-g-vikram',
+  'doc-dr-vidya-sagar-samana',
   'doc-pranay-kumar-mehta',
   'doc-seetha-katta',
   'doc-lokesh-kumar-k',
@@ -21,7 +21,7 @@ const FEATURED_DOCTOR_IDS = [
   'doc-ragi-prasad',
   'doc-payal-chitransi',
   'doc-sandeep-pemira',
-  'doc-dr-m-vijaykanth'
+  'doc-dr-sridevi-n'
 ];
 
 const FEATURED_DOCTORS = FEATURED_DOCTOR_IDS.map((id) => DOCTORS_DATA.find((d) => d.id === id)).filter(Boolean);

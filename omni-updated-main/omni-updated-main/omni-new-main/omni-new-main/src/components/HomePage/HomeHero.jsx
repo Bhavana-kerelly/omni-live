@@ -14,6 +14,20 @@ export default function HomeHero({ onFindDoctor, onBookAppointment, onNavigate }
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  // Guarantee mobile and desktop video autoplay
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => setIsPlaying(true))
+          .catch(() => {});
+      }
+    }
+  }, []);
+
   // Video Controls handlers
   const handleTogglePlay = () => {
     if (!videoRef.current) return;
@@ -68,7 +82,7 @@ export default function HomeHero({ onFindDoctor, onBookAppointment, onNavigate }
   }, []);
 
   const handleScrollToNextSection = () => {
-    const nextSection = document.getElementById('quick-care') || document.getElementById('network');
+    const nextSection = document.getElementById('ranked-hospital-section') || document.getElementById('quick-care') || document.getElementById('network');
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
     } else {

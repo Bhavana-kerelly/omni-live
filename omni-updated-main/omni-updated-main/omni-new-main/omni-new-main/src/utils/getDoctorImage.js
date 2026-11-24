@@ -15,6 +15,8 @@ const EXISTING_DOCTOR_PHOTOS = new Set([
   'dr-jayasimha-n.jpg',
   'dr-jn-srinivasulu.jpg',
   'dr-k-pavani.jpg',
+  'dr-kolla-pavani.jpg',
+  'dr-sandeep-anand-chintala.jpg',
   'dr-kandukuri-sasidhara-babu.jpg',
   'dr-khaleel.jpg',
   'dr-kolloju-srikanth.jpg',
@@ -84,12 +86,21 @@ export function getDoctorAvatarFallback(doctorName = '') {
     nameLower.includes('swetha') ||
     nameLower.includes('mrudula') ||
     nameLower.includes('kiranmayi') ||
+    nameLower.includes('harini') ||
+    nameLower.includes('annapurna') ||
+    nameLower.includes('tulasi') ||
     nameLower.includes('bhulaxmi') ||
     nameLower.includes('niharika') ||
     nameLower.includes('srinija') ||
     nameLower.includes('zehra') ||
     nameLower.includes('nazia') ||
     nameLower.includes('shanti') ||
+    nameLower.includes('radhika') ||
+    nameLower.includes('phebe') ||
+    nameLower.includes('shekina') ||
+    nameLower.includes('goutami') ||
+    nameLower.includes('darsani') ||
+    nameLower.includes('priya') ||
     nameLower.includes('gynaec') ||
     nameLower.includes('obstet')
   );

@@ -10,6 +10,7 @@ export default function HeroVideo({ videoRef, isLoaded, onVideoError }) {
         muted
         loop
         playsInline
+        webkit-playsinline="true"
         preload="auto"
         poster={getAssetUrl('/images/hospital-hero-poster.jpg')}
         className="hero-video hero-video-media"
